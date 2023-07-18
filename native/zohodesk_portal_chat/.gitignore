@@ -31,3 +31,6 @@ build/
 
 
 */pubspec.lock
+/.metadata
+/example/analysis_options.yaml
+/analysis_options.yaml

@@ -9,9 +9,7 @@ class MockZohodeskPortalKbPlatform
     implements ZohodeskPortalKbPlatform {
 
   @override
-  Future show() {
-    // TODO: implement show
-    throw UnimplementedError();
+  Future show() async {
   }
 }
 

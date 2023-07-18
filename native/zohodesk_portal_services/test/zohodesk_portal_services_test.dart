@@ -9,9 +9,7 @@ class MockZohodeskPortalServicesPlatform
     implements ZohodeskPortalServicesPlatform {
 
   @override
-  Future<void> show() {
-    // TODO: implement show
-    throw UnimplementedError();
+  Future<void> show() async {
   }
 }
 

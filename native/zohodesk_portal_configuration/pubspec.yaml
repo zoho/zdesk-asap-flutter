@@ -2,7 +2,7 @@ name: zohodesk_portal_configuration
 description: ASAP Flutter plugin for Configuration for mobile app configurations.
 version: 1.0.0
 homepage:
-w
+
 environment:
   sdk: '>=2.19.6 <3.0.0'
   flutter: ">=2.5.0"

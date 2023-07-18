@@ -1,0 +1,39 @@
+name: zohodesk_portal_core
+description: A new Flutter project.
+version: 1.0.0
+homepage:
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+  flutter: ">=2.5.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+
+  zohodesk_portal_apikit: ^1.0.0
+
+
+
+  zohodesk_portal_kb: ^1.0.0
+
+  zohodesk_portal_community: ^1.0.0
+
+  zohodesk_portal_ticket: ^1.0.0
+
+  zohodesk_portal_gc: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.zoho.desk.asap.core.zohodesk_portal_core
+        pluginClass: ZohodeskPortalCorePlugin
+      ios:
+        pluginClass: ZohodeskPortalCorePlugin

@@ -1,0 +1,52 @@
+PODS:
+  - Flutter (1.0.0)
+  - SwiftProtobuf (1.19.0)
+  - ZDMediaPickerSDK (1.0.4)
+  - zohodesk_portal_configuration (0.0.1):
+    - Flutter
+    - ZohoDeskPortalConfiguration (~> 3.0.0-beta.5)
+  - ZohoDeskPlatformDataBridge (1.0.4)
+  - ZohoDeskPlatformUIKit (1.0.4):
+    - SwiftProtobuf (= 1.19.0)
+    - ZDMediaPickerSDK (= 1.0.4)
+    - ZohoDeskPlatformDataBridge (= 1.0.4)
+  - ZohoDeskPortalAPIKit (3.0.0-beta.6)
+  - ZohoDeskPortalConfiguration (3.0.0-beta.6):
+    - SwiftProtobuf (= 1.19.0)
+    - ZDMediaPickerSDK (= 1.0.4)
+    - ZohoDeskPlatformDataBridge (= 1.0.4)
+    - ZohoDeskPlatformUIKit (= 1.0.4)
+    - ZohoDeskPortalAPIKit (= 3.0.0-beta.6)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - zohodesk_portal_configuration (from `.symlinks/plugins/zohodesk_portal_configuration/ios`)
+
+SPEC REPOS:
+  trunk:
+    - SwiftProtobuf
+    - ZDMediaPickerSDK
+    - ZohoDeskPlatformDataBridge
+    - ZohoDeskPlatformUIKit
+    - ZohoDeskPortalAPIKit
+    - ZohoDeskPortalConfiguration
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  zohodesk_portal_configuration:
+    :path: ".symlinks/plugins/zohodesk_portal_configuration/ios"
+
+SPEC CHECKSUMS:
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  SwiftProtobuf: 6ef3f0e422ef90d6605ca20b21a94f6c1324d6b3
+  ZDMediaPickerSDK: 838034795c723b8aec2c02043aee010009d735e5
+  zohodesk_portal_configuration: 5b6ee14a468dc1c395e80f613fbfa1f461d3af40
+  ZohoDeskPlatformDataBridge: 92244663632615b2e1362acc5c8c37fac6f5e88b
+  ZohoDeskPlatformUIKit: 6177ad41502b2411b2f9ee2e00b52375a2d47b76
+  ZohoDeskPortalAPIKit: 56ccda2eb7f1af8c14539e0977cd4184bcc4ee14
+  ZohoDeskPortalConfiguration: 93c8e0125e143280e00497dd76197b801b2c909e
+
+PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
+
+COCOAPODS: 1.12.1

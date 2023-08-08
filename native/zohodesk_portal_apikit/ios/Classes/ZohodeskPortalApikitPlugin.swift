@@ -60,7 +60,8 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
     private func initializeSDK(arguments: [String: Any]?) {
         guard let orgID = arguments?["orgID"] as? String,
               let appID = arguments?["appID"] as? String,
-              let dataCenter = ZDPDataCenter(rawValue: 0)
+              let dataCenterValue = arguments?["dataCenter"] as? Int,
+              let dataCenter = ZDPDataCenter(rawValue: dataCenterValue)
         else { return }
         ZohoDeskPortalKit.initialize(orgID: orgID, appID: appID, dataCenter: dataCenter)
     }

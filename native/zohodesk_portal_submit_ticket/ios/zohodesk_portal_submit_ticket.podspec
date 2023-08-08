@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'zohodesk_portal_submit_ticket'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Zoho Desk Portal Submit Ticket'
 
   s.description      = 'Zoho Desk Portal Submit Ticket'
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'ZohoDeskPortalTicket', '3.0.0-beta.10'
+  s.dependency 'ZohoDeskPortalTicket', '3.0.0-beta.11'
   s.platform = :ios, '11.0'
   s.ios.deployment_target  = '11.0'
 end

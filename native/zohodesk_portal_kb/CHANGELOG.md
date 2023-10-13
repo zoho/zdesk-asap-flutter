@@ -9,3 +9,7 @@ ASAP SDK Portal KB flutter plugin
 # 1.0.1
 
 - Fixed the issue faced during SDK initialization.
+
+# 1.0.2
+
+- Integrated the latest verison of the Android ASAP SDK [v3.0_BETA_14](https://help.zoho.com/portal/en/kb/desk/developer-space/asap/android-sdk/articles/working-with-the-asap-sdk-for-android-version#30_BETA-14)

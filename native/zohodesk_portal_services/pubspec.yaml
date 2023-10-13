@@ -1,6 +1,6 @@
 name: zohodesk_portal_services
 description: Zoho Desk Portal Services Flutter plugin, this flutter plugin comes with Flutter Core along with SalesIQ for agent chat.
-version: 1.0.1
+version: 1.0.2
 homepage:
 
 environment:
@@ -11,8 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  zohodesk_portal_core: ^1.0.1
-  zohodesk_portal_chat: ^1.0.1
+  zohodesk_portal_core: ^1.0.2
+  zohodesk_portal_chat: ^1.0.2
 
 dev_dependencies:
   flutter_test:

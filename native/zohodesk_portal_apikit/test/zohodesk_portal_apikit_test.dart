@@ -33,6 +33,21 @@ class MockZohodeskPortalApikitPlatform
   @override
   Future<void> enablePush() async {
   }
+
+  @override
+  Future<void> initializeAccountsKeys(String clientId, String clientSecretId, String portalId, String redirURI) async {
+
+  }
+
+  @override
+  Future<bool> presentLoginScreen(String colorString) async {
+    
+  }
+
+  @override
+  Future<void> disablePush(String fcmToken) async {
+
+  }
 }
 
 void main() {

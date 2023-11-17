@@ -1,6 +1,6 @@
 name: zohodesk_portal_gc
 description: Flutter plugin for ZohoDesk Guided conversation written around native GC SDKs
-version: 1.0.3
+version: 1.0.4
 homepage:
 
 environment:

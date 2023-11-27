@@ -13,3 +13,13 @@ ASAP SDK Community flutter plugin
 # 1.0.2
 
 - Integrated the latest version of the Android ASAP SDK [v3.0_BETA_14](https://help.zoho.com/portal/en/kb/desk/developer-space/asap/android-sdk/articles/working-with-the-asap-sdk-for-android-version#30_BETA-14)
+
+# 1.0.3
+
+- Integrated the latest version of the Android ASAP SDK [v3.0_BETA_15](https://help.zoho.com/portal/en/kb/desk/developer-space/asap/android-sdk/articles/working-with-the-asap-sdk-for-android-version#30_BETA-15)
+
+# 1.0.4
+
+
+# 1.0.5
+- Integrated the latest version of the Android ASAP SDK [v3.0_BETA_16](https://help.zoho.com/portal/en/kb/desk/developer-space/asap/android-sdk/articles/working-with-the-asap-sdk-for-android-version#30_BETA-16)

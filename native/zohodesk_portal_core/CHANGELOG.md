@@ -20,6 +20,8 @@ ASAP SDK Portal Core flutter plugin
 
 # 1.0.4
 
+- Integrated the iOS ASAP SDK with Nested Pick List support
 
 # 1.0.5
 - Integrated the latest version of the Android ASAP SDK [v3.0_BETA_16](https://help.zoho.com/portal/en/kb/desk/developer-space/asap/android-sdk/articles/working-with-the-asap-sdk-for-android-version#30_BETA-16)
+- Integrated the iOS ASAP SDK with Text-2-Speech & In-article search support

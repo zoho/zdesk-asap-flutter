@@ -78,7 +78,7 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
     try {
       val paramsMap = call.arguments as? HashMap<*, *>
       val jwtToken = paramsMap?.get("jwtToken") as? String
-      deskPortalSDK.setUserToken(jwtToken, object : SetUserCallback{
+      deskPortalSDK.loginWithJWTToken(jwtToken, object : SetUserCallback{
         override fun onException(exception: ZDPortalException?) {
           result.success(false)
         }
@@ -87,7 +87,7 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
           result.success(true)
         }
 
-      }, true)
+      })
     } catch (e:Exception) {
       result.success(false)
     }

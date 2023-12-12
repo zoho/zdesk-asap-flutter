@@ -28,3 +28,7 @@ ASAP SDK apikit flutter plugin
 
 # 1.0.6
 -Integrate the latest version of Android ASAP SDK v3.0_BETA_17
+
+# 1.0.7
+-Fixed the Build errors while integrating plugin on Flutter Android
+

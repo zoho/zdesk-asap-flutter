@@ -31,3 +31,6 @@ ASAP SDK Portal Submit Ticket flutter plugin
 
 # 1.0.7
 -Fixed the Build errors while integrating plugin on Flutter Android
+
+# 1.0.8
+- Updated iOS deployment target version to 13.0 and Xcode compiler version to 14.3.1 on iOS ASAP SDK

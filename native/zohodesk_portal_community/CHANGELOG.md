@@ -28,3 +28,6 @@ ASAP SDK Community flutter plugin
 
 # 1.0.6
 -Integrate the latest version of Android ASAP SDK v3.0_BETA_17
+
+# 1.0.8
+- Updated iOS deployment target version to 13.0 and Xcode compiler version to 14.3.1 on iOS ASAP SDK

@@ -12,6 +12,11 @@ class MockZohodeskPortalConfigurationPlatform
   @override
   Future<void> setTheme(ZDPTheme theme) async {
   }
+
+  @override
+  Future<void> handleNotification(Map<String, dynamic> map) async {
+
+  }
 }
 
 void main() {

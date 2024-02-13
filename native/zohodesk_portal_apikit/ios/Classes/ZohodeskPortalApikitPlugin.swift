@@ -4,11 +4,11 @@ import ZohoDeskPortalAPIKit
 
 public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
     
-    @Defaults(key: "ZDPAPNSDeviceID") public static var deviceIDForZDPortal: String? = nil
-    
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "zohodesk_portal_apikit", binaryMessenger: registrar.messenger())
     let instance = ZohodeskPortalApikitPlugin()
+      
+      PNConstants.refererName = "ZohoDeskPortalSDKFlutteriOS"
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 
@@ -30,10 +30,6 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
           ///To logout off ASAP
       case .logout:
           ZohoDeskPortalKit.logout(onCompletion: result)
-          
-          ///To enable push notification
-      case .enablePush:
-          enablePush()
           
           ///To disable push notification
       case .disablePush:
@@ -87,16 +83,10 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
         ZohoDeskPortalKit.signIn(onCompletion: handler)
     }
     
-    //Enable ASAP Push notifications
-    private func enablePush() {
-        guard let deviceID = ZohodeskPortalApikitPlugin.deviceIDForZDPortal else { return }
-        ZohoDeskPortalKit.enablePushNotifications(deviceToken: deviceID, mode: .production)
-    }
-    
     //Disable ASAP Push notifications
     private func disablePush() {
-        guard let deviceID = ZohodeskPortalApikitPlugin.deviceIDForZDPortal else { return }
-        ZohoDeskPortalKit.disablePushNotifications(deviceToken: deviceID, mode: .production) {_ in}
+        //Need to handled on ASAP native SDK
+        ZohoDeskPortalKit.disablePushNotifications(deviceToken: "deviceID", mode: .production) {_ in}
     }
 
     ///ASAP Plugin public APIs identifier
@@ -104,7 +94,6 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
         case initializeSDK
         case login, logout
         case enableLogs
-        case enablePush
         case disablePush
         case initAccountsKeys = "initializeAccountsKeys"
         case presentLoginScreen

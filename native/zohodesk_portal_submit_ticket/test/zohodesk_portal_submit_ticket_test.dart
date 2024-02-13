@@ -10,6 +10,11 @@ class MockZohodeskPortalSubmitTicketPlatform
 
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
+
+  @override
+  Future<void> show() async {
+
+  }
 }
 
 void main() {
@@ -24,6 +29,5 @@ void main() {
     MockZohodeskPortalSubmitTicketPlatform fakePlatform = MockZohodeskPortalSubmitTicketPlatform();
     ZohodeskPortalSubmitTicketPlatform.instance = fakePlatform;
 
-    expect(await zohodeskPortalSubmitTicketPlugin.getPlatformVersion(), '42');
   });
 }

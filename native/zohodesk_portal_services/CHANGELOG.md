@@ -34,3 +34,7 @@ ASAP SDK Portal Services flutter plugin
 
 # 1.0.8
 - Updated iOS deployment target version to 13.0 and Xcode compiler version to 14.3.1 on iOS ASAP SDK
+
+# 1.0.9
+- Integrated the latest version of iOS ASAP SDK v3.0.3
+- Integrated the latest version of Android ASAP SDK v3.0_BETA_18

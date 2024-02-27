@@ -24,4 +24,8 @@ abstract class ZohodeskPortalKbPlatform extends PlatformInterface {
   }
 
   Future show();
+
+  Future<void> showCategoryWithPermalink(String permalink);
+
+  Future<void> showArticleWithPermalink(String permalink);
 }

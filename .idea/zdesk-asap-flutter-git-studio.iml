@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_apikit/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_apikit/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_apikit/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_apikit/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_apikit/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_apikit/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_configuration/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_configuration/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_configuration/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_submit_ticket/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_submit_ticket/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_submit_ticket/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_chat/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_chat/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_chat/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_gc/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_gc/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_gc/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_gc/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_gc/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_gc/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_submit_ticket/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_submit_ticket/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_submit_ticket/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_configuration/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_configuration/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_configuration/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_chat/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_chat/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_chat/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_services/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_services/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_services/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_community/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_community/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_community/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_core/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_core/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_core/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_kb/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_kb/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_kb/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_ticket/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_ticket/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_ticket/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_ticket/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_ticket/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_ticket/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_kb/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_kb/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_kb/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_core/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_core/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_core/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_services/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_services/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_services/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_community/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_community/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/native/zohodesk_portal_community/example/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

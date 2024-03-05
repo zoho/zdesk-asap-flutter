@@ -38,3 +38,7 @@ ASAP SDK Chat flutter plugin
 # 1.0.9
 - Integrated the latest version of iOS ASAP SDK v3.0.3
 - Integrated the latest version of Android ASAP SDK v3.0_BETA_18
+
+# 1.1.0
+- Integrated the latest version of iOS ASAP SDK v3.0.6
+- Integrated Deeplinking support in zohodesk_portal_kb & zohodesk_portal_community for both Android & iOS

@@ -16,4 +16,12 @@ class MethodChannelZohodeskPortalCommunity extends ZohodeskPortalCommunityPlatfo
   ///ASAP show Community topic form channel method
   @override
   Future<void> showTopicForm() async => await methodChannel.invokeMethod('showTopicForm');
+
+  ///ASAP show Community topic with Topic permalink
+  @override
+  Future<void> showTopicWithPermaLink(String permalink) async => await methodChannel.invokeMethod('showTopicWithPermaLink', {"permalink": permalink});
+
+  ///ASAP show Community topic with Topic Id
+  @override
+  Future<void> showTopicWithId(String topicId) async => await methodChannel.invokeMethod('showTopicWithId', {"topicId": topicId});
 }

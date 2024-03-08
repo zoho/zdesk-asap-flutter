@@ -1,3 +1,6 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+/modules.xml
+/vcs.xml
+/zdesk-asap-flutter-git-studio.iml

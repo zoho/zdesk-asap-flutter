@@ -26,4 +26,8 @@ abstract class ZohodeskPortalCommunityPlatform extends PlatformInterface {
   Future<void> show();
 
   Future<void> showTopicForm();
+
+  Future<void> showTopicWithPermaLink(String permalink);
+
+  Future<void> showTopicWithId(String topicId);
 }

@@ -22,7 +22,29 @@ class ZohodeskPortalCommunityPlugin: ZDPBaseActivityAwarePlugin("zohodesk_portal
   override fun onMethodCall(call: MethodCall, result: Result) {
     when(call.method) {
       "showTopicForm" -> ZDPortalCommunity.showAddTopic(activity)
+      "showTopicWithPermaLink" -> showTopicWithPermaLink(call, result)
+      "showTopicWithId" -> showTopicWithId(call, result)
       else -> super.onMethodCall(call, result)
+    }
+  }
+
+  private fun showTopicWithId(@NonNull call: MethodCall, @NonNull result: Result) {
+    try {
+      val paramsMap = call.arguments as? HashMap<*, *>
+      val topicId = paramsMap?.get("topicId") as? String
+      ZDPortalCommunity.showTopicWithId(activity, topicId)
+    } catch (e:Exception) {
+      result.success(false)
+    }
+  }
+
+  private fun showTopicWithPermaLink(@NonNull call: MethodCall, @NonNull result: Result) {
+    try {
+      val paramsMap = call.arguments as? HashMap<*, *>
+      val permaLink = paramsMap?.get("permalink") as? String
+      ZDPortalCommunity.showTopicWithPermaLink(activity, permaLink)
+    } catch (e:Exception) {
+      result.success(false)
     }
   }
 }

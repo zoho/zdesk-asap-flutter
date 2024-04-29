@@ -34,10 +34,10 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 23
     }
 }
 
 dependencies {
-    implementation "com.zoho.desk:asap-livechat:3.0_BETA_18"
+    implementation "com.zoho.desk:asap-livechat:3.0_BETA_20"
 }

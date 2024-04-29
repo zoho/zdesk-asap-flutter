@@ -45,3 +45,4 @@ ASAP SDK Configuration flutter plugin
 
 # 1.1.1
 - Integrated the latest version of iOS ASAP SDK v3.0.8
+- Integrated the latest version of Android ASAP SDK v3.0_BETA_20

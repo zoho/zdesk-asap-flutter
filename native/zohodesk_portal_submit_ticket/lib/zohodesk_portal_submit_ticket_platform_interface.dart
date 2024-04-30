@@ -1,5 +1,6 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-
+import 'common/ZDCustomizedTicketForm.dart';
+import 'common/ZDVisibleTicketField.dart';
 import 'zohodesk_portal_submit_ticket_method_channel.dart';
 
 abstract class ZohodeskPortalSubmitTicketPlatform extends PlatformInterface {
@@ -24,4 +25,8 @@ abstract class ZohodeskPortalSubmitTicketPlatform extends PlatformInterface {
   }
 
   Future<void> show();
+
+  Future<void> preFillTicketFields(List<ZDCustomizedTicketForm> customizedTicketForms);
+
+  Future<void> setTicketsFieldsListTobeShown(List<ZDVisibleTicketField> visibleTicketFields);
 }

@@ -31,40 +31,25 @@ class ZohodeskPortalSubmitTicketPlugin: ZDPBaseActivityAwarePlugin("zohodesk_por
         }
     }
 
-    @OptIn(ExperimentalStdlibApi::class)
     fun preFillTicketFields(@NonNull call: MethodCall, @NonNull result: MethodChannel.Result) {
-
         val paramsMap = call.arguments as? HashMap<*, *>
-
         val fieldsData = paramsMap?.get("customizedTicketForms") as? String
-
-        val prefilledTicketFields: List<ZDCustomizedTicketForm> = Gson().fromJson(fieldsData, typeOf<List<ZDCustomizedTicketForm>>().javaType)
-
+        val prefilledTicketFields: Array<ZDCustomizedTicketForm> = Gson().fromJson(fieldsData, Array<ZDCustomizedTicketForm>::class.java)
         prefilledTicketFields.forEach { ticketForm ->
-
             val preFillTicketFiledList = mutableListOf<PreFillTicketField>()
-
             ticketForm.customizedTicketFields.forEach { ticketField ->
                 preFillTicketFiledList.add(PreFillTicketField(ticketField.fieldName, ticketField.value, ticketField.isEditable))
             }
-
             ZDPortalSubmitTicket.preFillTicketFields(preFillTicketFiledList , ticketForm.departmentId, ticketForm.layoutId)
         }
     }
 
-    @OptIn(ExperimentalStdlibApi::class)
     fun setTicketsFieldsListTobeShown(@NonNull call: MethodCall, @NonNull result: MethodChannel.Result) {
-
         val paramsMap = call.arguments as? HashMap<*, *>
-
         val fieldsData = paramsMap?.get("visibleTicketFields") as? String
-
-        val visibleTicketFields: List<ZDVisibleTicketField> = Gson().fromJson(fieldsData, typeOf<List<ZDVisibleTicketField>>().javaType)
-
+        val visibleTicketFields: Array<ZDVisibleTicketField> = Gson().fromJson(fieldsData, Array<ZDVisibleTicketField>::class.java)
         visibleTicketFields.forEach { ticketForm ->
-
             ZDPortalSubmitTicket.setTicketsFieldsListTobeShown( ticketForm.fieldNames, ticketForm.departmentId, ticketForm.layoutId)
-
         }
     }
 

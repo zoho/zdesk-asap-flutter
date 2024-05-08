@@ -48,4 +48,8 @@ class MethodChannelZohodeskPortalApikit extends ZohodeskPortalApikitPlatform {
   @override
   Future<bool> presentLoginScreen(String colorString) async => await methodChannel.invokeMethod('presentLoginScreen', {"colorString": colorString});
 
+  ///ASAP isUserLoggedIn channel method
+  @override
+  Future<bool> isUserSignedIn() async => await methodChannel.invokeMethod('isUserSignedIn');
+
 }

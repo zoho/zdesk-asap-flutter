@@ -24,4 +24,7 @@ class ZohodeskPortalApikit {
   static Future<void> initializeAccountsKeys(String clientId, String clientSecretId, String portalId, String redirURI) => ZohodeskPortalApikitPlatform.instance.initializeAccountsKeys(clientId, clientSecretId, portalId, redirURI);
 
   static Future<void> presentLoginScreen(String colorString, Function(bool isSuccess) handler) async => handler(await ZohodeskPortalApikitPlatform.instance.presentLoginScreen(colorString));
+
+  static Future<bool> get isUserLoggedIn async => await ZohodeskPortalApikitPlatform.instance.isUserSignedIn();
+
 }

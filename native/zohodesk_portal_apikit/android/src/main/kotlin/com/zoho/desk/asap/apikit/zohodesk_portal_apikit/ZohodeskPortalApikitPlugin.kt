@@ -45,6 +45,7 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
       "disablePush" -> handlePush(call, result, false)
       "initializeAccountsKeys" -> initAccountsKeys(call, result)
       "presentLoginScreen" -> handlePresentLoginScreen(call, result)
+      "isUserSignedIn" -> isUserSignedIn(result)
       else -> result.notImplemented()
     }
   }
@@ -148,4 +149,14 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
     }
 
   }
+
+  private fun isUserSignedIn(@NonNull result: Result){
+    val isUserLoggedIn = deskPortalSDK.isUserSignedIn
+    if(isUserLoggedIn){
+      result.success(true)
+    }else{
+      result.success(false)
+    }
+  }
+
 }

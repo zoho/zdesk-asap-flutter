@@ -31,6 +31,9 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
       case .logout:
           ZohoDeskPortalKit.logout(onCompletion: result)
           
+      case .isUserSignedIn:
+          result(ZohoDeskPortalKit.isUserLoggedIn)
+          
           ///To disable push notification
       case .disablePush:
           disablePush()
@@ -93,6 +96,7 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
     private enum ZDPKitAPIs: String {
         case initializeSDK
         case login, logout
+        case isUserSignedIn
         case enableLogs
         case disablePush
         case initAccountsKeys = "initializeAccountsKeys"

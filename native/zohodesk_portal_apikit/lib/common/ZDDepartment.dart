@@ -22,6 +22,6 @@ class ZDDepartment {
         description = json['description'],
         id = json['id'],
         nameInCustomerPortal = json['nameInCustomerPortal'],
-        layoutCount = int.parse(json['layoutCount']);
+        layoutCount = json['layoutCount'] is int ? json['layoutCount'] : int.parse(json['layoutCount']);
 
 }

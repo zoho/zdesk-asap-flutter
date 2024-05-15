@@ -1,4 +1,5 @@
 import 'package:zohodesk_portal_apikit/common/ZDPortalAPIKitConstants.dart';
+import 'common/ZDResponseCallback.dart';
 import 'zohodesk_portal_apikit_platform_interface.dart';
 
 class ZohodeskPortalApikit {
@@ -26,5 +27,9 @@ class ZohodeskPortalApikit {
   static Future<void> presentLoginScreen(String colorString, Function(bool isSuccess) handler) async => handler(await ZohodeskPortalApikitPlatform.instance.presentLoginScreen(colorString));
 
   static Future<bool> get isUserSignedIn async => await ZohodeskPortalApikitPlatform.instance.isUserSignedIn();
+
+  static getDepartments(DepartmentsCallback callback) async => await ZohodeskPortalApikitPlatform.instance.getDepartments(callback);
+
+  static getLayouts(String departmentId, LayoutsCallback callback) async => await ZohodeskPortalApikitPlatform.instance.getLayouts(departmentId, callback);
 
 }

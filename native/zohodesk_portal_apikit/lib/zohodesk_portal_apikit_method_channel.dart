@@ -1,9 +1,10 @@
-import 'dart:ffi';
-
+import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:zohodesk_portal_apikit/common/ZDDepartment.dart';
 import 'package:zohodesk_portal_apikit/common/ZDPortalAPIKitConstants.dart';
-
+import 'common/ZDLayout.dart';
+import 'common/ZDResponseCallback.dart';
 import 'zohodesk_portal_apikit_platform_interface.dart';
 
 /// An implementation of [ZohodeskPortalApikitPlatform] that uses method channels.
@@ -51,5 +52,33 @@ class MethodChannelZohodeskPortalApikit extends ZohodeskPortalApikitPlatform {
   ///ASAP isUserLoggedIn channel method
   @override
   Future<bool> isUserSignedIn() async => await methodChannel.invokeMethod('isUserSignedIn');
+
+  ///ASAP getDepartments channel method
+  @override
+  Future<void> getDepartments(DepartmentsCallback callback) async {
+    dynamic response = await methodChannel.invokeMethod('getDepartments');
+
+    if(response is int){
+      ZDResponseCallback.throwError(response, callback);
+    }else{
+      List departmentsList = json.decode(response) as List;
+      List<ZDDepartment> departments = departmentsList.map((department) => ZDDepartment.fromJson(department)).toList();
+      callback.onDepartmentsFetch(departments);
+    }
+  }
+
+  ///ASAP getLayouts channel method
+  @override
+  Future<void> getLayouts(String departmentId, LayoutsCallback callback) async {
+    dynamic response = await methodChannel.invokeMethod('getLayouts', {"departmentId": departmentId});
+
+    if(response is int){
+      ZDResponseCallback.throwError(response, callback);
+    }else{
+      List departmentsList = json.decode(response) as List;
+      List<ZDLayout> layouts = departmentsList.map((layout) => ZDLayout.fromJson(layout)).toList();
+      callback.onLayoutsFetch(layouts);
+    }
+  }
 
 }

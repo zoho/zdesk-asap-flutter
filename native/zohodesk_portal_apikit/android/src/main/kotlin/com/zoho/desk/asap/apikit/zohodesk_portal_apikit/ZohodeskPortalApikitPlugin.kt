@@ -7,13 +7,17 @@ import com.zoho.desk.asap.api.ZDPortalCallback.SetUserCallback
 import com.zoho.desk.asap.api.ZDPortalException
 import com.zoho.desk.asap.api.ZohoDeskPortalSDK
 import com.zoho.desk.asap.api.ZohoDeskPortalSDK.DataCenter
-
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import com.zoho.desk.asap.api.util.ZohoDeskAPIImpl
+import com.google.gson.Gson
+import com.zoho.desk.asap.api.ZDPortalAPI
+import com.zoho.desk.asap.api.ZDPortalCallback
+import com.zoho.desk.asap.api.response.DepartmentsList
+import com.zoho.desk.asap.api.response.Layouts
 
 /** ZohodeskPortalApikitPlugin */
 class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
@@ -46,6 +50,8 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
       "initializeAccountsKeys" -> initAccountsKeys(call, result)
       "presentLoginScreen" -> handlePresentLoginScreen(call, result)
       "isUserSignedIn" -> isUserSignedIn(result)
+      "getDepartments" -> getDepartments(result)
+      "getLayouts" -> getLayouts(call, result)
       else -> result.notImplemented()
     }
   }
@@ -157,6 +163,49 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
     }else{
       result.success(false)
     }
+  }
+
+  private fun getDepartments(@NonNull result: Result){
+    try {
+      ZDPortalAPI.getDepartments(object: ZDPortalCallback.DepartmensCallback{
+        override fun onException(exception: ZDPortalException?) {
+          result.success(exception?.errorCode)
+        }
+
+        override fun onDepartmentsDownloaded(departmentsList: DepartmentsList?) {
+          departmentsList?.data?.takeIf { it.isNotEmpty() }?.let { results ->
+            result.success(Gson().toJson(results))
+          }
+        }
+
+      }, HashMap())
+
+    } catch (e:Exception) {
+      result.success(106)
+    }
+
+  }
+
+  private fun getLayouts(@NonNull call: MethodCall, @NonNull result: Result){
+    try {
+      val paramsMap = call.arguments as? HashMap<String, String>
+      ZDPortalAPI.getLayouts(object: ZDPortalCallback.LayoutsCallback{
+        override fun onException(exception: ZDPortalException?) {
+          result.success(exception?.errorCode)
+        }
+
+        override fun onLayoutsDownloaded(layoutsList: Layouts?) {
+          layoutsList?.data?.takeIf { it.isNotEmpty() }?.let { results ->
+            result.success(Gson().toJson(results))
+          }
+        }
+
+      }, paramsMap)
+
+    } catch (e:Exception) {
+      result.success(106)
+    }
+
   }
 
 }

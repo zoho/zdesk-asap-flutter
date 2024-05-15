@@ -1,8 +1,6 @@
-import 'dart:ffi';
-
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import 'package:zohodesk_portal_apikit/common/ZDPortalAPIKitConstants.dart';
-
+import 'package:zohodesk_portal_apikit/common/ZDResponseCallback.dart';
 import 'zohodesk_portal_apikit_method_channel.dart';
 
 abstract class ZohodeskPortalApikitPlatform extends PlatformInterface {
@@ -38,4 +36,6 @@ abstract class ZohodeskPortalApikitPlatform extends PlatformInterface {
   Future<void> initializeAccountsKeys(String clientId, String clientSecretId, String portalId, String redirURI);
   Future<bool> presentLoginScreen(String colorString);
   Future<bool> isUserSignedIn();
+  Future<void> getDepartments(DepartmentsCallback callback);
+  Future<void> getLayouts(String departmentId, LayoutsCallback callback);
 }

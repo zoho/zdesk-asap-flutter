@@ -14,7 +14,7 @@ class ZDDepartment {
     String? description;
     String id;
     String nameInCustomerPortal;
-    String layoutCount;
+    int layoutCount;
 
     ZDDepartment.fromJson(Map<String, dynamic> json):
         photoURL = json['photoURL'],
@@ -22,6 +22,6 @@ class ZDDepartment {
         description = json['description'],
         id = json['id'],
         nameInCustomerPortal = json['nameInCustomerPortal'],
-        layoutCount = json['layoutCount'];
+        layoutCount = int.parse(json['layoutCount']);
 
 }

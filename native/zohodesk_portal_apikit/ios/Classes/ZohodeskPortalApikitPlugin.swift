@@ -31,6 +31,9 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
       case .logout:
           ZohoDeskPortalKit.logout(onCompletion: result)
           
+      case .isUserSignedIn:
+          result(ZohoDeskPortalKit.isUserLoggedIn)
+          
           ///To disable push notification
       case .disablePush:
           disablePush()
@@ -46,6 +49,14 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
           ///To present the IAM login screen
       case .presentLoginScreen:
           presentLoginScreen(onCompletion: result)
+          
+          ///To get list of departments in the ASAP add-on
+      case .getDepartments:
+          getDepartments(onCompletion: result)
+          
+          ///To get list of layouts of a department
+      case .getLayouts:
+          getLayouts(arguments: arguments, onCompletion: result)
           
       default:
           break
@@ -88,15 +99,44 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
         //Need to handled on ASAP native SDK
         ZohoDeskPortalKit.disablePushNotifications(deviceToken: "deviceID", mode: .production) {_ in}
     }
+    
+    //ASAP API to get departments list of the Add-On
+    private func getDepartments(onCompletion: @escaping FlutterResult) {
+        ZohoDeskPortalKit.getDepartments { result in
+            switch result {
+            case .success(let departments):
+                onCompletion(departments.jsonString)
+            case .failure(let error):
+                error.parseError(onCompletion)
+            }
+        }
+    }
+    
+    //ASAP API to get layouts list of a department
+    private func getLayouts(arguments: [String: Any]?, onCompletion: @escaping FlutterResult) {
+
+        ZohoDeskPortalKit.Ticket.getLayouts(arguments) { result in
+            switch result {
+            case .success(let layouts):
+                onCompletion(layouts.jsonString)
+            case .failure(let error):
+                error.parseError(onCompletion)
+            }
+        }
+        
+    }
 
     ///ASAP Plugin public APIs identifier
     private enum ZDPKitAPIs: String {
         case initializeSDK
         case login, logout
+        case isUserSignedIn
         case enableLogs
         case disablePush
         case initAccountsKeys = "initializeAccountsKeys"
         case presentLoginScreen
+        case getDepartments
+        case getLayouts
     }
 }
 
@@ -114,4 +154,33 @@ public struct Defaults<Value> {
     self.key = key
     self.defaultValue = value
   }
+}
+
+
+extension Encodable {
+
+//    Object to JSON conversion to pass the result to flutter
+    internal var jsonString: String? {
+        do {
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            return String(data: try encoder.encode(self), encoding: .utf8)
+        } catch {
+            return nil
+        }
+    }
+}
+
+extension ZDPError {
+//    Error mapping according to Flutter errors
+    internal func parseError(_ callback: FlutterResult) {
+        switch self {
+        case .noInternet:
+            callback(101)
+        case .noData:
+            callback(104)
+        default:
+            callback(106)
+        }
+    }
 }

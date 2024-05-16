@@ -1,6 +1,8 @@
+import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-
+import 'common/ZDCustomizedTicketForm.dart';
+import 'common/ZDVisibleTicketField.dart';
 import 'zohodesk_portal_submit_ticket_platform_interface.dart';
 
 /// An implementation of [ZohodeskPortalSubmitTicketPlatform] that uses method channels.
@@ -12,4 +14,8 @@ class MethodChannelZohodeskPortalSubmitTicket extends ZohodeskPortalSubmitTicket
   ///ASAP Submit Ticket show channel method
   @override
   Future<void> show() async => await methodChannel.invokeMethod<String>('show');
+
+  Future<void> preFillTicketFields(List<ZDCustomizedTicketForm> customizedTicketForms) async => await methodChannel.invokeMethod<String>('preFillTicketFields', { "customizedTicketForms": jsonEncode(customizedTicketForms)});
+
+  Future<void> setTicketsFieldsListTobeShown(List<ZDVisibleTicketField> visibleTicketFields) async => await methodChannel.invokeMethod<String>('setTicketsFieldsListTobeShown', { "visibleTicketFields": jsonEncode(visibleTicketFields)});
 }

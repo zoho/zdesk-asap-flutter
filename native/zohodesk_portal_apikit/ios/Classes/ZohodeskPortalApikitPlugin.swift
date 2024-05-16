@@ -114,9 +114,7 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
     
     //ASAP API to get layouts list of a department
     private func getLayouts(arguments: [String: Any]?, onCompletion: @escaping FlutterResult) {
-        guard let departmentID = arguments?["departmentId"] else { return }
-        
-        
+
         ZohoDeskPortalKit.Ticket.getLayouts(arguments) { result in
             switch result {
             case .success(let layouts):

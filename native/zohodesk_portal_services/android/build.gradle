@@ -17,6 +17,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+    namespace "com.zoho.desk.asap.services.zohodesk_portal_services"
     compileSdkVersion 33
 
     compileOptions {
@@ -35,7 +36,20 @@ android {
     defaultConfig {
         minSdkVersion 23
     }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
 }
 dependencies {
-    implementation "com.zoho.desk:asapsdk:3.0_BETA_20"
+    implementation "com.zoho.desk:asapsdk:3.0_BETA_22"
 }

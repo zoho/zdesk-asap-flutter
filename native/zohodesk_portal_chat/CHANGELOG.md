@@ -54,3 +54,8 @@ ASAP SDK Chat flutter plugin
 - Provided a method to verify the user's login status for both iOS and Android in zohodesk_portal_apikit
 - Provided a method for both Android and iOS to prefill the ticket forms in zohodesk_portal_submit_ticket
 - provided a method to configure the ticket forms visible fields in zohodesk_portal_submit_ticket for both iOS and Android
+
+# 1.1.3
+- Integrated Latest version of Android SDK v3.0_BETA_22
+- Added proguard rules for release mode
+- Added namespace in build.gradle for each modules and removed the package name from manifest

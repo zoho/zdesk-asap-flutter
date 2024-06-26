@@ -19,8 +19,5 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keepattributes *Annotation*
--keepattributes InnerClasses
--keeppackagenames com.zoho.desk.asap.configuration.**
 -keep public class com.zoho.desk.asap.configuration.zohodesk_portal_configuration.ZDPTheme {*;}
 -keep public class com.zoho.desk.asap.configuration.zohodesk_portal_configuration.ZohodeskPortalConfigurationPlugin {*;}

@@ -19,9 +19,6 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keepattributes *Annotation*
--keepattributes InnerClasses
--keeppackagenames com.zoho.desk.asap.ticket.zohodesk_portal_submit_ticket.**
 -keep public class com.zoho.desk.asap.ticket.zohodesk_portal_submit_ticket.models.ZDCustomizedTicketField {*;}
 -keep public class com.zoho.desk.asap.ticket.zohodesk_portal_submit_ticket.models.ZDCustomizedTicketForm {*;}
 -keep public class com.zoho.desk.asap.ticket.zohodesk_portal_submit_ticket.models.ZDVisibleTicketField {*;}

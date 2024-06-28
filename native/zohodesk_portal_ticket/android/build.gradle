@@ -18,6 +18,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+    namespace "com.zoho.desk.asap.ticket.zohodesk_portal_ticket"
     compileSdkVersion 33
 
     compileOptions {
@@ -36,7 +37,18 @@ android {
     defaultConfig {
         minSdkVersion 23
     }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+        }
+    }
 }
 dependencies {
-    implementation "com.zoho.desk:asap-tickets:3.0_BETA_20"
+    implementation "com.zoho.desk:asap-tickets:3.0_BETA_22"
 }

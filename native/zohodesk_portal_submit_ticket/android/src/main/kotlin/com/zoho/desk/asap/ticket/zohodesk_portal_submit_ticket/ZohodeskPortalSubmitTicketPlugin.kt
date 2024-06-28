@@ -13,9 +13,9 @@ import kotlin.reflect.javaType
 import kotlin.reflect.typeOf
 import com.google.gson.Gson
 import com.zoho.desk.asap.asap_tickets.utils.PreFillTicketField
-import ZDCustomizedTicketForm
-import ZDVisibleTicketField
-import ZDCustomizedTicketField
+import com.zoho.desk.asap.ticket.zohodesk_portal_submit_ticket.models.ZDCustomizedTicketForm
+import com.zoho.desk.asap.ticket.zohodesk_portal_submit_ticket.models.ZDVisibleTicketField
+import com.zoho.desk.asap.ticket.zohodesk_portal_submit_ticket.models.ZDCustomizedTicketField
 
 /** ZohodeskPortalSubmitTicketPlugin */
 class ZohodeskPortalSubmitTicketPlugin: ZDPBaseActivityAwarePlugin("zohodesk_portal_submit_ticket") {

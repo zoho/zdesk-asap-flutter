@@ -1,5 +1,5 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-
+import 'package:zohodesk_portal_ticket/data/zdp_ticket_configuration.dart';
 import 'zohodesk_portal_ticket_method_channel.dart';
 
 abstract class ZohodeskPortalTicketPlatform extends PlatformInterface {
@@ -24,4 +24,6 @@ abstract class ZohodeskPortalTicketPlatform extends PlatformInterface {
   }
 
   Future<void> show();
+
+  Future<void> setConfiguration(ZDPTicketConfiguration configuration);
 }

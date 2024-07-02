@@ -1,5 +1,5 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-
+import 'package:zohodesk_portal_configuration/data/zdp_configuration.dart';
 import 'zohodesk_portal_configuration_method_channel.dart';
 import 'package:zohodesk_portal_configuration/data/configuration_model.dart';
 
@@ -27,4 +27,6 @@ abstract class ZohodeskPortalConfigurationPlatform extends PlatformInterface {
   Future<void> setTheme(ZDPTheme theme);
 
   Future<void> handleNotification(Map<String, dynamic> map);
+
+  Future<void> setConfiguration(ZDPConfiguration configuration);
 }

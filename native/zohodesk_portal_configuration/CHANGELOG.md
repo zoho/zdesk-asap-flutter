@@ -59,3 +59,6 @@ ASAP SDK Configuration flutter plugin
 - Integrated Latest version of Android SDK v3.0_BETA_22
 - Added proguard rules for release mode
 - Added namespace in build.gradle for each modules and removed the package name from manifest
+  
+# 1.1.4
+- Integrated the lastest version of iOS ASAP SDK v3.0.12

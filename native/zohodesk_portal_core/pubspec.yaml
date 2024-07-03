@@ -17,6 +17,7 @@ dependencies:
   zohodesk_portal_ticket: 1.1.4
   zohodesk_portal_gc: 1.1.4
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -19,6 +19,8 @@ public class ZohodeskPortalConfigurationPlugin: NSObject, FlutterPlugin {
           ///To set app theme either Dark or Light
       case .setTheme:
           setTheme(arguments: arguments)
+      case .setConfiguration:
+          handlePortalConfigurations(arguments: arguments)
       default:
           break
       }
@@ -30,8 +32,68 @@ public class ZohodeskPortalConfigurationPlugin: NSObject, FlutterPlugin {
         guard let themeCode = arguments?["theme"] as? Int, let theme = ZDPThemeType(rawValue: themeCode)  else { return }
         ZDPThemeManager.setTheme(type:theme)
     }
+
+    private func handlePortalConfigurations(arguments: [String: Any]?) {
+        guard let configurationJSON = arguments?["configuration"] as? String else {
+          return
+        }
+        
+        if let portalConfigurations: ZDFPortalConfiguration = configurationJSON.parser() {
+            let zdpconfigurations = ZDPConfiguration()
+            zdpconfigurations.disableSidemenu = !portalConfigurations.isSideMenuEnabled
+            zdpconfigurations.disableLanguageChooser = !portalConfigurations.isLangChooserEnabled
+            zdpconfigurations.disablePoweredByZoho = !portalConfigurations.isPoweredByFooterEnabled
+            zdpconfigurations.disableGlobalSearch = !portalConfigurations.isGlobalSearchEnabled
+            zdpconfigurations.disableKB = !portalConfigurations.isKBEnabled
+            zdpconfigurations.disableCommunity = !portalConfigurations.isCommunityEnabled
+            zdpconfigurations.disableSubmitTicket = !portalConfigurations.isSubmitTicketEnabled
+            zdpconfigurations.disableAddTopic = !portalConfigurations.isAddTopicEnabled
+            zdpconfigurations.disableMyTicket = !portalConfigurations.isMyTicketsEnabled
+            zdpconfigurations.disableLiveChat = !portalConfigurations.isChatBotEnabled
+            zdpconfigurations.disableChat = !portalConfigurations.isLiveChatEnabled
+            zdpconfigurations.enableModuleBasedSearch = portalConfigurations.isModuleBasedSearchEnabled
+            ZDPortalConfiguration.set(configuration: zdpconfigurations)
+            
+            let zdpsecureconfigurations = ZDPSecureContentConfiguration()
+            zdpsecureconfigurations.disableDownloadAttachment = !portalConfigurations.isAttachmentUploadEnabled
+            zdpsecureconfigurations.disableUploadAttachment = !portalConfigurations.isAttachmentUploadEnabled
+            zdpsecureconfigurations.disableScreenShot = portalConfigurations.disableScreenShot
+            zdpsecureconfigurations.disableCopyPaste = portalConfigurations.disableCutCopy
+            ZDPortalConfiguration.setZDPSecureConfiguration(configuration: zdpsecureconfigurations)
+        }
+    }
     
     private enum ZDPConfigurationAPIs: String {
         case setTheme
+        case setConfiguration
     }
+}
+
+private extension String {
+    func parser<AnyDecodable: Decodable>() -> AnyDecodable? {
+        
+        guard let data = self.data(using: .utf8, allowLossyConversion: false) else {
+            return nil
+        }
+        return try? JSONDecoder().decode(AnyDecodable.self, from: data)
+    }
+}
+
+private class ZDFPortalConfiguration: Decodable {
+  var isSideMenuEnabled = true; 
+  var isLangChooserEnabled = true; 
+  var isPoweredByFooterEnabled = true; 
+  var isGlobalSearchEnabled = true; 
+  var isKBEnabled = true; 
+  var isCommunityEnabled = true; 
+  var isSubmitTicketEnabled = true; 
+  var isAddTopicEnabled = true; 
+  var isMyTicketsEnabled = true; 
+  var isLiveChatEnabled = true; 
+  var isChatBotEnabled = true; 
+  var isAttachmentDownloadEnabled = true; 
+  var isAttachmentUploadEnabled = true; 
+  var isModuleBasedSearchEnabled = false; 
+  var disableScreenShot = false; 
+  var disableCutCopy = false;
 }

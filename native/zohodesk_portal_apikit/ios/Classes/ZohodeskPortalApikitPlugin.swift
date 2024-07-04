@@ -184,3 +184,12 @@ extension ZDPError {
         }
     }
 }
+
+public extension String {
+    public func parser<AnyDecodable: Decodable>() -> AnyDecodable? {
+        guard let data = self.data(using: .utf8, allowLossyConversion: false) else {
+            return nil
+        }
+        return try? JSONDecoder().decode(AnyDecodable.self, from: data)
+    }
+}

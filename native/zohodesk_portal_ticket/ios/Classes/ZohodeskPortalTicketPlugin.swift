@@ -1,6 +1,7 @@
 import Flutter
 import UIKit
 import ZohoDeskPortalTicket
+import zohodesk_portal_apikit
 
 public class ZohodeskPortalTicketPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
@@ -42,16 +43,6 @@ public class ZohodeskPortalTicketPlugin: NSObject, FlutterPlugin {
     private enum ZDPTicketAPIs: String {
         case show
         case setConfiguration
-    }
-}
-
-private extension String {
-    func parser<AnyDecodable: Decodable>() -> AnyDecodable? {
-        
-        guard let data = self.data(using: .utf8, allowLossyConversion: false) else {
-            return nil
-        }
-        return try? JSONDecoder().decode(AnyDecodable.self, from: data)
     }
 }
 

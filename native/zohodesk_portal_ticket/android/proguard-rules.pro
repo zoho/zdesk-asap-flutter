@@ -19,5 +19,4 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keep public class com.zoho.desk.asap.configuration.zohodesk_portal_configuration.ZDPTheme {*;}
--keep public class com.zoho.desk.asap.configuration.zohodesk_portal_configuration.ZDPCommonConfiguration {*;}
+-keep public class com.zoho.desk.asap.ticket.zohodesk_portal_ticket.data.ZDPTicketConfiguration {*;}

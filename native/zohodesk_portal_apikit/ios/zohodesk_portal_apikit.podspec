@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'zohodesk_portal_apikit'
-  s.version          = '1.1.3'
+  s.version          = '1.1.4'
   s.summary          = 'ASAP API Kit for Zoho Desk'
   
   s.description      = 'ASAP API Kit for Zoho Desk'
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'ZohoDeskPortalAPIKit', '3.0.9'
+  s.dependency 'ZohoDeskPortalAPIKit', '3.0.12'
   s.platform = :ios, '13.0'
   s.ios.deployment_target = '13.0'
 end

@@ -1,6 +1,7 @@
+import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-
+import 'package:zohodesk_portal_configuration/data/zdp_configuration.dart';
 import 'zohodesk_portal_configuration_platform_interface.dart';
 import 'package:zohodesk_portal_configuration/data/configuration_model.dart';
 
@@ -15,4 +16,7 @@ class MethodChannelZohodeskPortalConfiguration extends ZohodeskPortalConfigurati
 
   @override
   Future<void> handleNotification(Map<String, dynamic> map) async => await methodChannel.invokeMethod('handleNotification', {'msgMap': map});
+
+  @override
+  Future<void> setConfiguration(ZDPConfiguration configuration) async => await methodChannel.invokeMethod('setConfiguration', {'configuration': jsonEncode(configuration)});
 }

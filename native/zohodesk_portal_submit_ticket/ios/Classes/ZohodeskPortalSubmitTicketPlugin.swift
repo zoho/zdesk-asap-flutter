@@ -2,6 +2,7 @@ import Flutter
 import UIKit
 import ZohoDeskPortalTicket
 import ZohoDeskPortalAPIKit
+import zohodesk_portal_apikit
 
 public class ZohodeskPortalSubmitTicketPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
@@ -50,16 +51,6 @@ public class ZohodeskPortalSubmitTicketPlugin: NSObject, FlutterPlugin {
         case show
         case preFillTicketFields
         case ticketFieldsVisibility = "setTicketsFieldsListTobeShown"
-    }
-}
-
-private extension String {
-    func parser<AnyDecodable: Decodable>() -> AnyDecodable? {
-        
-        guard let data = self.data(using: .utf8, allowLossyConversion: false) else {
-            return nil
-        }
-        return try? JSONDecoder().decode(AnyDecodable.self, from: data)
     }
 }
 

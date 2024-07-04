@@ -1,7 +1,6 @@
 package com.zoho.desk.asap.configuration.zohodesk_portal_configuration
 
 import androidx.annotation.NonNull
-
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
@@ -13,6 +12,8 @@ import com.google.gson.Gson
 import com.zoho.desk.asap.common.ZDPortalConfiguration
 import com.zoho.desk.asap.common.utils.DeskCommonUtil
 import com.zoho.desk.asap.common.utils.ZDPThemeType
+import com.zoho.desk.asap.configuration.zohodesk_portal_configuration.ZDPCommonConfiguration
+import com.zoho.desk.asap.common.utils.ZDPConfiguration
 
 /** ZohodeskPortalConfigurationPlugin */
 class ZohodeskPortalConfigurationPlugin: FlutterPlugin, MethodCallHandler {
@@ -47,6 +48,7 @@ class ZohodeskPortalConfigurationPlugin: FlutterPlugin, MethodCallHandler {
     when(call.method) {
       "setTheme" -> handleSetTheme(call)
       "handleNotification" -> handleNotif(call, result)
+      "setConfiguration" -> setConfiguration(call)
       else -> result.notImplemented()
     }
   }
@@ -84,6 +86,34 @@ class ZohodeskPortalConfigurationPlugin: FlutterPlugin, MethodCallHandler {
     } catch (e:Exception) {
       result.error(ERROR_PUSH_NOTIF, "Parse Error", null)
     }
+  }
+
+  private fun setConfiguration(@NonNull call: MethodCall) {
+    val paramsMap = call.arguments as? HashMap<*, *>
+    val configurationData = paramsMap?.get("configuration") as? String
+    val zdpConfiguration: ZDPCommonConfiguration = Gson().fromJson(configurationData, ZDPCommonConfiguration::class.java)
+    ZDPortalConfiguration.setConfiguration(
+      ZDPConfiguration.Builder()
+        .isSideMenuEnabled(zdpConfiguration.isSideMenuEnabled)
+        .isLangChooserEnabled(zdpConfiguration.isLangChooserEnabled)
+        .isPoweredByFooterEnabled(zdpConfiguration.isPoweredByFooterEnabled)
+        .isGlobalSearchEnabled(zdpConfiguration.isGlobalSearchEnabled)
+        .isKBEnabled(zdpConfiguration.isKBEnabled)
+        .isCommunityEnabled(zdpConfiguration.isCommunityEnabled)
+        .isSubmitTicketEnabled(zdpConfiguration.isSubmitTicketEnabled)
+        .isAddTopicEnabled(zdpConfiguration.isAddTopicEnabled)
+        .isMyTicketsEnabled(zdpConfiguration.isMyTicketsEnabled)
+        .isLiveChatEnabled(zdpConfiguration.isLiveChatEnabled)
+        .isChatBotEnabled(zdpConfiguration.isChatBotEnabled)
+        .isAttachmentDownloadEnabled(zdpConfiguration.isAttachmentDownloadEnabled)
+        .isAttachmentUploadEnabled(zdpConfiguration.isAttachmentUploadEnabled)
+        .isInArticleSearchEnabled(zdpConfiguration.isSideMenuEnabled)
+        .isTextToSpeechEnabled(zdpConfiguration.isSideMenuEnabled)
+        .isModuleBasedSearchEnabled(zdpConfiguration.isModuleBasedSearchEnabled)
+        .build()
+    )
+    ZDPortalConfiguration.disableCutCopy(zdpConfiguration.disableCutCopy)
+    ZDPortalConfiguration.disableScreenShot(zdpConfiguration.disableScreenShot)
   }
 
 }

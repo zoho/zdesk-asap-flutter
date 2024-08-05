@@ -63,4 +63,7 @@ ASAP SDK Portal GC flutter plugin
 # 1.1.4
 - Integrated the lastest version of iOS ASAP SDK v3.0.12
 - Provided a method to customize the Configuration module
-- Provided a method to customize the Tickets module
+- Provided a method to customize the Tickets module\
+
+# 1.1.5
+- Integrated the latest version of ASAP iOS SDK v3.0.14

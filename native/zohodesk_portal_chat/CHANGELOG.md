@@ -67,3 +67,4 @@ ASAP SDK Chat flutter plugin
 
 # 1.1.5
 - Integrate the latest version of ASAP iOS SDK v3.0.14
+- Integrated the latest version of Android ASAP SDK v3.0_BETA_23

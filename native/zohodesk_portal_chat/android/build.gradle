@@ -50,5 +50,5 @@ android {
     }
 }
 dependencies {
-    implementation "com.zoho.desk:asap-chat:3.0_BETA_22"
+    implementation "com.zoho.desk:asap-chat:3.0_BETA_23"
 }

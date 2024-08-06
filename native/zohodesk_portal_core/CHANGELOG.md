@@ -67,3 +67,4 @@ ASAP SDK Portal Core flutter plugin
 
 # 1.1.5
 - Integrated the latest version of ASAP iOS SDK v3.0.14
+- Integrated the latest version of Android ASAP SDK v3.0_BETA_23

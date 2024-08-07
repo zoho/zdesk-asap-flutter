@@ -64,3 +64,7 @@ ASAP SDK Chat flutter plugin
 - Integrated the lastest version of iOS ASAP SDK v3.0.12
 - Provided a method to customize the Configuration module
 - Provided a method to customize the Tickets module
+
+# 1.1.5
+- Integrate the latest version of ASAP iOS SDK v3.0.14
+- Integrated the latest version of Android ASAP SDK v3.0_BETA_23

@@ -65,3 +65,6 @@ ASAP SDK Community flutter plugin
 # 1.1.5
 - Integrated the latest version of ASAP iOS SDK v3.0.14
 - Integrated the latest version of Android ASAP SDK v3.0_BETA_23
+
+# 1.1.6
+- Flutter version conflict fix

@@ -18,6 +18,10 @@ import com.zoho.desk.asap.api.ZDPortalAPI
 import com.zoho.desk.asap.api.ZDPortalCallback
 import com.zoho.desk.asap.api.response.DepartmentsList
 import com.zoho.desk.asap.api.response.Layouts
+import com.zoho.desk.asap.api.ZDPortalTicketsAPI
+import com.zoho.desk.asap.api.response.TicketForm
+import com.zoho.desk.asap.api.response.TicketFieldsList
+import android.util.Log
 
 /** ZohodeskPortalApikitPlugin */
 class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
@@ -52,6 +56,8 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
       "isUserSignedIn" -> isUserSignedIn(result)
       "getDepartments" -> getDepartments(result)
       "getLayouts" -> getLayouts(call, result)
+      "getTicketForm" -> getTicketForm(call, result)
+      "getTicketFields" -> getTicketFields(call, result)
       else -> result.notImplemented()
     }
   }
@@ -201,6 +207,52 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
         }
 
       }, paramsMap)
+
+    } catch (e:Exception) {
+      result.success(106)
+    }
+
+  }
+
+  private fun getTicketForm(@NonNull call: MethodCall, @NonNull result: Result){
+    try {
+      val paramsMap = call.arguments as? HashMap<String, String>
+      ZDPortalTicketsAPI.getTicketForm(object: ZDPortalCallback.TicketFormCallback{
+
+        override fun onException(exception: ZDPortalException?) {
+          result.success(exception?.errorCode)
+        }
+
+        override fun onTicketFormDownloaded(ticketForm: TicketForm?) {
+          ticketForm?.let {
+            Log.i(">>>>>", "hello: ${Gson().toJson(ticketForm).replace("}", "}\n")}")
+            result.success(Gson().toJson(it))
+          }
+        }
+      }, paramsMap, "multiLayout,providePHIDetails,showIsNested")
+
+    } catch (e:Exception) {
+      result.success(106)
+    }
+
+  }
+
+  private fun getTicketFields(@NonNull call: MethodCall, @NonNull result: Result){
+    try {
+      val paramsMap = call.arguments as? HashMap<String, String>
+
+      ZDPortalTicketsAPI.getTicketFields(object : ZDPortalCallback.TicketFieldsCallback {
+        override fun onTicketFieldsDownloaded(ticketFieldsList: TicketFieldsList) {
+          ticketFieldsList?.let {
+            Log.i(">>>>>", "hello: ${Gson().toJson(ticketFieldsList)}")
+            result.success(Gson().toJson(it))
+          }
+        }
+
+        override fun onException(exception: ZDPortalException) {
+          result.success(exception?.errorCode)
+        }
+      }, paramsMap, "apiName")
 
     } catch (e:Exception) {
       result.success(106)

@@ -38,4 +38,6 @@ abstract class ZohodeskPortalApikitPlatform extends PlatformInterface {
   Future<bool> isUserSignedIn();
   Future<void> getDepartments(DepartmentsCallback callback);
   Future<void> getLayouts(String departmentId, LayoutsCallback callback);
+  Future<void> getTicketForm(String departmentId, String layoutId, TicketFormCallback callback);
+  Future<void> getTicketFields(String departmentId, String layoutId, TicketFieldsCallback callback);
 }

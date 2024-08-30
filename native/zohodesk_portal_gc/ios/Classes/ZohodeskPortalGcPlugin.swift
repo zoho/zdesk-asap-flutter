@@ -11,14 +11,18 @@ public class ZohodeskPortalGcPlugin: NSObject, FlutterPlugin {
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
       switch ZDPGCAPIs(rawValue: call.method) {
-      case .show:
-          ZDPortalLiveChat.show()
+      case .showGC:
+          ZDPortalLiveChat.showGC()
+      case .showKBBot:
+          ZDPortalLiveChat.showKBBot()
+      case .showBMChat:
+          ZDPortalLiveChat.showBMChat()
       default:
           break
       }
   }
     
     private enum ZDPGCAPIs: String {
-        case show
+        case showGC, showKBBot, showBMChat
     }
 }

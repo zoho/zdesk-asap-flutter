@@ -23,5 +23,7 @@ abstract class ZohodeskPortalGcPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<void> show();
+  Future<void> showGC();
+  Future<void> showKBBot();
+  Future<void> showBMChat();
 }

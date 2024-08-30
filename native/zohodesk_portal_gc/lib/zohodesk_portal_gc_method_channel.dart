@@ -9,10 +9,22 @@ class MethodChannelZohodeskPortalGc extends ZohodeskPortalGcPlatform {
   @visibleForTesting
   final methodChannel = const MethodChannel('zohodesk_portal_gc');
 
-  /// ASAP GC show channel method
+  /// ASAP GC showGC channel method
   @override
-  Future<void> show() async {
-    await methodChannel.invokeMethod('show');
+  Future<void> showGC() async {
+    await methodChannel.invokeMethod('showGC');
+  }
+
+  /// ASAP GC showKBBot channel method
+  @override
+  Future<void> showKBBot() async {
+    await methodChannel.invokeMethod('showKBBot');
+  }
+
+  /// ASAP GC showKBBot channel method
+  @override
+  Future<void> showBMChat() async {
+    await methodChannel.invokeMethod('showBMChat');
   }
 
 }

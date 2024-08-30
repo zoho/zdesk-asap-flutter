@@ -27,4 +27,27 @@ class MethodChannelZohodeskPortalGc extends ZohodeskPortalGcPlatform {
     await methodChannel.invokeMethod('showBMChat');
   }
 
+  /// ASAP GC set session variable channel method
+  @override
+  Future<void> setGCSessionVariable(String variableName, String updatedValue) async {
+    await methodChannel.invokeMethod('setGCSessionVariable', {'variableName': variableName, 'updatedValue': updatedValue});
+  }
+
+  /// ASAP GC update session variable channel method
+  @override
+  Future<void> updateGCSessionVariable(String variableName, String updatedValue) async {
+    await methodChannel.invokeMethod('updateGCSessionVariable', {'variableName': variableName, 'updatedValue': updatedValue});
+  }
+
+  /// ASAP BM set session variable channel method
+  @override
+  Future<void> setBMSessionVariable(String variableName, String updatedValue) async {
+    await methodChannel.invokeMethod('setBMSessionVariable', {'variableName': variableName, 'updatedValue': updatedValue});
+  }
+
+  /// ASAP BM update session variable channel method
+  @override
+  Future<void> updateBMSessionVariable(String variableName, String updatedValue) async {
+    await methodChannel.invokeMethod('updateBMSessionVariable', {'variableName': variableName, 'updatedValue': updatedValue});
+  }
 }

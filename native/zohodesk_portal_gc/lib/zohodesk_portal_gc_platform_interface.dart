@@ -26,4 +26,9 @@ abstract class ZohodeskPortalGcPlatform extends PlatformInterface {
   Future<void> showGC();
   Future<void> showKBBot();
   Future<void> showBMChat();
+
+  Future<void> setGCSessionVariable(String variableName, String updatedValue);
+  Future<void> updateGCSessionVariable(String variableName, String updatedValue);
+  Future<void> setBMSessionVariable(String variableName, String updatedValue);
+  Future<void> updateBMSessionVariable(String variableName, String updatedValue);
 }

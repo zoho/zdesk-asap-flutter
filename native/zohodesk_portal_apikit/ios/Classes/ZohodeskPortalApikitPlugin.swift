@@ -58,6 +58,12 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
       case .getLayouts:
           getLayouts(arguments: arguments, onCompletion: result)
           
+      case .getTicketForm:
+          getTicketForm(arguments: arguments, onCompletion: result)
+          
+      case .getTicketFields:
+          getTicketFields(arguments: arguments, onCompletion: result)
+          
       default:
           break
       }
@@ -125,6 +131,40 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
         }
         
     }
+        
+    private func getTicketForm(arguments: [String: Any]?, onCompletion: @escaping FlutterResult) {
+        ZohoDeskPortalKit.Ticket.getForm(arguments, headers: nil) { result in
+            switch result {
+            case .success(let ticketSections):
+                if let dataString = ticketSections.jsonString, let dataObject = dataString.convertJsonToDataObject() {
+                    // Need to
+                    let wrappedJsonDict: [String: Any] = ["form": dataObject]
+                    if let modifiedJsonString = wrappedJsonDict.convertObjecttoJsonString() {
+                        onCompletion(modifiedJsonString)
+                    }
+                }
+            case .failure(let error):
+                error.parseError(onCompletion)
+            }
+        }
+    }
+    
+    private func getTicketFields(arguments: [String: Any]?, onCompletion: @escaping FlutterResult) {
+        ZohoDeskPortalKit.Ticket.getFields(arguments) { result in
+            switch result {
+            case .success(let fields):
+                if let dataString = fields.jsonString, let dataObject = dataString.convertJsonToDataObject() {
+                    let wrappedJsonDict: [String: Any] = ["data": dataObject]
+                    if let modifiedJsonString = wrappedJsonDict.convertObjecttoJsonString() {
+                        onCompletion(modifiedJsonString)
+                    }
+                }
+            case .failure(let error):
+                error.parseError(onCompletion)
+            }
+        }
+    }
+    
 
     ///ASAP Plugin public APIs identifier
     private enum ZDPKitAPIs: String {
@@ -137,6 +177,8 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
         case presentLoginScreen
         case getDepartments
         case getLayouts
+        case getTicketForm
+        case getTicketFields
     }
 }
 
@@ -191,5 +233,21 @@ public extension String {
             return nil
         }
         return try? JSONDecoder().decode(AnyDecodable.self, from: data)
+    }
+    
+    func convertJsonToDataObject() -> Any? {
+        if let data = self.data(using: .utf8) {
+            return try? JSONSerialization.jsonObject(with: data, options: [])
+        }
+        return nil
+    }
+}
+
+extension Dictionary {
+    func convertObjecttoJsonString() -> String? {
+        if let data = try? JSONSerialization.data(withJSONObject: self, options: []) {
+            return String(data: data, encoding: .utf8)
+        }
+        return nil
     }
 }

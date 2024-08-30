@@ -1,6 +1,6 @@
 name: zohodesk_portal_core
 description: ASAP Flutter plugin for ASAP Core for mobile app configurations.
-version: 1.1.6
+version: 2.0.0
 homepage:
 
 environment:
@@ -12,10 +12,10 @@ dependencies:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
 
-  zohodesk_portal_kb: 1.1.6
-  zohodesk_portal_community: 1.1.6
-  zohodesk_portal_ticket: 1.1.6
-  zohodesk_portal_gc: 1.1.6
+  zohodesk_portal_kb: 2.0.0
+  zohodesk_portal_community: 2.0.0
+  zohodesk_portal_ticket: 2.0.0
+  zohodesk_portal_gc: 2.0.0
 
 
 dev_dependencies:

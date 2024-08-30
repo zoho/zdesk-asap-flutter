@@ -137,7 +137,7 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
             switch result {
             case .success(let ticketSections):
                 if let dataString = ticketSections.jsonString, let dataObject = dataString.convertJsonToDataObject() {
-                    // Need to
+                    // Editing JSON response to match Flutter Dart model class before passing in onCompletion
                     let wrappedJsonDict: [String: Any] = ["form": dataObject]
                     if let modifiedJsonString = wrappedJsonDict.convertObjecttoJsonString() {
                         onCompletion(modifiedJsonString)
@@ -154,6 +154,7 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
             switch result {
             case .success(let fields):
                 if let dataString = fields.jsonString, let dataObject = dataString.convertJsonToDataObject() {
+                    // Editing JSON response to match Flutter Dart model class before passing in onCompletion
                     let wrappedJsonDict: [String: Any] = ["data": dataObject]
                     if let modifiedJsonString = wrappedJsonDict.convertObjecttoJsonString() {
                         onCompletion(modifiedJsonString)

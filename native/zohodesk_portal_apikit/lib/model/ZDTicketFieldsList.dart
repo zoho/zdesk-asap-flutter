@@ -12,4 +12,8 @@ class ZDTicketFieldsList {
   ZDTicketFieldsList.fromJson(Map<String, dynamic> json):
       data = (json['data'] as List).map((toElement) => ZDTicketField.fromJson(toElement)).toList();
 
+  Map toJson() => {
+    'data' : data
+  };
+
 }

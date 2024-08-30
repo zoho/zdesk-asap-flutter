@@ -9,6 +9,11 @@ class ZDTicketForm {
 
   ZDTicketForm.fromJson(Map<String, dynamic> json):
         form = ZDTicketSectionsList.fromJson(json['form']);
+
+  Map toJson() => {
+    'form' : form
+  };
+
 }
 
 
@@ -22,6 +27,11 @@ class ZDTicketSectionsList {
 
   ZDTicketSectionsList.fromJson(Map<String, dynamic> json):
         sections = (json['sections'] as List).map((toElement) => ZDTicketSection.fromJson(toElement)).toList();
+
+  Map toJson() => {
+    'sections' : sections
+  };
+
 }
 
 class ZDTicketSection {
@@ -37,6 +47,12 @@ class ZDTicketSection {
   ZDTicketSection.fromJson(Map<String, dynamic> json):
         sectionName = json['sectionName'],
         fields = (json['fields'] as List).map((toElement) => ZDTicketField.fromJson(toElement)).toList();
+
+  Map toJson() => {
+    'sectionName' : sectionName,
+    'fields' : fields,
+  };
+
 
 }
 
@@ -106,6 +122,30 @@ class ZDTicketField{
         statusMapping = (json['statusMapping'] as List?)?.map((toElement) => ZDTicketStatusMapping.fromJson(toElement)).toList(),
         isPHI = json['isPHI'],
         isNested = json['isNested'];
+
+  Map toJson() => {
+    'displayLabel' : displayLabel,
+    'allowedValues' : allowedValues,
+    'name' : name,
+    'apiName' : apiName,
+    'isCustomField' : isCustomField,
+    'fieldName' : fieldName,
+    'dependancyMappingResponseMap' : dependancyMappingResponseMap,
+    'defaultValue' : defaultValue,
+    'i18NLabel' : i18NLabel,
+    'type' : type,
+    'isReadOnly' : isReadOnly,
+    'id' : id,
+    'maxLength' : maxLength,
+    'isMandatory' : isMandatory,
+    'toolTipType' : toolTipType,
+    'toolTip' : toolTip,
+    'decimalPlaces' : decimalPlaces,
+    'statusMapping' : statusMapping,
+    'isPHI' : isPHI,
+    'isNested' : isNested,
+  };
+
 }
 
 class ZDTicketStatusMapping{
@@ -120,5 +160,11 @@ class ZDTicketStatusMapping{
   ZDTicketStatusMapping.fromJson(Map<String, dynamic> json):
         mappingValue = json['mappingValue'],
         name = json['name'];
+
+  Map toJson() => {
+    'mappingValue' : mappingValue,
+    'name' : name
+  };
+
 
 }

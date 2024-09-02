@@ -27,12 +27,60 @@ class ZohodeskPortalGcPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
   }
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
+    if(activity == null){
+      result.notImplemented()
+    }
     when(call.method) {
-      "show" -> activity?.let {
-        ZDPortalLiveChat.show(activity)
-      } ?: kotlin.run { result.notImplemented() }
+      "showGC" -> showGC(call, result)
+      "showKBBot" -> showKBBot(call, result)
+      "showBMChat" -> showBMChat(call, result)
+      "setGCSessionVariable" -> setGCSessionVariable(call, result)
+      "updateGCSessionVariable" -> updateGCSessionVariable(call, result)
+      "setBMSessionVariable" -> setBMSessionVariable(call, result)
+      "updateBMSessionVariable" -> updateBMSessionVariable(call, result)
+
       else -> result.notImplemented()
     }
+  }
+
+  private fun showGC(@NonNull call: MethodCall, @NonNull result: Result){
+    ZDPortalLiveChat.showGC(activity)
+  }
+
+  private fun showKBBot(@NonNull call: MethodCall, @NonNull result: Result){
+    ZDPortalLiveChat.showAnswerBot(activity)
+  }
+
+  private fun showBMChat(@NonNull call: MethodCall, @NonNull result: Result){
+    ZDPortalLiveChat.showBusinessMessenger(activity)
+  }
+
+  private fun setGCSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
+    val paramsMap = call.arguments as? HashMap<*, *>
+    val variableName = paramsMap?.get("variableName") as? String
+    val variableValue = paramsMap?.get("updatedValue") as? String
+    ZDPortalLiveChat.setGCSessionVariable(activity, arrayListOf(hashMapOf(variableName to variableValue)))
+  }
+
+  private fun updateGCSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
+    val paramsMap = call.arguments as? HashMap<*, *>
+    val variableName = paramsMap?.get("variableName") as? String
+    val variableValue = paramsMap?.get("updatedValue") as? String
+    ZDPortalLiveChat.updateGCSessionVariable(activity, arrayListOf(hashMapOf(variableName to variableValue)))
+  }
+
+  private fun setBMSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
+    val paramsMap = call.arguments as? HashMap<*, *>
+    val variableName = paramsMap?.get("variableName") as? String
+    val variableValue = paramsMap?.get("updatedValue") as? String
+    ZDPortalLiveChat.setBMSessionVariable(activity, arrayListOf(hashMapOf(variableName to variableValue)))
+  }
+
+  private fun updateBMSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
+    val paramsMap = call.arguments as? HashMap<*, *>
+    val variableName = paramsMap?.get("variableName") as? String
+    val variableValue = paramsMap?.get("updatedValue") as? String
+    ZDPortalLiveChat.updateBMSessionVariable(activity, arrayListOf(hashMapOf(variableName to variableValue)))
   }
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {

@@ -13,14 +13,14 @@ class ZDPortalGC {
   static Future<void> showBMChat() => ZohodeskPortalGcPlatform.instance.showBMChat();
 
   ///To set GC session variable
-  static Future<void> setGCSessionVariable(String variableName, String updatedValue) => ZohodeskPortalGcPlatform.instance.setGCSessionVariable(variableName, updatedValue);
+  static Future<void> setGCSessionVariable(Map<String, String> sessionVariables) => ZohodeskPortalGcPlatform.instance.setGCSessionVariable(sessionVariables);
 
   ///To update GC session variable
-  static Future<void> updateGCSessionVariable(String variableName, String updatedValue) => ZohodeskPortalGcPlatform.instance.updateGCSessionVariable(variableName, updatedValue);
+  static Future<void> updateGCSessionVariable(Map<String, String> sessionVariables) => ZohodeskPortalGcPlatform.instance.updateGCSessionVariable(sessionVariables);
 
   ///To set BM session variable
-  static Future<void> setBMSessionVariable(String variableName, String updatedValue) => ZohodeskPortalGcPlatform.instance.setBMSessionVariable(variableName, updatedValue);
+  static Future<void> setBMSessionVariable(Map<String, String> sessionVariables) => ZohodeskPortalGcPlatform.instance.setBMSessionVariable(sessionVariables);
 
   ///To update BM session variable
-  static Future<void> updateBMSessionVariable(String variableName, String updatedValue) => ZohodeskPortalGcPlatform.instance.updateBMSessionVariable(variableName, updatedValue);
+  static Future<void> updateBMSessionVariable(Map<String, String> sessionVariables) => ZohodeskPortalGcPlatform.instance.updateBMSessionVariable(sessionVariables);
 }

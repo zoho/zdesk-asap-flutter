@@ -29,25 +29,25 @@ class MethodChannelZohodeskPortalGc extends ZohodeskPortalGcPlatform {
 
   /// ASAP GC set session variable channel method
   @override
-  Future<void> setGCSessionVariable(String variableName, String updatedValue) async {
-    await methodChannel.invokeMethod('setGCSessionVariable', {'variableName': variableName, 'updatedValue': updatedValue});
+  Future<void> setGCSessionVariable(Map<String, String> sessionVariable) async {
+    await methodChannel.invokeMethod('setGCSessionVariable', sessionVariable);
   }
 
   /// ASAP GC update session variable channel method
   @override
-  Future<void> updateGCSessionVariable(String variableName, String updatedValue) async {
-    await methodChannel.invokeMethod('updateGCSessionVariable', {'variableName': variableName, 'updatedValue': updatedValue});
+  Future<void> updateGCSessionVariable(Map<String, String> sessionVariable) async {
+    await methodChannel.invokeMethod('updateGCSessionVariable', sessionVariable);
   }
 
   /// ASAP BM set session variable channel method
   @override
-  Future<void> setBMSessionVariable(String variableName, String updatedValue) async {
-    await methodChannel.invokeMethod('setBMSessionVariable', {'variableName': variableName, 'updatedValue': updatedValue});
+  Future<void> setBMSessionVariable(Map<String, String> sessionVariable) async {
+    await methodChannel.invokeMethod('setBMSessionVariable', sessionVariable);
   }
 
   /// ASAP BM update session variable channel method
   @override
-  Future<void> updateBMSessionVariable(String variableName, String updatedValue) async {
-    await methodChannel.invokeMethod('updateBMSessionVariable', {'variableName': variableName, 'updatedValue': updatedValue});
+  Future<void> updateBMSessionVariable(Map<String, String> sessionVariable) async {
+    await methodChannel.invokeMethod('updateBMSessionVariable', sessionVariable);
   }
 }

@@ -71,3 +71,7 @@ ASAP SDK apikit flutter plugin
 
 # 1.1.6
 - Flutter version conflict fix
+
+# 2.0.0
+- Integrated the ASAP new setup iOS SDK 4.0.0-beta.1
+- Integrated the ASAP new setup Android SDK 4.0_BETA_01

@@ -50,5 +50,5 @@ android {
     }
 }
 dependencies {
-    implementation "com.zoho.desk:asap-community:3.0_BETA_23"
+    implementation "com.zoho.desk:asap-community:4.0_BETA_01"
 }

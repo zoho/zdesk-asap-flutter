@@ -15,16 +15,16 @@ class MethodChannelZohodeskPortalGc extends ZohodeskPortalGcPlatform {
     await methodChannel.invokeMethod('showGC');
   }
 
-  /// ASAP GC showKBBot channel method
+  /// ASAP GC showAnswerBot channel method
   @override
-  Future<void> showKBBot() async {
-    await methodChannel.invokeMethod('showKBBot');
+  Future<void> showAnswerBot() async {
+    await methodChannel.invokeMethod('showAnswerBot');
   }
 
-  /// ASAP GC showKBBot channel method
+  /// ASAP GC showBMBot channel method
   @override
-  Future<void> showBMChat() async {
-    await methodChannel.invokeMethod('showBMChat');
+  Future<void> showBM() async {
+    await methodChannel.invokeMethod('showBM');
   }
 
   /// ASAP GC set session variable channel method

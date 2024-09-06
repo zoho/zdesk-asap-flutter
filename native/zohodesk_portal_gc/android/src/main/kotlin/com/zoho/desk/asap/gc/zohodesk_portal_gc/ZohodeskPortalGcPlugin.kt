@@ -33,8 +33,8 @@ class ZohodeskPortalGcPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
     }
     when(call.method) {
       "showGC" -> showGC(call, result)
-      "showKBBot" -> showKBBot(call, result)
-      "showBMChat" -> showBMChat(call, result)
+      "showAnswerBot" -> showAnswerBot(call, result)
+      "showBM" -> showBM(call, result)
       "setGCSessionVariable" -> setGCSessionVariable(call, result)
       "updateGCSessionVariable" -> updateGCSessionVariable(call, result)
       "setBMSessionVariable" -> setBMSessionVariable(call, result)
@@ -48,11 +48,11 @@ class ZohodeskPortalGcPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
     ZDPortalLiveChat.showGC(activity)
   }
 
-  private fun showKBBot(@NonNull call: MethodCall, @NonNull result: Result){
+  private fun showAnswerBot(@NonNull call: MethodCall, @NonNull result: Result){
     ZDPortalLiveChat.showAnswerBot(activity)
   }
 
-  private fun showBMChat(@NonNull call: MethodCall, @NonNull result: Result){
+  private fun showBM(@NonNull call: MethodCall, @NonNull result: Result){
     ZDPortalLiveChat.showBusinessMessenger(activity)
   }
 

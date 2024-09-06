@@ -7,10 +7,10 @@ class ZDPortalGC {
   static Future<void> showGC() => ZohodeskPortalGcPlatform.instance.showGC();
 
   ///To show GC bot screen
-  static Future<void> showKBBot() => ZohodeskPortalGcPlatform.instance.showKBBot();
+  static Future<void> showAnswerBot() => ZohodeskPortalGcPlatform.instance.showAnswerBot();
 
   ///To show GC bot screen
-  static Future<void> showBMChat() => ZohodeskPortalGcPlatform.instance.showBMChat();
+  static Future<void> showBM() => ZohodeskPortalGcPlatform.instance.showBM();
 
   ///To set GC session variable
   static Future<void> setGCSessionVariable(List<Map<String, String>> sessionVariables) => ZohodeskPortalGcPlatform.instance.setGCSessionVariable(sessionVariables);

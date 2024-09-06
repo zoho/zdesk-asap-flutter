@@ -16,11 +16,11 @@ public class ZohodeskPortalGcPlugin: NSObject, FlutterPlugin {
           ZDPortalLiveChat.showGC()
       
       //To show Answer Bot chat
-      case .showKBBot:
+      case .showAnswerBot:
           ZDPortalLiveChat.showKBBot()
       
       //To show Business messaging
-      case .showBMChat:
+      case .showBM:
           ZDPortalLiveChat.showBMChat()
       
       //To set GC session variable
@@ -99,7 +99,7 @@ public class ZohodeskPortalGcPlugin: NSObject, FlutterPlugin {
     }
     
     private enum ZDPGCAPIs: String {
-        case showGC, showKBBot, showBMChat
+        case showGC, showAnswerBot, showBM
         case setGCSessionVariable, updateGCSessionVariable
         case setBMSessionVariable, updateBMSessionVariable
     }

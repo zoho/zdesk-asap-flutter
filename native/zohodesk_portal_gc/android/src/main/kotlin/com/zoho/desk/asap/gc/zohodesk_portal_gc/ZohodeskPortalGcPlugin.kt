@@ -11,6 +11,7 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
+import java.util.ArrayList
 
 /** ZohodeskPortalGcPlugin */
 class ZohodeskPortalGcPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
@@ -56,31 +57,27 @@ class ZohodeskPortalGcPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
   }
 
   private fun setGCSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
-    val paramsMap = call.arguments as? HashMap<*, *>
-    val variableName = paramsMap?.get("variableName") as? String
-    val variableValue = paramsMap?.get("updatedValue") as? String
-    ZDPortalLiveChat.setGCSessionVariable(activity, arrayListOf(hashMapOf(variableName to variableValue)))
+    val paramsMap = call.arguments as? ArrayList<HashMap<String, Any>>
+    android.util.Log.i(">>>>>>", "setGCSessionVariable: ${paramsMap}   type ${paramsMap}")
+    ZDPortalLiveChat.setGCSessionVariable(activity, paramsMap)
   }
 
   private fun updateGCSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
-    val paramsMap = call.arguments as? HashMap<*, *>
-    val variableName = paramsMap?.get("variableName") as? String
-    val variableValue = paramsMap?.get("updatedValue") as? String
-    ZDPortalLiveChat.updateGCSessionVariable(activity, arrayListOf(hashMapOf(variableName to variableValue)))
+    val paramsMap = call.arguments as? ArrayList<HashMap<String, Any>>
+    android.util.Log.i(">>>>>>", "updateGCSessionVariable: ${paramsMap}")
+    ZDPortalLiveChat.updateGCSessionVariable(activity, paramsMap)
   }
 
   private fun setBMSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
-    val paramsMap = call.arguments as? HashMap<*, *>
-    val variableName = paramsMap?.get("variableName") as? String
-    val variableValue = paramsMap?.get("updatedValue") as? String
-    ZDPortalLiveChat.setBMSessionVariable(activity, arrayListOf(hashMapOf(variableName to variableValue)))
+    val paramsMap = call.arguments as? ArrayList<HashMap<String, Any>>
+    android.util.Log.i(">>>>>>", "setBMSessionVariable: ${paramsMap}")
+    ZDPortalLiveChat.setBMSessionVariable(activity, paramsMap)
   }
 
   private fun updateBMSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
-    val paramsMap = call.arguments as? HashMap<*, *>
-    val variableName = paramsMap?.get("variableName") as? String
-    val variableValue = paramsMap?.get("updatedValue") as? String
-    ZDPortalLiveChat.updateBMSessionVariable(activity, arrayListOf(hashMapOf(variableName to variableValue)))
+    val paramsMap = call.arguments as? ArrayList<HashMap<String, Any>>
+    android.util.Log.i(">>>>>>", "updateBMSessionVariable: ${paramsMap}")
+    ZDPortalLiveChat.updateBMSessionVariable(activity, paramsMap)
   }
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {

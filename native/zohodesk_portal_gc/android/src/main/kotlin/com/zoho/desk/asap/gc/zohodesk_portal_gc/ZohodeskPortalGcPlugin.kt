@@ -58,25 +58,21 @@ class ZohodeskPortalGcPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
 
   private fun setGCSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
     val paramsMap = call.arguments as? ArrayList<HashMap<String, Any>>
-    android.util.Log.i(">>>>>>", "setGCSessionVariable: ${paramsMap}   type ${paramsMap}")
     ZDPortalLiveChat.setGCSessionVariable(activity, paramsMap)
   }
 
   private fun updateGCSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
     val paramsMap = call.arguments as? ArrayList<HashMap<String, Any>>
-    android.util.Log.i(">>>>>>", "updateGCSessionVariable: ${paramsMap}")
     ZDPortalLiveChat.updateGCSessionVariable(activity, paramsMap)
   }
 
   private fun setBMSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
     val paramsMap = call.arguments as? ArrayList<HashMap<String, Any>>
-    android.util.Log.i(">>>>>>", "setBMSessionVariable: ${paramsMap}")
     ZDPortalLiveChat.setBMSessionVariable(activity, paramsMap)
   }
 
   private fun updateBMSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
     val paramsMap = call.arguments as? ArrayList<HashMap<String, Any>>
-    android.util.Log.i(">>>>>>", "updateBMSessionVariable: ${paramsMap}")
     ZDPortalLiveChat.updateBMSessionVariable(activity, paramsMap)
   }
 

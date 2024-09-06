@@ -10,7 +10,6 @@ public class ZohodeskPortalGcPlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-      let arguments: [String: Any]? = call.arguments as? Dictionary<String, Any>
       switch ZDPGCAPIs(rawValue: call.method) {
       //To show GC chat
       case .showGC:
@@ -26,47 +25,77 @@ public class ZohodeskPortalGcPlugin: NSObject, FlutterPlugin {
       
       //To set GC session variable
       case .setGCSessionVariable:
-          setGCSessionVariable(arguments: arguments)
+          setGCSessionVariable(arguments: call.arguments)
       
       //To update GC session variable
       case .updateGCSessionVariable:
-          updateGCSessionVariable(arguments: arguments)
+          updateGCSessionVariable(arguments: call.arguments)
       
       //To set BM session variable
       case .setBMSessionVariable:
-          setBMSessionVariable(arguments: arguments)
+          setBMSessionVariable(arguments: call.arguments)
       
       //To update GC session variable
       case .updateBMSessionVariable:
-          updateBMSessionVariable(arguments: arguments)
+          updateBMSessionVariable(arguments: call.arguments)
       
       default:
           break
       }
   }
     
-    private func setGCSessionVariable(arguments: [String: Any]?) {
-        guard let variableName = arguments?["variableName"] as? String,
-              let updatedValue = arguments?["updatedValue"] as? String else { return }
-        ZDPortalLiveChat.setGCSessionVariable(variableName: variableName, updatedValue: updatedValue)
+    private func setGCSessionVariable(arguments: Any?) {
+        guard let sessionVariables = arguments as? [[String: Any]] else { return }
+        sessionVariables.forEach { sessionVariable in
+            prepareSessionVariable(variable: sessionVariable) { name, value in
+                ZDPortalLiveChat.setGCSessionVariable(variableName: name, updatedValue: value)
+            }
+        }
     }
     
-    private func updateGCSessionVariable(arguments: [String: Any]?) {
-        guard let variableName = arguments?["variableName"] as? String,
-              let updatedValue = arguments?["updatedValue"] as? String else { return }
-        ZDPortalLiveChat.updateGCSessionVariable(variableName: variableName, updatedValue: updatedValue)
+    private func updateGCSessionVariable(arguments: Any?) {
+        guard let sessionVariables = arguments as? [[String: Any]] else { return }
+        sessionVariables.forEach { sessionVariable in
+            prepareSessionVariable(variable: sessionVariable) { name, value in
+                ZDPortalLiveChat.updateGCSessionVariable(variableName: name, updatedValue: value)
+            }
+        }
     }
     
-    private func setBMSessionVariable(arguments: [String: Any]?) {
-        guard let variableName = arguments?["variableName"] as? String,
-              let updatedValue = arguments?["updatedValue"] as? String else { return }
-        ZDPortalLiveChat.setBMSessionVariable(variableName: variableName, updatedValue: updatedValue)
+    private func setBMSessionVariable(arguments: Any?) {
+        guard let sessionVariables = arguments as? [[String: Any]] else { return }
+        sessionVariables.forEach { sessionVariable in
+            prepareSessionVariable(variable: sessionVariable) { name, value in
+                ZDPortalLiveChat.setBMSessionVariable(variableName: name, updatedValue: value)
+            }
+        }
     }
     
-    private func updateBMSessionVariable(arguments: [String: Any]?) {
-        guard let variableName = arguments?["variableName"] as? String,
-              let updatedValue = arguments?["updatedValue"] as? String else { return }
-        ZDPortalLiveChat.updateBMSessionVariable(variableName: variableName, updatedValue: updatedValue)
+    private func updateBMSessionVariable(arguments: Any?) {
+        guard let sessionVariables = arguments as? [[String: Any]] else { return }
+        sessionVariables.forEach { sessionVariable in
+            prepareSessionVariable(variable: sessionVariable) { name, value in
+                ZDPortalLiveChat.updateBMSessionVariable(variableName: name, updatedValue: value)
+            }
+        }
+    }
+    
+    //Temporarily processing the session variable signature, will be handled directly by GC SDK
+    private func prepareSessionVariable(variable: [String: Any], _ handler: (String, String) -> Void) {
+        var name: String = ""
+        var value: String = ""
+        variable.forEach { (key, note) in
+            guard let stringNote = note as? String else { return }
+            switch key {
+            case "name":
+                name = stringNote
+            case "value":
+                value = stringNote
+            default:
+                break
+            }
+        }
+        handler(name, value)
     }
     
     private enum ZDPGCAPIs: String {

@@ -71,3 +71,6 @@ ASAP SDK Configuration flutter plugin
 
 # 1.1.6
 - Flutter version conflict fix
+
+# 1.1.7
+- Integrated the lastest version of iOS ASAP SDK v3.0.16

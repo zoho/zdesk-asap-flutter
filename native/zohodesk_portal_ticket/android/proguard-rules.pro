@@ -20,3 +20,4 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 -keep public class com.zoho.desk.asap.ticket.zohodesk_portal_ticket.data.ZDPTicketConfiguration {*;}
+-keep public class com.zoho.desk.asap.ticket.zohodesk_portal_ticket.ZohodeskPortalTicketPlugin {*;}

@@ -19,7 +19,4 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keep public class com.zoho.desk.asap.ticket.zohodesk_portal_submit_ticket.models.ZDCustomizedTicketField {*;}
--keep public class com.zoho.desk.asap.ticket.zohodesk_portal_submit_ticket.models.ZDCustomizedTicketForm {*;}
--keep public class com.zoho.desk.asap.ticket.zohodesk_portal_submit_ticket.models.ZDVisibleTicketField {*;}
--keep public class com.zoho.desk.asap.ticket.zohodesk_portal_submit_ticket.ZohodeskPortalSubmitTicketPlugin {*;}
+-keep public class com.zoho.desk.asap.gc.zohodesk_portal_gc.ZohodeskPortalGcPlugin {*;}

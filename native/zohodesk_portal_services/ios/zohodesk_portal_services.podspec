@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.dependency 'Flutter'
   s.dependency 'ZohoDeskPortalCore', '4.0.0-beta.4'
   s.dependency 'ZohoDeskPortalChatKit', '4.0.0-beta.4'
-  s.dependency 'ohoDeskPortalSalesIQ', '4.0.0-beta.4'
+  s.dependency 'ZohoDeskPortalSalesIQ', '4.0.0-beta.4'
   s.platform = :ios, '13.0'
   s.ios.deployment_target  = '13.0'
 

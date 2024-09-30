@@ -1,6 +1,6 @@
 import Flutter
 import UIKit
-import ZohoDeskPortalChat
+import ZohoDeskPortalSalesIQ
 
 public class ZohodeskPortalChatPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
@@ -12,7 +12,7 @@ public class ZohodeskPortalChatPlugin: NSObject, FlutterPlugin {
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
       switch ZDPChatAPIs(rawValue: call.method) {
       case .show:
-        ZDPortalChat.show()
+        ZDPortalSalesIQ.show()
     default:
         break
     }

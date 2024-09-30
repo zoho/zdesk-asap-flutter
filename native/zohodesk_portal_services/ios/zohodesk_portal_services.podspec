@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'zohodesk_portal_services'
-  s.version          = '2.0.0'
+  s.version          = '2.0.1'
   s.summary          = 'Zoho Desk Portal Services'
   
   s.description      = 'Zoho Desk Portal Services'
@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'ZohoDeskPortalCore', '4.0.0-beta.1'
-  s.dependency 'ZohoDeskPortalChat', '4.0.0-beta.1'
+  s.dependency 'ZohoDeskPortalCore', '4.0.0-beta.4'
+  s.dependency 'ZohoDeskPortalChat', '4.0.0-beta.4'
   s.platform = :ios, '13.0'
   s.ios.deployment_target  = '13.0'
 

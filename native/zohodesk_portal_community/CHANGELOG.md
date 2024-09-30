@@ -75,3 +75,4 @@ ASAP SDK Community flutter plugin
 
 # 2.0.1
 - Added the proguard rules to fix issues with gradle version 8.4
+- Integrated the ASAP new setup iOS SDK 4.0.0-beta.4

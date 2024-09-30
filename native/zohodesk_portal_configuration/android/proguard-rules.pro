@@ -21,3 +21,6 @@
 #-renamesourcefileattribute SourceFile
 -keep public class com.zoho.desk.asap.configuration.zohodesk_portal_configuration.ZDPTheme {*;}
 -keep public class com.zoho.desk.asap.configuration.zohodesk_portal_configuration.ZDPCommonConfiguration {*;}
+-keep public class com.zoho.desk.asap.configuration.zohodesk_portal_configuration.ZDPTheme$Builder {*;}
+-keep public class com.zoho.desk.asap.configuration.zohodesk_portal_configuration.ZohodeskPortalConfigurationPlugin$Companion {*;}
+-keep public class com.zoho.desk.asap.configuration.zohodesk_portal_configuration.ZohodeskPortalConfigurationPlugin {*;}

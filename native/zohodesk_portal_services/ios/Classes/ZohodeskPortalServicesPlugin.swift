@@ -1,6 +1,6 @@
 import Flutter
 import UIKit
-import ZohoDeskPortalChat
+import ZohoDeskPortalSalesIQ
 
 public class ZohodeskPortalServicesPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {

@@ -71,3 +71,11 @@ ASAP SDK Portal GC flutter plugin
 
 # 1.1.6
 - Flutter version conflict fix
+
+# 2.0.0
+- Integrated the ASAP new setup iOS SDK 4.0.0-beta.1
+- Integrated the ASAP new setup Android SDK 4.0_BETA_01
+
+# 2.0.1
+- Added the proguard rules to fix issues with gradle version 8.4
+- Integrated the ASAP new setup iOS SDK 4.0.0-beta.4

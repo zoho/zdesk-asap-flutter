@@ -21,7 +21,6 @@ import com.zoho.desk.asap.api.response.Layouts
 import com.zoho.desk.asap.api.ZDPortalTicketsAPI
 import com.zoho.desk.asap.api.response.TicketForm
 import com.zoho.desk.asap.api.response.TicketFieldsList
-import android.util.Log
 
 /** ZohodeskPortalApikitPlugin */
 class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
@@ -33,6 +32,7 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
   private lateinit var context: Context
   private lateinit var deskPortalSDK: ZohoDeskPortalSDK
   private val ERROR_PUSH_NOTIF = "101"
+  private val ERROR_CODE_GENERAL = "106"
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
     channel = MethodChannel(flutterPluginBinding.binaryMessenger, "zohodesk_portal_apikit")
@@ -187,7 +187,7 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
       }, HashMap())
 
     } catch (e:Exception) {
-      result.success(106)
+      result.success(ERROR_CODE_GENERAL)
     }
 
   }
@@ -209,7 +209,7 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
       }, paramsMap)
 
     } catch (e:Exception) {
-      result.success(106)
+      result.success(ERROR_CODE_GENERAL)
     }
 
   }
@@ -217,6 +217,7 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
   private fun getTicketForm(@NonNull call: MethodCall, @NonNull result: Result){
     try {
       val paramsMap = call.arguments as? HashMap<String, String>
+      val flags = paramsMap?.remove("flags")
       ZDPortalTicketsAPI.getTicketForm(object: ZDPortalCallback.TicketFormCallback{
 
         override fun onException(exception: ZDPortalException?) {
@@ -225,14 +226,13 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
 
         override fun onTicketFormDownloaded(ticketForm: TicketForm?) {
           ticketForm?.let {
-            Log.i(">>>>>", "hello: ${Gson().toJson(ticketForm).replace("}", "}\n")}")
             result.success(Gson().toJson(it))
           }
         }
-      }, paramsMap, "multiLayout,providePHIDetails,showIsNested")
+      }, paramsMap, flags)
 
     } catch (e:Exception) {
-      result.success(106)
+      result.success(ERROR_CODE_GENERAL)
     }
 
   }
@@ -240,11 +240,10 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
   private fun getTicketFields(@NonNull call: MethodCall, @NonNull result: Result){
     try {
       val paramsMap = call.arguments as? HashMap<String, String>
-
+      val flags = paramsMap?.remove("flags")
       ZDPortalTicketsAPI.getTicketFields(object : ZDPortalCallback.TicketFieldsCallback {
         override fun onTicketFieldsDownloaded(ticketFieldsList: TicketFieldsList) {
           ticketFieldsList?.let {
-            Log.i(">>>>>", "hello: ${Gson().toJson(ticketFieldsList)}")
             result.success(Gson().toJson(it))
           }
         }
@@ -252,10 +251,10 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
         override fun onException(exception: ZDPortalException) {
           result.success(exception?.errorCode)
         }
-      }, paramsMap, "apiName")
+      }, paramsMap, flags)
 
     } catch (e:Exception) {
-      result.success(106)
+      result.success(ERROR_CODE_GENERAL)
     }
 
   }

@@ -1,6 +1,6 @@
-## Zoho Desk ASAP GC Plugin Changelog
+## Zoho Desk ASAP Chat Kit Plugin Changelog
 
-ASAP SDK Portal GC flutter plugin
+ASAP SDK Portal Chat Kit flutter plugin
 
 # 1.0.0
 

@@ -1,8 +1,8 @@
-package com.zoho.desk.asap.gc.zohodesk_portal_gc
+package com.zoho.desk.asap.chatkit.zohodesk_portal_chatkit
 
 import android.app.Activity
 import androidx.annotation.NonNull
-import com.zoho.desk.asap.livechat.ZDPortalLiveChat
+import com.zoho.desk.asap.chatkit.ZohoDeskPortalChatKit
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
@@ -14,7 +14,7 @@ import io.flutter.plugin.common.MethodChannel.Result
 import java.util.ArrayList
 
 /** ZohodeskPortalGcPlugin */
-class ZohodeskPortalGcPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
+class ZohodeskPortalChatKitPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
@@ -23,7 +23,7 @@ class ZohodeskPortalGcPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
   private var activity : Activity? = null
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "zohodesk_portal_gc")
+    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "zohodesk_portal_chatkit")
     channel.setMethodCallHandler(this)
   }
 
@@ -45,35 +45,35 @@ class ZohodeskPortalGcPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
   }
 
   private fun showGC(@NonNull call: MethodCall, @NonNull result: Result){
-    ZDPortalLiveChat.showGC(activity)
+    ZohoDeskPortalChatKit.showGC(activity)
   }
 
   private fun showAnswerBot(@NonNull call: MethodCall, @NonNull result: Result){
-    ZDPortalLiveChat.showAnswerBot(activity)
+    ZohoDeskPortalChatKit.showAnswerBot(activity)
   }
 
   private fun showBM(@NonNull call: MethodCall, @NonNull result: Result){
-    ZDPortalLiveChat.showBusinessMessenger(activity)
+    ZohoDeskPortalChatKit.showBM(activity)
   }
 
   private fun setGCSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
     val paramsMap = call.arguments as? ArrayList<HashMap<String, Any>>
-    ZDPortalLiveChat.setGCSessionVariable(activity, paramsMap)
+    ZohoDeskPortalChatKit.setGCSessionVariable(activity, paramsMap)
   }
 
   private fun updateGCSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
     val paramsMap = call.arguments as? ArrayList<HashMap<String, Any>>
-    ZDPortalLiveChat.updateGCSessionVariable(activity, paramsMap)
+    ZohoDeskPortalChatKit.updateGCSessionVariable(activity, paramsMap)
   }
 
   private fun setBMSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
     val paramsMap = call.arguments as? ArrayList<HashMap<String, Any>>
-    ZDPortalLiveChat.setBMSessionVariable(activity, paramsMap)
+    ZohoDeskPortalChatKit.setBMSessionVariable(activity, paramsMap)
   }
 
   private fun updateBMSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
     val paramsMap = call.arguments as? ArrayList<HashMap<String, Any>>
-    ZDPortalLiveChat.updateBMSessionVariable(activity, paramsMap)
+    ZohoDeskPortalChatKit.updateBMSessionVariable(activity, paramsMap)
   }
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {

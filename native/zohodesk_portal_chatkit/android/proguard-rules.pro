@@ -19,4 +19,4 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keep public class com.zoho.desk.asap.gc.zohodesk_portal_gc.ZohodeskPortalGcPlugin {*;}
+-keep public class com.zoho.desk.asap.chatkit.zohodesk_portal_chatkit.ZohodeskPortalChatKitPlugin {*;}

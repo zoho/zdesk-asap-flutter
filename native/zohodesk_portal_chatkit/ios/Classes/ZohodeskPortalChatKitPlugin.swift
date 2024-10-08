@@ -2,10 +2,10 @@ import Flutter
 import UIKit
 import ZohoDeskPortalChatKit
 
-public class ZohodeskPortalGcPlugin: NSObject, FlutterPlugin {
+public class ZohodeskPortalChatKitPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "zohodesk_portal_gc", binaryMessenger: registrar.messenger())
-    let instance = ZohodeskPortalGcPlugin()
+    let channel = FlutterMethodChannel(name: "zohodesk_portal_chatkit", binaryMessenger: registrar.messenger())
+    let instance = ZohodeskPortalChatKitPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 

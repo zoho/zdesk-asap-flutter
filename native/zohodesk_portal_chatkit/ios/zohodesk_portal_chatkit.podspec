@@ -1,13 +1,13 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint zohodesk_portal_gc.podspec` to validate before publishing.
+# Run `pod lib lint zohodesk_portal_chatkit.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'zohodesk_portal_gc'
+  s.name             = 'zohodesk_portal_chatkit'
   s.version          = '2.0.1'
-  s.summary          = 'Zoho Desk Portal LiveChat'
+  s.summary          = 'Zoho Desk Portal Chat Kit'
   
-  s.description      = 'Zoho Desk Portal LiveChat'
+  s.description      = 'Zoho Desk Portal Chat Kit'
   
   s.homepage         = 'https://help.zoho.com/portal/en/kb/desk/for-developers/asap/'
   s.license          = { :file => '../LICENSE' }

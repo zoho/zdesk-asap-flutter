@@ -1,4 +1,4 @@
-name: zohodesk_portal_gc
+name: zohodesk_portal_chatkit
 description: Flutter plugin for ZohoDesk Guided conversation written around native GC SDKs
 version: 2.0.2
 homepage:
@@ -23,7 +23,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.zoho.desk.asap.gc.zohodesk_portal_gc
-        pluginClass: ZohodeskPortalGcPlugin
+        package: com.zoho.desk.asap.chatkit.zohodesk_portal_chatkit
+        pluginClass: ZohodeskPortalChatKitPlugin
       ios:
-        pluginClass: ZohodeskPortalGcPlugin
+        pluginClass: ZohodeskPortalChatKitPlugin

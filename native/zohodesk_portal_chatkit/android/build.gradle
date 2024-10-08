@@ -1,4 +1,4 @@
-group 'com.zoho.desk.asap.gc.zohodesk_portal_gc'
+group 'com.zoho.desk.asap.chatkit.zohodesk_portal_chatkit'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -18,7 +18,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace "com.zoho.desk.asap.gc.zohodesk_portal_gc"
+    namespace "com.zoho.desk.asap.chatkit.zohodesk_portal_chatkit"
     compileSdkVersion 33
 
     compileOptions {
@@ -53,5 +53,5 @@ android {
 }
 
 dependencies {
-    implementation "com.zoho.desk:asap-livechat:4.0_BETA_01"
+    implementation "com.zoho.desk:asap-chatkit:4.0_BETA_02"
 }

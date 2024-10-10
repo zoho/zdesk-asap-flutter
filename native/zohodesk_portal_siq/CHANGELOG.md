@@ -1,6 +1,6 @@
-## Zoho Desk ASAP Chat Plugin Changelog
+## Zoho Desk ASAP SalesIQ Plugin Changelog
 
-ASAP SDK Chat flutter plugin
+ASAP SDK SalesIQ flutter plugin
 
 # 1.0.0
 

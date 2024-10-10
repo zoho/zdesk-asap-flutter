@@ -1,4 +1,4 @@
-group 'com.zoho.desk.asap.chat.zohodesk_portal_chat'
+group 'com.zoho.desk.asap.siq.zohodesk_portal_siq'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -18,7 +18,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace "com.zoho.desk.asap.chat.zohodesk_portal_chat"
+    namespace "com.zoho.desk.asap.siq.zohodesk_portal_siq"
     compileSdkVersion 33
 
     compileOptions {

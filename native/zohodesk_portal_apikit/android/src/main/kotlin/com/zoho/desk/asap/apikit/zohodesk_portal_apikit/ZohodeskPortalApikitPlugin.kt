@@ -78,6 +78,8 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
         3 -> ZohoDeskPortalSDK.DataCenter.EU
         4 -> ZohoDeskPortalSDK.DataCenter.AU
         5 -> ZohoDeskPortalSDK.DataCenter.JP
+        6 -> ZohoDeskPortalSDK.DataCenter.CA
+        7 -> ZohoDeskPortalSDK.DataCenter.SA
         else ->   ZohoDeskPortalSDK.DataCenter.US
       }
       deskPortalSDK.initDesk(orgId.toLong(), appId, dc)

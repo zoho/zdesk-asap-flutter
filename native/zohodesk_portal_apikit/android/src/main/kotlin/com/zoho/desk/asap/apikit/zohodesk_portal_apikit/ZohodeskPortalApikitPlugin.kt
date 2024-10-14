@@ -218,15 +218,9 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
 
   private fun getTicketForm(@NonNull call: MethodCall, @NonNull result: Result){
     try {
-      val paramsMap = call.arguments as? HashMap<String, String>
-      val flags = paramsMap?.get("flags")
-      val params = HashMap<String, String>()
-      paramsMap?.get("departmentId")?.let {
-        params["departmentId"] = it
-      }
-      paramsMap?.get("layoutId")?.let {
-        params["layoutId"] = it
-      }
+      val paramsMap = call.arguments as? HashMap<String, Any>
+      val flags = paramsMap?.get("flags") as? String?
+      val params = paramsMap?.get("params") as? HashMap<String?, String?>
       ZDPortalTicketsAPI.getTicketForm(object: ZDPortalCallback.TicketFormCallback{
 
         override fun onException(exception: ZDPortalException?) {
@@ -248,15 +242,9 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
 
   private fun getTicketFields(@NonNull call: MethodCall, @NonNull result: Result){
     try {
-      val paramsMap = call.arguments as? HashMap<String, String>
-      val flags = paramsMap?.get("flags")
-      val params = HashMap<String, String>()
-      paramsMap?.get("departmentId")?.let {
-        params["departmentId"] = it
-      }
-      paramsMap?.get("layoutId")?.let {
-        params["layoutId"] = it
-      }
+      val paramsMap = call.arguments as? HashMap<String, Any>
+      val flags = paramsMap?.get("flags") as? String?
+      val params = paramsMap?.get("params") as? HashMap<String?, String?>
       ZDPortalTicketsAPI.getTicketFields(object : ZDPortalCallback.TicketFieldsCallback {
         override fun onTicketFieldsDownloaded(ticketFieldsList: TicketFieldsList) {
           ticketFieldsList?.let {

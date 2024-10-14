@@ -133,7 +133,11 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
     }
         
     private func getTicketForm(arguments: [String: Any]?, onCompletion: @escaping FlutterResult) {
-        ZohoDeskPortalKit.Ticket.getForm(arguments, headers: nil) { result in
+        var filteredArguments: [String: Any] = [:]
+        if let departmentId = arguments?["departmentId"] { filteredArguments["departmentId"] = departmentId }
+        if let layoutId = arguments?["layoutId"] { filteredArguments["layoutId"] = layoutId }
+        
+        ZohoDeskPortalKit.Ticket.getForm(filteredArguments, headers: nil) { result in
             switch result {
             case .success(let ticketSections):
                 if let dataString = ticketSections.jsonString, let dataObject = dataString.convertJsonToDataObject() {
@@ -150,7 +154,11 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
     }
     
     private func getTicketFields(arguments: [String: Any]?, onCompletion: @escaping FlutterResult) {
-        ZohoDeskPortalKit.Ticket.getFields(arguments) { result in
+        var filteredArguments: [String: Any] = [:]
+        if let departmentId = arguments?["departmentId"] { filteredArguments["departmentId"] = departmentId }
+        if let layoutId = arguments?["layoutId"] { filteredArguments["layoutId"] = layoutId }
+        
+        ZohoDeskPortalKit.Ticket.getFields(filteredArguments) { result in
             switch result {
             case .success(let fields):
                 if let dataString = fields.jsonString, let dataObject = dataString.convertJsonToDataObject() {

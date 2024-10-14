@@ -50,8 +50,10 @@ public class ZohodeskPortalConfigurationPlugin: NSObject, FlutterPlugin {
             zdpconfigurations.disableSubmitTicket = !portalConfigurations.isSubmitTicketEnabled
             zdpconfigurations.disableAddTopic = !portalConfigurations.isAddTopicEnabled
             zdpconfigurations.disableMyTicket = !portalConfigurations.isMyTicketsEnabled
-            zdpconfigurations.disableLiveChat = !portalConfigurations.isChatBotEnabled
-            zdpconfigurations.disableChat = !portalConfigurations.isLiveChatEnabled
+            zdpconfigurations.disableChat = !portalConfigurations.isSiqEnabled
+            zdpconfigurations.disableGC = !portalConfigurations.isGCEnabled
+            zdpconfigurations.disableAnswerBot = !portalConfigurations.isAnswerBotEnabled
+            zdpconfigurations.disableBM = !portalConfigurations.isBusinessMessagingEnabled
             zdpconfigurations.enableModuleBasedSearch = portalConfigurations.isModuleBasedSearchEnabled
             ZDPortalConfiguration.set(configuration: zdpconfigurations)
             
@@ -80,9 +82,11 @@ private class ZDFPortalConfiguration: Decodable {
   var isSubmitTicketEnabled = true; 
   var isAddTopicEnabled = true; 
   var isMyTicketsEnabled = true; 
-  var isLiveChatEnabled = true; 
-  var isChatBotEnabled = true; 
-  var isAttachmentDownloadEnabled = true; 
+  var isSiqEnabled = true;
+  var isGCEnabled = true;
+  var isAnswerBotEnabled = true;
+  var isBusinessMessagingEnabled = true;
+  var isAttachmentDownloadEnabled = true;
   var isAttachmentUploadEnabled = true; 
   var isModuleBasedSearchEnabled = false; 
   var disableScreenShot = false; 

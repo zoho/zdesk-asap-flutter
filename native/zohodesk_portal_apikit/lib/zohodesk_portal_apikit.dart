@@ -32,8 +32,8 @@ class ZohodeskPortalApikit {
 
   static getLayouts(String departmentId, LayoutsCallback callback) async => await ZohodeskPortalApikitPlatform.instance.getLayouts(departmentId, callback);
 
-  static getTicketForm(String? departmentId, String? layoutId, TicketFormCallback callback, String flags) async => await ZohodeskPortalApikitPlatform.instance.getTicketForm(departmentId, layoutId, callback, flags);
+  static getTicketForm(String? departmentId, String? layoutId, TicketFormCallback callback, String? flags) async => await ZohodeskPortalApikitPlatform.instance.getTicketForm(departmentId, layoutId, callback, flags);
 
-  static getTicketFields(String? departmentId, String? layoutId, TicketFieldsCallback callback, String flags) async => await ZohodeskPortalApikitPlatform.instance.getTicketFields(departmentId, layoutId, callback, flags);
+  static getTicketFields(String? departmentId, String? layoutId, TicketFieldsCallback callback, String? flags) async => await ZohodeskPortalApikitPlatform.instance.getTicketFields(departmentId, layoutId, callback, flags);
 
 }

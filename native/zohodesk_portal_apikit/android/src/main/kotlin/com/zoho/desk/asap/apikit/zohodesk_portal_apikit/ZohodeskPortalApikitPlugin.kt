@@ -219,7 +219,14 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
   private fun getTicketForm(@NonNull call: MethodCall, @NonNull result: Result){
     try {
       val paramsMap = call.arguments as? HashMap<String, String>
-      val flags = paramsMap?.remove("flags")
+      val flags = paramsMap?.get("flags")
+      val params = HashMap<String, String>()
+      paramsMap?.get("departmentId")?.let {
+        params["departmentId"] = it
+      }
+      paramsMap?.get("layoutId")?.let {
+        params["layoutId"] = it
+      }
       ZDPortalTicketsAPI.getTicketForm(object: ZDPortalCallback.TicketFormCallback{
 
         override fun onException(exception: ZDPortalException?) {
@@ -231,7 +238,7 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
             result.success(Gson().toJson(it))
           }
         }
-      }, paramsMap, flags)
+      }, params, flags)
 
     } catch (e:Exception) {
       result.success(ERROR_CODE_GENERAL)
@@ -242,7 +249,14 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
   private fun getTicketFields(@NonNull call: MethodCall, @NonNull result: Result){
     try {
       val paramsMap = call.arguments as? HashMap<String, String>
-      val flags = paramsMap?.remove("flags")
+      val flags = paramsMap?.get("flags")
+      val params = HashMap<String, String>()
+      paramsMap?.get("departmentId")?.let {
+        params["departmentId"] = it
+      }
+      paramsMap?.get("layoutId")?.let {
+        params["layoutId"] = it
+      }
       ZDPortalTicketsAPI.getTicketFields(object : ZDPortalCallback.TicketFieldsCallback {
         override fun onTicketFieldsDownloaded(ticketFieldsList: TicketFieldsList) {
           ticketFieldsList?.let {
@@ -253,7 +267,7 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
         override fun onException(exception: ZDPortalException) {
           result.success(exception?.errorCode)
         }
-      }, paramsMap, flags)
+      }, params, flags)
 
     } catch (e:Exception) {
       result.success(ERROR_CODE_GENERAL)

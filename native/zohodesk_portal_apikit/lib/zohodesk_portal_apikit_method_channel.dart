@@ -84,7 +84,7 @@ class MethodChannelZohodeskPortalApikit extends ZohodeskPortalApikitPlatform {
   }
 
   @override
-  Future<void> getTicketForm(String? departmentId, String? layoutId, TicketFormCallback callback, String flags) async {
+  Future<void> getTicketForm(String? departmentId, String? layoutId, TicketFormCallback callback, String? flags) async {
     dynamic response = await methodChannel.invokeMethod('getTicketForm', {"departmentId": departmentId, "layoutId": layoutId, "flags": flags});
     if(response is int){
       ZDResponseCallback.throwError(response, callback);
@@ -97,7 +97,7 @@ class MethodChannelZohodeskPortalApikit extends ZohodeskPortalApikitPlatform {
   }
 
   @override
-  Future<void> getTicketFields(String? departmentId, String? layoutId, TicketFieldsCallback callback, String flags) async {
+  Future<void> getTicketFields(String? departmentId, String? layoutId, TicketFieldsCallback callback, String? flags) async {
     dynamic response = await methodChannel.invokeMethod('getTicketFields', {"departmentId": departmentId, "layoutId": layoutId, "flags": flags});
     if(response is int){
       ZDResponseCallback.throwError(response, callback);

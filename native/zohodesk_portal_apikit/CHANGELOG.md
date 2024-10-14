@@ -79,3 +79,12 @@ ASAP SDK apikit flutter plugin
 # 2.0.1
 - Added the proguard rules to fix issues with gradle version 8.4
 - Integrated the ASAP new setup iOS SDK 4.0.0-beta.4
+
+# 2.0.2
+- Integrated the ASAP new setup Android SDK 4.0_BETA_02
+- Integrated the ASAP new setup iOS SDK 4.0.0
+- Supported New CA and SA DC in ASAP SDK
+- Provided APIs to fetch ticket forms and fields data in zohodesk_portal_apikit
+- Removed package: zohodesk_portal_services
+- Package: zohodesk_portal_chat renamed to zohodesk_portal_siq
+- Package: zohodesk_portal_gc renamed to zohodesk_portal_chatkit

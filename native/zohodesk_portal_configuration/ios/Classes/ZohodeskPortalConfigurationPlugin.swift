@@ -53,7 +53,7 @@ public class ZohodeskPortalConfigurationPlugin: NSObject, FlutterPlugin {
             zdpconfigurations.disableChat = !portalConfigurations.isSiqEnabled
             zdpconfigurations.disableGC = !portalConfigurations.isGCEnabled
             zdpconfigurations.disableAnswerBot = !portalConfigurations.isAnswerBotEnabled
-            zdpconfigurations.disableBM = !portalConfigurations.isBusinessMessagingEnabled
+            zdpconfigurations.disableBM = !portalConfigurations.isBMEnabled
             zdpconfigurations.enableModuleBasedSearch = portalConfigurations.isModuleBasedSearchEnabled
             ZDPortalConfiguration.set(configuration: zdpconfigurations)
             
@@ -85,7 +85,7 @@ private class ZDFPortalConfiguration: Decodable {
   var isSiqEnabled = true;
   var isGCEnabled = true;
   var isAnswerBotEnabled = true;
-  var isBusinessMessagingEnabled = true;
+  var isBMEnabled = true;
   var isAttachmentDownloadEnabled = true;
   var isAttachmentUploadEnabled = true; 
   var isModuleBasedSearchEnabled = false; 

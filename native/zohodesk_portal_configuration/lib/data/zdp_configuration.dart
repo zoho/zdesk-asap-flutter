@@ -13,7 +13,7 @@ class ZDPConfiguration {
   bool _isSiqEnabled = true;
   bool _isGCEnabled = true;
   bool _isAnswerBotEnabled = true;
-  bool _isBusinessMessagingEnabled = true;
+  bool _isBMEnabled = true;
   bool _isAttachmentDownloadEnabled = true;
   bool _isAttachmentUploadEnabled = true;
   bool _isModuleBasedSearchEnabled = false;
@@ -32,7 +32,7 @@ class ZDPConfiguration {
   set isSiqEnabled(bool isEnabled) => _isSiqEnabled = isEnabled;
   set isGCEnabled(bool isEnabled) => _isGCEnabled = isEnabled;
   set isAnswerBotEnabled(bool isEnabled) => _isAnswerBotEnabled = isEnabled;
-  set isBusinessMessagingEnabled(bool isEnabled) => _isBusinessMessagingEnabled = isEnabled;
+  set isBMEnabled(bool isEnabled) => _isBMEnabled = isEnabled;
   set isAttachmentDownloadEnabled(bool isEnabled) => _isAttachmentDownloadEnabled = isEnabled;
   set isAttachmentUploadEnabled(bool isEnabled) => _isAttachmentUploadEnabled = isEnabled;
   set isModuleBasedSearchEnabled(bool isEnabled) => _isModuleBasedSearchEnabled = isEnabled;
@@ -51,7 +51,7 @@ class ZDPConfiguration {
   bool get isSiqEnabled => _isSiqEnabled;
   bool get isGCEnabled => _isGCEnabled;
   bool get isAnswerBotEnabled => _isAnswerBotEnabled;
-  bool get isBusinessMessagingEnabled => _isBusinessMessagingEnabled;
+  bool get isBMEnabled => _isBMEnabled;
   bool get isAttachmentDownloadEnabled => _isAttachmentDownloadEnabled;
   bool get isAttachmentUploadEnabled => _isAttachmentUploadEnabled;
   bool get isModuleBasedSearchEnabled => _isModuleBasedSearchEnabled;
@@ -71,7 +71,7 @@ class ZDPConfiguration {
     'isSiqEnabled' : isSiqEnabled,
     'isGCEnabled' : isGCEnabled,
     'isAnswerBotEnabled' : isAnswerBotEnabled,
-    'isBusinessMessagingEnabled' : isBusinessMessagingEnabled,
+    'isBMEnabled' : isBMEnabled,
     'isAttachmentDownloadEnabled' : isAttachmentDownloadEnabled,
     'isAttachmentUploadEnabled' : isAttachmentUploadEnabled,
     'isModuleBasedSearchEnabled' : isModuleBasedSearchEnabled,

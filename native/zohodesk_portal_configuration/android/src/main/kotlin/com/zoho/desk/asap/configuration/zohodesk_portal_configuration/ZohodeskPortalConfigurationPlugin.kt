@@ -106,7 +106,7 @@ class ZohodeskPortalConfigurationPlugin: FlutterPlugin, MethodCallHandler {
         .isLiveChatEnabled(zdpConfiguration.isSiqEnabled)
         .isChatBotEnabled(zdpConfiguration.isGCEnabled)
         .isAnswerBotEnabled(zdpConfiguration.isAnswerBotEnabled)
-        .isBusinessMessengerEnabled(zdpConfiguration.isBusinessMessagingEnabled)
+        .isBusinessMessengerEnabled(zdpConfiguration.isBMEnabled)
         .isAttachmentDownloadEnabled(zdpConfiguration.isAttachmentDownloadEnabled)
         .isAttachmentUploadEnabled(zdpConfiguration.isAttachmentUploadEnabled)
         .isInArticleSearchEnabled(zdpConfiguration.isSideMenuEnabled)

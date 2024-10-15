@@ -13,7 +13,7 @@ data class ZDPCommonConfiguration (
     val isSiqEnabled: Boolean,
     val isGCEnabled: Boolean,
     val isAnswerBotEnabled: Boolean,
-    val isBusinessMessagingEnabled: Boolean,
+    val isBMEnabled: Boolean,
     val isAttachmentDownloadEnabled: Boolean,
     val isAttachmentUploadEnabled: Boolean,
     val isModuleBasedSearchEnabled: Boolean,

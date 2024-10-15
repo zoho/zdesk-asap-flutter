@@ -1,5 +1,5 @@
 
-import 'ZDTicketForm.dart';
+import 'ZDTicketForm.dart' show ZDTicketField;
 
 class ZDTicketFieldsList {
 

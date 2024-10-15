@@ -15,7 +15,7 @@ dependencies:
   zohodesk_portal_kb: 2.0.2
   zohodesk_portal_community: 2.0.2
   zohodesk_portal_ticket: 2.0.2
-  zohodesk_portal_gc: 2.0.2
+  zohodesk_portal_chatkit: 2.0.2
 
 
 dev_dependencies:

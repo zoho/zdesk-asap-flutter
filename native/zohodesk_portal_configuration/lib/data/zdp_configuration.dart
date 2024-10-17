@@ -10,8 +10,10 @@ class ZDPConfiguration {
   bool _isSubmitTicketEnabled = true;
   bool _isAddTopicEnabled = true;
   bool _isMyTicketsEnabled = true;
-  bool _isLiveChatEnabled = true;
-  bool _isChatBotEnabled = true;
+  bool _isSiqEnabled = true;
+  bool _isGCEnabled = true;
+  bool _isAnswerBotEnabled = true;
+  bool _isBMEnabled = true;
   bool _isAttachmentDownloadEnabled = true;
   bool _isAttachmentUploadEnabled = true;
   bool _isModuleBasedSearchEnabled = false;
@@ -27,8 +29,10 @@ class ZDPConfiguration {
   set isSubmitTicketEnabled(bool isEnabled) => _isSubmitTicketEnabled = isEnabled;
   set isAddTopicEnabled(bool isEnabled) => _isAddTopicEnabled = isEnabled;
   set isMyTicketsEnabled(bool isEnabled) => _isMyTicketsEnabled = isEnabled;
-  set isLiveChatEnabled(bool isEnabled) => _isLiveChatEnabled = isEnabled;
-  set isChatBotEnabled(bool isEnabled) => _isChatBotEnabled = isEnabled;
+  set isSiqEnabled(bool isEnabled) => _isSiqEnabled = isEnabled;
+  set isGCEnabled(bool isEnabled) => _isGCEnabled = isEnabled;
+  set isAnswerBotEnabled(bool isEnabled) => _isAnswerBotEnabled = isEnabled;
+  set isBMEnabled(bool isEnabled) => _isBMEnabled = isEnabled;
   set isAttachmentDownloadEnabled(bool isEnabled) => _isAttachmentDownloadEnabled = isEnabled;
   set isAttachmentUploadEnabled(bool isEnabled) => _isAttachmentUploadEnabled = isEnabled;
   set isModuleBasedSearchEnabled(bool isEnabled) => _isModuleBasedSearchEnabled = isEnabled;
@@ -44,8 +48,10 @@ class ZDPConfiguration {
   bool get isSubmitTicketEnabled => _isSubmitTicketEnabled;
   bool get isAddTopicEnabled => _isAddTopicEnabled;
   bool get isMyTicketsEnabled => _isMyTicketsEnabled;
-  bool get isLiveChatEnabled => _isLiveChatEnabled;
-  bool get isChatBotEnabled => _isChatBotEnabled;
+  bool get isSiqEnabled => _isSiqEnabled;
+  bool get isGCEnabled => _isGCEnabled;
+  bool get isAnswerBotEnabled => _isAnswerBotEnabled;
+  bool get isBMEnabled => _isBMEnabled;
   bool get isAttachmentDownloadEnabled => _isAttachmentDownloadEnabled;
   bool get isAttachmentUploadEnabled => _isAttachmentUploadEnabled;
   bool get isModuleBasedSearchEnabled => _isModuleBasedSearchEnabled;
@@ -62,8 +68,10 @@ class ZDPConfiguration {
     'isSubmitTicketEnabled' : isSubmitTicketEnabled,
     'isAddTopicEnabled' : isAddTopicEnabled,
     'isMyTicketsEnabled' : isMyTicketsEnabled,
-    'isLiveChatEnabled' : isLiveChatEnabled,
-    'isChatBotEnabled' : isChatBotEnabled,
+    'isSiqEnabled' : isSiqEnabled,
+    'isGCEnabled' : isGCEnabled,
+    'isAnswerBotEnabled' : isAnswerBotEnabled,
+    'isBMEnabled' : isBMEnabled,
     'isAttachmentDownloadEnabled' : isAttachmentDownloadEnabled,
     'isAttachmentUploadEnabled' : isAttachmentUploadEnabled,
     'isModuleBasedSearchEnabled' : isModuleBasedSearchEnabled,

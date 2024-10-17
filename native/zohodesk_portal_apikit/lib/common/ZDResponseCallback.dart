@@ -1,5 +1,8 @@
-import 'package:zohodesk_portal_apikit/common/ZDLayout.dart';
-import 'ZDDepartment.dart';
+import 'package:zohodesk_portal_apikit/model/ZDLayout.dart';
+
+import '../model/ZDDepartment.dart';
+import '../model/ZDTicketFieldsList.dart';
+import '../model/ZDTicketForm.dart';
 
 abstract class ZDResponseCallback{
 
@@ -32,5 +35,17 @@ abstract class DepartmentsCallback extends ZDResponseCallback{
 abstract class LayoutsCallback extends ZDResponseCallback{
 
   onLayoutsFetch(List<ZDLayout> layouts);
+
+}
+
+abstract class TicketFormCallback extends ZDResponseCallback{
+
+  onTicketFormDownloaded(ZDTicketForm ticketForm);
+
+}
+
+abstract class TicketFieldsCallback extends ZDResponseCallback{
+
+  onTicketFieldsDownloaded(ZDTicketFieldsList ticketFields);
 
 }

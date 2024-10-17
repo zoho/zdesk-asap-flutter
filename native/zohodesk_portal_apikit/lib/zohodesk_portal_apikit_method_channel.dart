@@ -1,10 +1,12 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:zohodesk_portal_apikit/common/ZDDepartment.dart';
 import 'package:zohodesk_portal_apikit/common/ZDPortalAPIKitConstants.dart';
-import 'common/ZDLayout.dart';
+import 'package:zohodesk_portal_apikit/model/ZDDepartment.dart';
+import 'package:zohodesk_portal_apikit/model/ZDTicketFieldsList.dart';
 import 'common/ZDResponseCallback.dart';
+import 'model/ZDLayout.dart';
+import 'model/ZDTicketForm.dart';
 import 'zohodesk_portal_apikit_platform_interface.dart';
 
 /// An implementation of [ZohodeskPortalApikitPlatform] that uses method channels.
@@ -80,5 +82,32 @@ class MethodChannelZohodeskPortalApikit extends ZohodeskPortalApikitPlatform {
       callback.onLayoutsFetch(layouts);
     }
   }
+
+  @override
+  Future<void> getTicketForm(TicketFormCallback callback, Map<String, String>? params, String? flags) async {
+    dynamic response = await methodChannel.invokeMethod('getTicketForm', {"params": params, "flags": flags});
+    if(response is int){
+      ZDResponseCallback.throwError(response, callback);
+    }else{
+      Map<String, dynamic> results = json.decode(response) as Map<String, dynamic>;
+
+      ZDTicketForm departmentsList = ZDTicketForm.fromJson(results);
+      callback.onTicketFormDownloaded(departmentsList);
+    }
+  }
+
+  @override
+  Future<void> getTicketFields(TicketFieldsCallback callback, Map<String, String>? params, String? flags) async {
+    dynamic response = await methodChannel.invokeMethod('getTicketFields', {"params": params, "flags": flags});
+    if(response is int){
+      ZDResponseCallback.throwError(response, callback);
+    }else{
+      Map<String, dynamic> results = json.decode(response) as Map<String, dynamic>;
+
+      ZDTicketFieldsList fieldsList = ZDTicketFieldsList.fromJson(results);
+      callback.onTicketFieldsDownloaded(fieldsList);
+    }
+  }
+
 
 }

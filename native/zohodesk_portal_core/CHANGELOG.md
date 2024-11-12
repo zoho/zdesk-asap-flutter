@@ -72,6 +72,9 @@ ASAP SDK Portal Core flutter plugin
 # 1.1.6
 - Flutter version conflict fix
 
+# 1.1.7
+- Integrated the lastest version of iOS ASAP SDK v3.0.16
+
 # 2.0.0
 - Integrated the ASAP new setup iOS SDK 4.0.0-beta.1
 - Integrated the ASAP new setup Android SDK 4.0_BETA_01
@@ -88,3 +91,6 @@ ASAP SDK Portal Core flutter plugin
 - Removed package: zohodesk_portal_services
 - Package: zohodesk_portal_chat renamed to zohodesk_portal_siq
 - Package: zohodesk_portal_gc renamed to zohodesk_portal_chatkit
+
+# 2.0.3
+- Integrated the ASAP iOS SDK v4.0.3

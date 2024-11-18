@@ -94,3 +94,6 @@ ASAP SDK Configuration flutter plugin
 
 # 2.0.3
 - Integrated the ASAP iOS SDK v4.0.3
+
+# 2.0.4
+- Integrated the ASSAP iOS SDK v4.0.4

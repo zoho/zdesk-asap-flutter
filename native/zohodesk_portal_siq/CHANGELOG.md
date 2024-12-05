@@ -97,3 +97,6 @@ ASAP SDK SalesIQ flutter plugin
 
 # 2.0.4
 - Integrated the ASSAP iOS SDK v4.0.4
+
+# 2.0.5
+- Integrated the ASAP Android SDK v4.0.3

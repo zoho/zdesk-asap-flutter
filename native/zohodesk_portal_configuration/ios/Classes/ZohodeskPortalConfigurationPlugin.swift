@@ -22,6 +22,8 @@ public class ZohodeskPortalConfigurationPlugin: NSObject, FlutterPlugin {
           setTheme(arguments: arguments)
       case .setConfiguration:
           handlePortalConfigurations(arguments: arguments)
+      case .setLanguage:
+          setLanguage(arguments: arguments)
       default:
           break
       }
@@ -70,6 +72,12 @@ public class ZohodeskPortalConfigurationPlugin: NSObject, FlutterPlugin {
         case setTheme
         case setConfiguration
     }
+
+    private func setLanguage(arguments: [String: Any]?) {
+        guard let language = arguments?["language"] as? String else { return }
+        ZDPortalConfiguration.setSDKLanguage(language)
+    }
+
 }
 
 private class ZDFPortalConfiguration: Decodable {

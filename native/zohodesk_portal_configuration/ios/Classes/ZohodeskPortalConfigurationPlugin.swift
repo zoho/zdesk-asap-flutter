@@ -71,6 +71,7 @@ public class ZohodeskPortalConfigurationPlugin: NSObject, FlutterPlugin {
     private enum ZDPConfigurationAPIs: String {
         case setTheme
         case setConfiguration
+        case setLanguage
     }
 
     private func setLanguage(arguments: [String: Any]?) {

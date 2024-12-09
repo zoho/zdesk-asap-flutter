@@ -29,4 +29,6 @@ abstract class ZohodeskPortalConfigurationPlatform extends PlatformInterface {
   Future<void> handleNotification(Map<String, dynamic> map);
 
   Future<void> setConfiguration(ZDPConfiguration configuration);
+
+  Future<void> setLanguage(String language);
 }

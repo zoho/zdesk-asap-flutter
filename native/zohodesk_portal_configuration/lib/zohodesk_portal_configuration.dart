@@ -9,4 +9,7 @@ class ZohodeskPortalConfiguration {
   static handleNotification(Map<String, dynamic> map) async => await ZohodeskPortalConfigurationPlatform.instance.handleNotification(map);
 
   static setConfiguration(ZDPConfiguration configuration) async => await ZohodeskPortalConfigurationPlatform.instance.setConfiguration(configuration);
+
+  static setLanguage(String language) async => await ZohodeskPortalConfigurationPlatform.instance.setLanguage(language);
+
 }

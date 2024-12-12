@@ -99,4 +99,4 @@ ASAP SDK Community flutter plugin
 - Integrated the ASAP Android SDK v4.0.3
 
 # 2.0.6
-- Provided a method to set language to the ASAP SDK in zohodesk_portal_configuration
+- Provided a method to set language to the ASAP Flutter SDK

@@ -100,3 +100,6 @@ ASAP SDK Configuration flutter plugin
 
 # 2.0.5
 - Integrated the ASAP Android SDK v4.0.3
+
+# 2.0.6
+- Provided a method to set language to the ASAP Flutter SDK

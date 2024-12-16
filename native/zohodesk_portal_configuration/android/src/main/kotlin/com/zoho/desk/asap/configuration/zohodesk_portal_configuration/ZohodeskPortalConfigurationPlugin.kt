@@ -49,6 +49,7 @@ class ZohodeskPortalConfigurationPlugin: FlutterPlugin, MethodCallHandler {
       "setTheme" -> handleSetTheme(call)
       "handleNotification" -> handleNotif(call, result)
       "setConfiguration" -> setConfiguration(call)
+      "setLanguage" -> setLanguage(call)
       else -> result.notImplemented()
     }
   }
@@ -116,6 +117,12 @@ class ZohodeskPortalConfigurationPlugin: FlutterPlugin, MethodCallHandler {
     )
     ZDPortalConfiguration.disableCutCopy(zdpConfiguration.disableCutCopy)
     ZDPortalConfiguration.disableScreenShot(zdpConfiguration.disableScreenShot)
+  }
+
+  private fun setLanguage(@NonNull call: MethodCall){
+    val paramsMap = call.arguments as? HashMap<*, *>
+    val langCode = paramsMap?.get("language") as? String
+    ZDPortalConfiguration.setLanguage(langCode)
   }
 
 }

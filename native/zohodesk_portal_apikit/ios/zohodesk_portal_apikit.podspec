@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'zohodesk_portal_apikit'
-  s.version          = '2.0.5'
+  s.version          = '2.0.6'
   s.summary          = 'ASAP API Kit for Zoho Desk'
   
   s.description      = 'ASAP API Kit for Zoho Desk'

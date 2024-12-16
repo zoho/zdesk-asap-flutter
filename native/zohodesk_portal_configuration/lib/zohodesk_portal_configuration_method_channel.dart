@@ -19,4 +19,8 @@ class MethodChannelZohodeskPortalConfiguration extends ZohodeskPortalConfigurati
 
   @override
   Future<void> setConfiguration(ZDPConfiguration configuration) async => await methodChannel.invokeMethod('setConfiguration', {'configuration': jsonEncode(configuration)});
+
+  @override
+  Future<void> setLanguage(String language) async => await methodChannel.invokeMethod('setLanguage', {'language': language});
+
 }

@@ -103,3 +103,7 @@ ASAP SDK Portal Chat Kit flutter plugin
 
 # 2.0.6
 - Provided a method to set language to the ASAP Flutter SDK
+
+# 2.0.7
+- Integrated the ASAP Android SDK 4.2.0
+- Provided SalesIQ Configurations in zohodesk_portal_siq module

@@ -52,5 +52,5 @@ android {
     }
 }
 dependencies {
-    implementation "com.zoho.desk:asap-siq:4.0.3"
+    implementation "com.zoho.desk:asap-siq:4.2.0"
 }

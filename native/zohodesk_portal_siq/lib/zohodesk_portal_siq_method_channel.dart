@@ -29,7 +29,7 @@ class MethodChannelZohodeskPortalSiq extends ZohodeskPortalSiqPlatform {
   @override
   Future<void> setSalesIQInitCallback(SalesIQInitCallback callback) async {
     messageStream.listen((event) {
-      if(dynamic is String){
+      if(event is String){
         callback.onException(event);
       }else{
         callback.onInitialized();

@@ -11,26 +11,41 @@ import com.zoho.desk.asap.siq.ZohoDeskPortalSalesIQ
 import com.zoho.desk.asap.siq.Component
 import com.zoho.desk.asap.siq.LauncherMode
 import com.zoho.desk.asap.siq.SalesIQInitCallback
+import com.google.gson.Gson
+import com.zoho.desk.asap.siq.ZDPortalChatUser
+import io.flutter.embedding.engine.FlutterEngine
+import io.flutter.plugin.common.EventChannel
 
 /** ZohodeskPortalSiqPlugin */
-class ZohodeskPortalSiqPlugin: FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware {
+class ZohodeskPortalSiqPlugin: FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware, EventChannel.StreamHandler {
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
   /// when the Flutter Engine is detached from the Activity
   private lateinit var channel : MethodChannel
   protected var activity : Activity? = null
+  private lateinit var eventChannel : EventChannel
+  private var eventSink: EventChannel.EventSink? = null
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
     channel = MethodChannel(flutterPluginBinding.binaryMessenger, "zohodesk_portal_siq")
     channel.setMethodCallHandler(this)
+    eventChannel = EventChannel(flutterPluginBinding.binaryMessenger, "zohodesk_portal_siq_event_channel");
+    eventChannel.setStreamHandler(this)
+  }
+
+  override fun onCancel(p0: Any?) {
+    eventSink = null
+  }
+
+  override fun onListen(p0: Any?, sink: EventChannel.EventSink) {
+    eventSink = sink
   }
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: MethodChannel.Result) {
     when(call.method) {
-      "show" -> activity?.let {
-        ZohoDeskPortalSalesIQ.show(activity)
-      } ?: kotlin.run { result.notImplemented() }
+      "show" -> showSalesIQ(call, result)
+      "setGuestUserDetails" -> setGuestUserDetails(call, result)
       "setSalesIQInitCallback" -> setSalesIQInitCallback(call, result)
       "setChatBrandDetails" -> setChatBrandDetails(call, result)
       "setChatVisibility" -> setChatVisibility(call, result)
@@ -50,6 +65,7 @@ class ZohodeskPortalSiqPlugin: FlutterPlugin, MethodChannel.MethodCallHandler, A
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
     channel.setMethodCallHandler(null)
+    eventSink = null
   }
 
   override fun onAttachedToActivity(binding: ActivityPluginBinding) {
@@ -66,16 +82,29 @@ class ZohodeskPortalSiqPlugin: FlutterPlugin, MethodChannel.MethodCallHandler, A
     activity = null
   }
 
+  private fun showSalesIQ(call: MethodCall, result: MethodChannel.Result) {
+    activity?.let{
+      ZohoDeskPortalSalesIQ.show(activity)
+    }
+  }
+
   private fun setSalesIQInitCallback(call: MethodCall, result: MethodChannel.Result) {
     ZohoDeskPortalSalesIQ.setSalesIQInitCallback(object: SalesIQInitCallback{
       override fun onInitialized() {
-        result.success(true)
+        eventSink?.success(true)
       }
 
       override fun onException(errorCode: Int, errorMessage: String?) {
-        result.success(errorMessage)
+        eventSink?.success(errorMessage)
       }
     })
+  }
+
+  private fun setGuestUserDetails(call: MethodCall, result: MethodChannel.Result) {
+    (call.arguments as? String?)?.let { data ->
+      val userDetails: ZDPortalChatUser = Gson().fromJson(data, ZDPortalChatUser::class.java)
+      ZohoDeskPortalSalesIQ.setGuestUserDetails(userDetails)
+    }
   }
 
   private fun setChatBrandDetails(call: MethodCall, result: MethodChannel.Result) {

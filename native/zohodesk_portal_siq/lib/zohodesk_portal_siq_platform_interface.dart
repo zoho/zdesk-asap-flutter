@@ -3,6 +3,7 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import 'common/ChatComponent.dart';
 import 'common/LauncherMode.dart';
 import 'common/SalesIQInitCallback.dart';
+import 'common/ZDPChatUser.dart';
 import 'zohodesk_portal_siq_method_channel.dart';
 
 abstract class ZohodeskPortalSiqPlatform extends PlatformInterface {
@@ -27,6 +28,8 @@ abstract class ZohodeskPortalSiqPlatform extends PlatformInterface {
   }
 
   Future<void> show();
+
+  Future<void> setGuestUserDetails(ZDPChatUser userDetails);
 
   Future<void> setSalesIQInitCallback(SalesIQInitCallback callback);
 
@@ -53,4 +56,5 @@ abstract class ZohodeskPortalSiqPlatform extends PlatformInterface {
   Future<void> setConversationTitle(String title);
 
   Future<void> setLauncherVisibility(LauncherMode visibility);
+
 }

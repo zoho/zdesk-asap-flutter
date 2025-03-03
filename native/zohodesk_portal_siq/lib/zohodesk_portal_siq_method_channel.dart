@@ -1,9 +1,10 @@
+import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-
 import 'common/ChatComponent.dart';
 import 'common/LauncherMode.dart';
 import 'common/SalesIQInitCallback.dart';
+import 'common/ZDPChatUser.dart';
 import 'zohodesk_portal_siq_platform_interface.dart';
 
 /// An implementation of [ZohodeskPortalSiqPlatform] that uses method channels.
@@ -11,21 +12,31 @@ class MethodChannelZohodeskPortalSiq extends ZohodeskPortalSiqPlatform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
   final methodChannel = const MethodChannel('zohodesk_portal_siq');
+  final eventChannel = EventChannel('zohodesk_portal_siq_event_channel');
+
+  Stream<dynamic> get messageStream async* {
+    await for (dynamic message in eventChannel.receiveBroadcastStream().map((message) => message)){
+      yield message;
+    }
+  }
 
   ///ASAP Chat show channel method
   @override
   Future<void> show() async => await methodChannel.invokeMethod('show');
 
   @override
+  Future<void> setGuestUserDetails(ZDPChatUser userDetails) async => await methodChannel.invokeMethod('setGuestUserDetails', jsonEncode(userDetails));
+
+  @override
   Future<void> setSalesIQInitCallback(SalesIQInitCallback callback) async {
-    dynamic response = await methodChannel.invokeMethod('setSalesIQInitCallback');
-    if(response is String){
-      callback.onException(response);
-    }else{
-      callback.onInitialized();
-
-    }
-
+    messageStream.listen((event) {
+      if(dynamic is String){
+        callback.onException(event);
+      }else{
+        callback.onInitialized();
+      }
+    });
+    await methodChannel.invokeMethod('setSalesIQInitCallback');
   }
 
   @override

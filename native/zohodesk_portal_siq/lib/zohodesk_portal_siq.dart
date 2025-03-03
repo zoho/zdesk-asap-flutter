@@ -2,6 +2,7 @@
 import 'common/ChatComponent.dart';
 import 'common/LauncherMode.dart';
 import 'common/SalesIQInitCallback.dart';
+import 'common/ZDPChatUser.dart';
 import 'zohodesk_portal_siq_platform_interface.dart';
 
 ///ASAP Agent Chat
@@ -9,6 +10,8 @@ class ZohodeskPortalSiq {
 
   ///To show Agent Chat screen
   static Future<void> show() => ZohodeskPortalSiqPlatform.instance.show();
+
+  static Future<void> setGuestUserDetails(ZDPChatUser userDetails) => ZohodeskPortalSiqPlatform.instance.setGuestUserDetails( userDetails);
 
   static Future<void> setSalesIQInitCallback(SalesIQInitCallback callback) => ZohodeskPortalSiqPlatform.instance.setSalesIQInitCallback( callback);
 

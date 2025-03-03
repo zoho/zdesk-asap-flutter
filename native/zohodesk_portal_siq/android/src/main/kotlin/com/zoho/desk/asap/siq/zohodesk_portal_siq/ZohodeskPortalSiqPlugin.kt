@@ -101,10 +101,15 @@ class ZohodeskPortalSiqPlugin: FlutterPlugin, MethodChannel.MethodCallHandler, A
   }
 
   private fun setGuestUserDetails(call: MethodCall, result: MethodChannel.Result) {
-    (call.arguments as? String?)?.let { data ->
-      val userDetails: ZDPortalChatUser = Gson().fromJson(data, ZDPortalChatUser::class.java)
-      ZohoDeskPortalSalesIQ.setGuestUserDetails(userDetails)
-    }
+    val paramsMap = call.arguments as? HashMap<String, Any>
+    val name = paramsMap?.get("name") as? String?
+    val email = paramsMap?.get("email") as? String?
+    val phone = paramsMap?.get("phone") as? String?
+    val userDetails = ZDPortalChatUser()
+    userDetails.name = name
+    userDetails.phone = phone
+    userDetails.email = email
+    ZohoDeskPortalSalesIQ.setGuestUserDetails(userDetails)
   }
 
   private fun setChatBrandDetails(call: MethodCall, result: MethodChannel.Result) {

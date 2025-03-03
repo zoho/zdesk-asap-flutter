@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'common/ChatComponent.dart';
 import 'common/LauncherMode.dart';
 import 'common/SalesIQInitCallback.dart';
-import 'common/ZDPChatUser.dart';
 import 'zohodesk_portal_siq_platform_interface.dart';
 
 /// An implementation of [ZohodeskPortalSiqPlatform] that uses method channels.
@@ -25,7 +24,7 @@ class MethodChannelZohodeskPortalSiq extends ZohodeskPortalSiqPlatform {
   Future<void> show() async => await methodChannel.invokeMethod('show');
 
   @override
-  Future<void> setGuestUserDetails(ZDPChatUser userDetails) async => await methodChannel.invokeMethod('setGuestUserDetails', jsonEncode(userDetails));
+  Future<void> setGuestUserDetails(String name, String email, String phone) async => await methodChannel.invokeMethod('setGuestUserDetails', {'name': name, 'email': email, 'phone': phone});
 
   @override
   Future<void> setSalesIQInitCallback(SalesIQInitCallback callback) async {

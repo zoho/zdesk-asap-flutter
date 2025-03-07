@@ -38,8 +38,6 @@ abstract class ZohodeskPortalSiqPlatform extends PlatformInterface {
 
   Future<void> showOfflineMessage(bool isShow);
 
-  Future<void> allowChatInOfflineMode(bool isAllow);
-
   Future<void> hideQueueTime(bool isHide);
 
   Future<void> showFeedbackAfterSkip(bool isShow);

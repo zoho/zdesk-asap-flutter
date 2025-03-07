@@ -20,8 +20,6 @@ class ZohodeskPortalSiq {
 
   static Future<void> showOfflineMessage(bool isShow) => ZohodeskPortalSiqPlatform.instance.showOfflineMessage( isShow);
 
-  static Future<void> allowChatInOfflineMode(bool isAllow) => ZohodeskPortalSiqPlatform.instance.allowChatInOfflineMode( isAllow);
-
   static Future<void> hideQueueTime(bool isHide) => ZohodeskPortalSiqPlatform.instance.hideQueueTime( isHide);
 
   static Future<void> showFeedbackAfterSkip(bool isShow) => ZohodeskPortalSiqPlatform.instance.showFeedbackAfterSkip( isShow);

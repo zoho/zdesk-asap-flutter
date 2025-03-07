@@ -48,9 +48,6 @@ class MethodChannelZohodeskPortalSiq extends ZohodeskPortalSiqPlatform {
   Future<void> showOfflineMessage(bool isShow) async => await methodChannel.invokeMethod('showOfflineMessage', isShow);
 
   @override
-  Future<void> allowChatInOfflineMode(bool isAllow) async => await methodChannel.invokeMethod('allowChatInOfflineMode', isAllow);
-
-  @override
   Future<void> hideQueueTime(bool isHide) async => await methodChannel.invokeMethod('hideQueueTime', isHide);
 
   @override

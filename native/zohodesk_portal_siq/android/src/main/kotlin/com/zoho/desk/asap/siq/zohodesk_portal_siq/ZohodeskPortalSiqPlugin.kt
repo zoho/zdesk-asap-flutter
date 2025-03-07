@@ -50,7 +50,6 @@ class ZohodeskPortalSiqPlugin: FlutterPlugin, MethodChannel.MethodCallHandler, A
       "setChatBrandDetails" -> setChatBrandDetails(call, result)
       "setChatVisibility" -> setChatVisibility(call, result)
       "showOfflineMessage" -> showOfflineMessage(call, result)
-      "allowChatInOfflineMode" -> allowChatInOfflineMode(call, result)
       "hideQueueTime" -> hideQueueTime(call, result)
       "showFeedbackAfterSkip" -> showFeedbackAfterSkip(call, result)
       "enableDragToDismiss" -> enableDragToDismiss(call, result)
@@ -132,12 +131,6 @@ class ZohodeskPortalSiqPlugin: FlutterPlugin, MethodChannel.MethodCallHandler, A
   private fun showOfflineMessage(call: MethodCall, result: MethodChannel.Result) {
     (call.arguments as? Boolean?)?.let { isShow ->
       ZohoDeskPortalSalesIQ.showOfflineMessage(isShow)
-    }
-  }
-
-  private fun allowChatInOfflineMode(call: MethodCall, result: MethodChannel.Result) {
-    (call.arguments as? Boolean?)?.let { isAllow ->
-      ZohoDeskPortalSalesIQ.allowChatInOfflineMode(isAllow)
     }
   }
 

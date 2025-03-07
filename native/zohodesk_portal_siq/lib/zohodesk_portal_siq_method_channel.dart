@@ -24,7 +24,7 @@ class MethodChannelZohodeskPortalSiq extends ZohodeskPortalSiqPlatform {
   Future<void> show() async => await methodChannel.invokeMethod('show');
 
   @override
-  Future<void> setGuestUserDetails(String name, String email, String phone) async => await methodChannel.invokeMethod('setGuestUserDetails', {'name': name, 'email': email, 'phone': phone});
+  Future<void> setGuestUserDetails(String? name, String? email, String? phone) async => await methodChannel.invokeMethod('setGuestUserDetails', {'name': name, 'email': email, 'phone': phone});
 
   @override
   Future<void> setSalesIQInitCallback(SalesIQInitCallback callback) async {

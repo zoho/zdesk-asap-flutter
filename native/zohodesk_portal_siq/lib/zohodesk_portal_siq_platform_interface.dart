@@ -28,7 +28,7 @@ abstract class ZohodeskPortalSiqPlatform extends PlatformInterface {
 
   Future<void> show();
 
-  Future<void> setGuestUserDetails(String name, String email, String phone);
+  Future<void> setGuestUserDetails(String? name, String? email, String? phone);
 
   Future<void> setSalesIQInitCallback(SalesIQInitCallback callback);
 

@@ -10,7 +10,7 @@ class ZohodeskPortalSiq {
   ///To show Agent Chat screen
   static Future<void> show() => ZohodeskPortalSiqPlatform.instance.show();
 
-  static Future<void> setGuestUserDetails(String name, String email, String phone) => ZohodeskPortalSiqPlatform.instance.setGuestUserDetails(name, email, phone);
+  static Future<void> setGuestUserDetails(String? name, String? email, String? phone) => ZohodeskPortalSiqPlatform.instance.setGuestUserDetails(name, email, phone);
 
   static Future<void> setSalesIQInitCallback(SalesIQInitCallback callback) => ZohodeskPortalSiqPlatform.instance.setSalesIQInitCallback( callback);
 

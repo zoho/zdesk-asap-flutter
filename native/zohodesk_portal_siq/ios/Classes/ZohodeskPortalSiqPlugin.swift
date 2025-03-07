@@ -9,8 +9,9 @@ public class ZohodeskPortalSiqPlugin: NSObject, FlutterPlugin {
     
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "zohodesk_portal_siq", binaryMessenger: registrar.messenger())
-      let eventChannel = FlutterEventChannel(name: "zohodesk_portal_siq_event", binaryMessenger: registrar.messenger())
+      let eventChannel = FlutterEventChannel(name: "zohodesk_portal_siq_event_channel", binaryMessenger: registrar.messenger())
     let instance = ZohodeskPortalSiqPlugin()
+      eventChannel.setStreamHandler(instance)
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 
@@ -18,6 +19,9 @@ public class ZohodeskPortalSiqPlugin: NSObject, FlutterPlugin {
         switch ZDPChatAPIs(rawValue: call.method) {
         case .show:
             ZDPortalSalesIQ.show()
+            
+        case .setSalesIQInitCallback:
+            setSalesIQInitCallback()
             
         case .showOfflineMessage:
             guard let isShow = call.arguments as? Bool else { return }
@@ -77,16 +81,14 @@ public class ZohodeskPortalSiqPlugin: NSObject, FlutterPlugin {
             eventSink?(true)
         } onError: { [weak self] in
             guard let self else { return }
-            eventSink?(false)
+            eventSink?("Initialization Failed")
         }
     }
     
     private func setGuestUserDetails(_ arguments: [String: Any]) {
-        
-        guard let emailID = arguments["email"] as? String,
-                let displayName = arguments["name"] as? String,
-                let phoneNumer = arguments["phone"] as? String
-        else { return }
+        let emailID = arguments["email"] as? String ?? ""
+        let displayName = arguments["name"] as? String
+        let phoneNumer = arguments["phone"] as? String
         
         ZDPortalSalesIQ.setGuestUser(email: emailID, displayName: displayName, phoneNumber: phoneNumer)
     }
@@ -102,8 +104,43 @@ public class ZohodeskPortalSiqPlugin: NSObject, FlutterPlugin {
     
     private func setChatVisibility(_ arguments: [String: Any]) {
         
-        guard let componentValue = arguments["component"] as? Int,
-              let component = ZDPSalesIQComponents.ChatComponent(rawValue: componentValue),
+        guard let componentValue = arguments["component"] as? String,
+              let component = {
+                  switch componentValue {
+                  case "OPERATOR_IMAGE":
+                      return ZDPSalesIQComponents.ChatComponent.attenderImageInChat
+                  case "RATING":
+                      return .rating
+                  case "FEEDBACK":
+                      return .feedback
+                  case "SCREENSHOT":
+                      return .screenshotOption
+                  case "PRECHAT_FORM":
+                      return .preChatForm
+                  case "VISITOR_NAME":
+                      return .visitorName
+                  case "EMAIL_TRANSCRIPT":
+                      return .emailTranscript
+                  case "FILE_SHARE":
+                      return .fileSharing
+                  case "MEDIA_CAPTURE":
+                      return .mediaCapture
+                  case "END":
+                      return .end
+                  case "END_WHEN_BOT_CONNECTED":
+                      return .endWhenBotConnected
+                  case "END_WHEN_OPERATOR_CONNECTED":
+                      return .endWhenOperatorConnected
+                  case "END_WHEN_IN_QUEUE":
+                      return .endWhenInQueue
+                  case "REOPEN":
+                      return .reopen
+                  case "QUEUE_POSITION":
+                      return .queuePosition
+                  default:
+                      return nil
+                  }
+              }(),
                 let visibility = arguments["visibility"] as? Bool
         else { return }
         

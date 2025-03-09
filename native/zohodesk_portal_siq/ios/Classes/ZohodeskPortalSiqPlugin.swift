@@ -33,6 +33,7 @@ public class ZohodeskPortalSiqPlugin: NSObject, FlutterPlugin {
             
         case .setChatBrandDetails:
             guard let arguments = call.arguments as? [String: Any] else { return }
+            setChatBrandDetails(arguments)
             
         case .setChatVisibility:
             guard let arguments = call.arguments as? [String: Any] else { return }

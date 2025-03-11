@@ -110,8 +110,6 @@ class ZohodeskPortalConfigurationPlugin: FlutterPlugin, MethodCallHandler {
         .isBusinessMessengerEnabled(zdpConfiguration.isBMEnabled)
         .isAttachmentDownloadEnabled(zdpConfiguration.isAttachmentDownloadEnabled)
         .isAttachmentUploadEnabled(zdpConfiguration.isAttachmentUploadEnabled)
-        .isInArticleSearchEnabled(zdpConfiguration.isSideMenuEnabled)
-        .isTextToSpeechEnabled(zdpConfiguration.isSideMenuEnabled)
         .isModuleBasedSearchEnabled(zdpConfiguration.isModuleBasedSearchEnabled)
         .build()
     )

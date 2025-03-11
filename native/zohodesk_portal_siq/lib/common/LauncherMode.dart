@@ -1,0 +1,6 @@
+
+enum LauncherMode {
+  ALWAYS_VISIBLE,
+  NEVER_VISIBLE,
+  VISIBLE_WHEN_ACTIVE_CHAT
+}

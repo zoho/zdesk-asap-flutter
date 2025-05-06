@@ -1,6 +1,7 @@
 package com.zoho.desk.asap.siq.zohodesk_portal_siq
 
 import android.app.Activity
+import android.content.Context
 import androidx.annotation.NonNull
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
@@ -26,10 +27,12 @@ class ZohodeskPortalSiqPlugin: FlutterPlugin, MethodChannel.MethodCallHandler, A
   protected var activity : Activity? = null
   private lateinit var eventChannel : EventChannel
   private var eventSink: EventChannel.EventSink? = null
+  private var context: Context? = null
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
     channel = MethodChannel(flutterPluginBinding.binaryMessenger, "zohodesk_portal_siq")
     channel.setMethodCallHandler(this)
+    context = flutterPluginBinding.applicationContext
     eventChannel = EventChannel(flutterPluginBinding.binaryMessenger, "zohodesk_portal_siq_event_channel");
     eventChannel.setStreamHandler(this)
   }
@@ -58,6 +61,8 @@ class ZohodeskPortalSiqPlugin: FlutterPlugin, MethodChannel.MethodCallHandler, A
       "setConversationVisibility" -> setConversationVisibility(call, result)
       "setConversationTitle" -> setConversationTitle(call, result)
       "setLauncherVisibility" -> setLauncherVisibility(call, result)
+      "syncThemeWithOSForAndroid" -> syncThemeWithOSForAndroid(call, result)
+      "setThemeForAndroid" -> setThemeForAndroid(call, result)
       else -> result.notImplemented()
     }
   }
@@ -65,6 +70,7 @@ class ZohodeskPortalSiqPlugin: FlutterPlugin, MethodChannel.MethodCallHandler, A
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
     channel.setMethodCallHandler(null)
     eventSink = null
+    context = null
   }
 
   override fun onAttachedToActivity(binding: ActivityPluginBinding) {
@@ -180,6 +186,24 @@ class ZohodeskPortalSiqPlugin: FlutterPlugin, MethodChannel.MethodCallHandler, A
   private fun setLauncherVisibility(call: MethodCall, result: MethodChannel.Result) {
     (call.arguments as? String?)?.let { visibility ->
       ZohoDeskPortalSalesIQ.setLauncherVisibility(LauncherMode.valueOf(visibility))
+    }
+  }
+
+  private fun syncThemeWithOSForAndroid(call: MethodCall, result: MethodChannel.Result) {
+    (call.arguments as? Boolean?)?.let { isEnable ->
+      ZohoDeskPortalSalesIQ.syncThemeWithOS(isEnable)
+    }
+  }
+
+  private fun setThemeForAndroid(call: MethodCall, result: MethodChannel.Result) {
+    (call.arguments as? String?)?.let { theme ->
+      context?.let{ flutterContext ->
+        val themeResId = flutterContext.resources.getIdentifier(theme, "style", flutterContext.packageName)
+        if (themeResId != 0) {
+            ZohoDeskPortalSalesIQ.setTheme(themeResId);
+        }
+      }
+      
     }
   }
 }

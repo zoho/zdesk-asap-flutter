@@ -54,4 +54,8 @@ abstract class ZohodeskPortalSiqPlatform extends PlatformInterface {
 
   Future<void> setLauncherVisibility(LauncherMode visibility);
 
+  Future<void> syncThemeWithOSForAndroid(bool isSync);
+
+  Future<void> setThemeForAndroid(String theme);
+
 }

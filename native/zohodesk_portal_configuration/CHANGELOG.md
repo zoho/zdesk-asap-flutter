@@ -111,5 +111,5 @@ ASAP SDK Configuration flutter plugin
 
 # 2.2.0
 - Integrated the ASAP Android SDK 4.4.1
-- Integrated the ASAP iOS SDK v4.0.8
+- Integrated the ASAP iOS SDK v4.1.2
 - Provided SalesIQ Theme Configurations for Android in zohodesk_portal_siq module

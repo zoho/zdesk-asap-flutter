@@ -36,4 +36,8 @@ class ZohodeskPortalSiq {
 
   static Future<void> setLauncherVisibility(LauncherMode visibility) => ZohodeskPortalSiqPlatform.instance.setLauncherVisibility( visibility);
 
+  static Future<void> syncThemeWithOSForAndroid(bool isSync) => ZohodeskPortalSiqPlatform.instance.syncThemeWithOSForAndroid(isSync);
+
+  static Future<void> setThemeForAndroid(String theme) => ZohodeskPortalSiqPlatform.instance.setThemeForAndroid(theme);
+
 }

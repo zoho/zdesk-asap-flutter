@@ -1,6 +1,6 @@
 name: zohodesk_portal_chatkit
 description: Flutter plugin for ZohoDesk Guided conversation written around native GC SDKs
-version: 2.1.0
+version: 2.2.0
 homepage:
 
 environment:
@@ -12,7 +12,7 @@ dependencies:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
   
-  zohodesk_portal_apikit: 2.1.0
+  zohodesk_portal_apikit: 2.2.0
 
 dev_dependencies:
   flutter_test:

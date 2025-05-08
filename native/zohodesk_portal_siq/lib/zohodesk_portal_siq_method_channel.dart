@@ -71,4 +71,10 @@ class MethodChannelZohodeskPortalSiq extends ZohodeskPortalSiqPlatform {
   @override
   Future<void> setLauncherVisibility(LauncherMode visibility) async => await methodChannel.invokeMethod('setLauncherVisibility', visibility.name);
 
+  @override
+  Future<void> syncThemeWithOSForAndroid(bool isSync) async => await methodChannel.invokeMethod('syncThemeWithOSForAndroid', isSync);
+
+  @override
+  Future<void> setThemeForAndroid(String theme) async => await methodChannel.invokeMethod('setThemeForAndroid', theme);
+
 }

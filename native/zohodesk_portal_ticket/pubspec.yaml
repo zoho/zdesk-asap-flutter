@@ -1,6 +1,6 @@
 name: zohodesk_portal_ticket
 description: ASAP Flutter plugin for ASAP Tickets for mobile app configurations.
-version: 2.2.0
+version: 2.2.1
 homepage:
 
 environment:
@@ -11,8 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  zohodesk_portal_apikit: 2.2.0
-  zohodesk_portal_submit_ticket: 2.2.0
+  zohodesk_portal_apikit: 2.2.1
+  zohodesk_portal_submit_ticket: 2.2.1
 
 dev_dependencies:
   flutter_test:

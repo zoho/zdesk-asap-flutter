@@ -1,6 +1,6 @@
 name: zohodesk_portal_siq
 description: Zohodesk agent chat flutter plugin.
-version: 2.2.1
+version: 2.2.2
 homepage:
 
 environment:
@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  zohodesk_portal_apikit: 2.2.1
+  zohodesk_portal_apikit: 2.2.2
 
 dev_dependencies:
   flutter_test:

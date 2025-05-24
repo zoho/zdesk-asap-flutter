@@ -2,13 +2,11 @@ package com.zoho.desk.asap.core.zohodesk_portal_core
 
 import android.app.Activity
 import androidx.annotation.NonNull
-import io.flutter.app.FlutterPluginRegistry
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
-import io.flutter.plugin.common.PluginRegistry
 import com.zoho.desk.asap.ZDPortalHome
 
 /** ZohodeskPortalCorePlugin */

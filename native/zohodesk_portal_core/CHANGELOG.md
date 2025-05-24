@@ -116,3 +116,6 @@ ASAP SDK Portal Core flutter plugin
 
 # 2.2.1
 - Integrated the ASAP iOS SDK v4.2.0
+
+# 2.2.2
+- Removed the deprecated methods from Android v1 embedding

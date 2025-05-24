@@ -2,13 +2,11 @@ package com.zoho.desk.asap.apikit.zohodesk_portal_apikit
 
 import android.app.Activity
 import androidx.annotation.NonNull
-import io.flutter.app.FlutterPluginRegistry
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
-import io.flutter.plugin.common.PluginRegistry
 
 abstract class ZDPBaseActivityAwarePlugin(val nameOfPlugin: String): FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware {
     /// The MethodChannel that will the communication between Flutter and native Android

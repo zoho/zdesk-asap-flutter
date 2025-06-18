@@ -58,6 +58,7 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
       "getLayouts" -> getLayouts(call, result)
       "getTicketForm" -> getTicketForm(call, result)
       "getTicketFields" -> getTicketFields(call, result)
+      "presentSignUpScreen" -> handlePresentSignUpScreen(call, result)
       else -> result.notImplemented()
     }
   }
@@ -151,6 +152,27 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
       val loginViewColor = paramsMap?.get("colorString") as? String ?: "#1A7063"
 
       deskPortalSDK.presentLoginScreen(android.graphics.Color.parseColor(loginViewColor), object : SetUserCallback{
+        override fun onException(p0: ZDPortalException?) {
+          result.success(false)
+        }
+        override fun onUserSetSuccess() {
+          result.success(true)
+        }
+      })
+    } catch (e:Exception) {
+      result.success(false)
+    }
+
+  }
+
+  private fun handlePresentSignUpScreen(call: MethodCall, result: Result) {
+    try {
+      val paramsMap = call.arguments as? HashMap<*, *>
+      val signUpViewColor = paramsMap?.get("colorString") as? String ?: "#1A7063"
+      val signUpUrl = paramsMap?.get("url") as? String?
+      val signUpLocale = paramsMap?.get("locale") as? String?
+
+      deskPortalSDK.presentSignUpScreen(android.graphics.Color.parseColor(signUpViewColor), signUpUrl, signUpLocale, object : SetUserCallback{
         override fun onException(p0: ZDPortalException?) {
           result.success(false)
         }

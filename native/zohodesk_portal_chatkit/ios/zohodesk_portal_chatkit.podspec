@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'zohodesk_portal_chatkit'
-  s.version          = '2.3.0'
+  s.version          = '2.2.3'
   s.summary          = 'Zoho Desk Portal Chat Kit'
   
   s.description      = 'Zoho Desk Portal Chat Kit'

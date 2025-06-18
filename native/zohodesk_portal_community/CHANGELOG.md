@@ -116,3 +116,7 @@ ASAP SDK Community flutter plugin
 
 # 2.2.2
 - Removed the deprecated methods from Android v1 embedding
+
+# 2.3.0
+- Integrated the ASAP Android SDK 4.5.0
+- Provided the presentSignUpScreen method in zohodesk_portal_apikit

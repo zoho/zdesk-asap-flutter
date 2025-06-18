@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'zohodesk_portal_core'
-  s.version          = '2.2.2'
+  s.version          = '2.3.0'
   s.summary          = 'Zoho Desk Portal Core'
   
   s.description      = 'Zoho Desk Portal Core'

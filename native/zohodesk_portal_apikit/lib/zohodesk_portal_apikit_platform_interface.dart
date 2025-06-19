@@ -35,6 +35,7 @@ abstract class ZohodeskPortalApikitPlatform extends PlatformInterface {
   Future<void> disablePush(String fcmToken);
   Future<void> initializeAccountsKeys(String clientId, String clientSecretId, String portalId, String redirURI);
   Future<bool> presentLoginScreen(String colorString);
+  Future<bool> presentSignUpScreen(String colorString, String? locale);
   Future<bool> isUserSignedIn();
   Future<void> getDepartments(DepartmentsCallback callback);
   Future<void> getLayouts(String departmentId, LayoutsCallback callback);

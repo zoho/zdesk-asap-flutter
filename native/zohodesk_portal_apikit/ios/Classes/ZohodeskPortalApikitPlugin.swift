@@ -46,6 +46,10 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
       case .initAccountsKeys:
           initAccountsKeys(arguments: arguments)
           
+          ///To Present the IAM sign-up screen
+      case .presentSignUpScreen:
+          presentSignUpScreen(arguments: arguments, onCompletion: result)
+          
           ///To present the IAM login screen
       case .presentLoginScreen:
           presentLoginScreen(onCompletion: result)
@@ -94,6 +98,11 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
               let urlScheme = arguments?["redirURI"] as? String else { return }
         
         ZohoDeskPortalKit.setAuthDetails(clientID: clientID, clientSecret: clientSecret, portalID: portalID, urlScheme: urlScheme)
+    }
+    
+    private func presentSignUpScreen(arguments: [String: Any]?, onCompletion handler: @escaping FlutterResult) {
+        guard let locale = arguments?["locale"] as? String else { return }
+        ZohoDeskPortalKit.signUp(inLanguage: locale, onCompletion: handler)
     }
     
     private func presentLoginScreen(onCompletion handler: @escaping FlutterResult) {
@@ -178,7 +187,7 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
         case enableLogs
         case disablePush
         case initAccountsKeys = "initializeAccountsKeys"
-        case presentLoginScreen
+        case presentSignUpScreen, presentLoginScreen
         case getDepartments
         case getLayouts
         case getTicketForm

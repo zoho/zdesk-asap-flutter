@@ -169,10 +169,9 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
     try {
       val paramsMap = call.arguments as? HashMap<*, *>
       val signUpViewColor = paramsMap?.get("colorString") as? String ?: "#1A7063"
-      val signUpUrl = paramsMap?.get("url") as? String?
       val signUpLocale = paramsMap?.get("locale") as? String?
 
-      deskPortalSDK.presentSignUpScreen(android.graphics.Color.parseColor(signUpViewColor), signUpUrl, signUpLocale, object : SetUserCallback{
+      deskPortalSDK.presentSignUpScreen(android.graphics.Color.parseColor(signUpViewColor), "", signUpLocale, object : SetUserCallback{
         override fun onException(p0: ZDPortalException?) {
           result.success(false)
         }

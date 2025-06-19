@@ -26,7 +26,7 @@ class ZohodeskPortalApikit {
 
   static Future<void> presentLoginScreen(String colorString, Function(bool isSuccess) handler) async => handler(await ZohodeskPortalApikitPlatform.instance.presentLoginScreen(colorString));
 
-  static Future<void> presentSignUpScreen(String colorString, String? url, String? locale, Function(bool isSuccess) handler) async => handler(await ZohodeskPortalApikitPlatform.instance.presentSignUpScreen(colorString, url, locale));
+  static Future<void> presentSignUpScreen(String colorString, String? locale, Function(bool isSuccess) handler, [String? url]) async => handler(await ZohodeskPortalApikitPlatform.instance.presentSignUpScreen(colorString, url, locale));
 
   static Future<bool> get isUserSignedIn async => await ZohodeskPortalApikitPlatform.instance.isUserSignedIn();
 

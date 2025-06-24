@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'zohodesk_portal_submit_ticket'
-  s.version          = '2.2.3'
+  s.version          = '2.2.4'
   s.summary          = 'Zoho Desk Portal Submit Ticket'
 
   s.description      = 'Zoho Desk Portal Submit Ticket'

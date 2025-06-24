@@ -1,6 +1,6 @@
 name: zohodesk_portal_kb
 description: Flutter plugin for Zoho Desk ASAP KB module
-version: 2.2.3
+version: 2.2.4
 homepage:
 
 environment:
@@ -12,8 +12,8 @@ dependencies:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
 
-  zohodesk_portal_apikit: 2.2.3
-  zohodesk_portal_configuration: 2.2.3
+  zohodesk_portal_apikit: 2.2.4
+  zohodesk_portal_configuration: 2.2.4
 
 dev_dependencies:
   flutter_test:

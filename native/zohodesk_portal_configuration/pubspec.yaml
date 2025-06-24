@@ -1,6 +1,6 @@
 name: zohodesk_portal_configuration
 description: ASAP Flutter plugin for Configuration for mobile app configurations.
-version: 2.2.3
+version: 2.2.4
 homepage:
 
 environment:
@@ -12,7 +12,7 @@ dependencies:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
   
-  zohodesk_portal_apikit: 2.2.3
+  zohodesk_portal_apikit: 2.2.4
 
 dev_dependencies:
   flutter_test:

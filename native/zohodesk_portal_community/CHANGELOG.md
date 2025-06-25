@@ -120,3 +120,6 @@ ASAP SDK Community flutter plugin
 # 2.2.3
 - Integrated the ASAP Android SDK 4.5.0
 - Provided the presentSignUpScreen method in zohodesk_portal_apikit
+
+# 2.2.4
+- Added the proguard rules to fix issues with latest gradle versions

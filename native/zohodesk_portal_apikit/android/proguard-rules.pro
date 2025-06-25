@@ -22,3 +22,4 @@
 -dontwarn kotlinx.parcelize.Parcelize
 -keep public class com.zoho.desk.asap.apikit.zohodesk_portal_apikit.ZohodeskPortalApikitPlugin {*;}
 -keep public class com.zoho.desk.asap.apikit.zohodesk_portal_apikit.ZDPBaseActivityAwarePlugin {*;}
+-keep class com.zoho.desk.asap.apikit.zohodesk_portal_apikit.ZohodeskPortalApikitPlugin$**$1 {*;}

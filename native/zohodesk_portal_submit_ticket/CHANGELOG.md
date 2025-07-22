@@ -126,3 +126,6 @@ ASAP SDK Portal Submit Ticket flutter plugin
 
 # 2.2.4
 - Added the proguard rules to fix issues with latest gradle versions
+
+# 2.3.0
+- Integrated the ASAP iOS SDK v4.3.0

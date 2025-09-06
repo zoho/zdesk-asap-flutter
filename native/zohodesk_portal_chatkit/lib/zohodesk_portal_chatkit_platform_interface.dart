@@ -31,4 +31,8 @@ abstract class ZohodeskPortalChatKitPlatform extends PlatformInterface {
   Future<void> updateGCSessionVariable(List<Map<String, String>> sessionVariables);
   Future<void> setBMSessionVariable(List<Map<String, String>> sessionVariables);
   Future<void> updateBMSessionVariable(List<Map<String, String>> sessionVariables);
+
+  Future<void> clearGCData();
+  Future<void> clearBMData();
+  Future<void> clearAnswerBotData();
 }

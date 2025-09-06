@@ -23,4 +23,13 @@ class ZohodeskPortalChatKit {
 
   ///To update Business Messaging session variable
   static Future<void> updateBMSessionVariable(List<Map<String, String>> sessionVariables) => ZohodeskPortalChatKitPlatform.instance.updateBMSessionVariable(sessionVariables);
+
+  ///To clear GC Data
+  static Future<void> clearGCData() => ZohodeskPortalChatKitPlatform.instance.clearGCData();
+
+  ///To clear BM Data
+  static Future<void> clearBMData() => ZohodeskPortalChatKitPlatform.instance.clearBMData();
+
+  ///To clear AnswerBot Data
+  static Future<void> clearAnswerBotData() => ZohodeskPortalChatKitPlatform.instance.clearAnswerBotData();
 }

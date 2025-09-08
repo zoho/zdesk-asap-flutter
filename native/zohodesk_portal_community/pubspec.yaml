@@ -1,6 +1,6 @@
 name: zohodesk_portal_community
 description: ASAP Community module Flutter Plugin
-version: 2.3.0
+version: 2.4.0
 homepage:
 
 environment:
@@ -12,8 +12,8 @@ dependencies:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
 
-  zohodesk_portal_apikit: 2.3.0
-  zohodesk_portal_configuration: 2.3.0
+  zohodesk_portal_apikit: 2.4.0
+  zohodesk_portal_configuration: 2.4.0
 
 dev_dependencies:
   flutter_test:

@@ -39,13 +39,27 @@ class ZohodeskPortalChatKitPlugin: FlutterPlugin, MethodCallHandler, ActivityAwa
       "updateGCSessionVariable" -> updateGCSessionVariable(call, result)
       "setBMSessionVariable" -> setBMSessionVariable(call, result)
       "updateBMSessionVariable" -> updateBMSessionVariable(call, result)
-
+      "clearGCData" -> clearGC(call, result)
+      "clearBMData" -> clearBM(call, result)
+      "clearAnswerBotData" -> clearAnswerBot(call, result)
       else -> result.notImplemented()
     }
   }
 
   private fun showGC(@NonNull call: MethodCall, @NonNull result: Result){
     ZohoDeskPortalChatKit.showGC(activity)
+  }
+
+  private fun clearBM(@NonNull call: MethodCall, @NonNull result: Result){
+    ZohoDeskPortalChatKit.clearBM(activity)
+  }
+
+  private fun clearAnswerBot(@NonNull call: MethodCall, @NonNull result: Result){
+    ZohoDeskPortalChatKit.clearAnswerBot(activity)
+  }
+
+  private fun clearGC(@NonNull call: MethodCall, @NonNull result: Result){
+    ZohoDeskPortalChatKit.clearGC(activity)
   }
 
   private fun showAnswerBot(@NonNull call: MethodCall, @NonNull result: Result){

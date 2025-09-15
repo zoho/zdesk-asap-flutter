@@ -50,4 +50,22 @@ class MethodChannelZohodeskPortalChatKit extends ZohodeskPortalChatKitPlatform {
   Future<void> updateBMSessionVariable(List<Map<String, String>> sessionVariables) async {
     await methodChannel.invokeMethod('updateBMSessionVariable', sessionVariables);
   }
+
+  /// ASAP ChatKit GC clear data channel method
+  @override
+  Future<void> clearGCData() async {
+    await methodChannel.invokeMethod('clearGCData');
+  }
+
+  /// ASAP ChatKit BM clear data channel method
+  @override
+  Future<void> clearBMData() async {
+    await methodChannel.invokeMethod('clearBMData');
+  }
+
+  /// ASAP ChatKit AnswerBot clear data channel method
+  @override
+  Future<void> clearAnswerBotData() async {
+    await methodChannel.invokeMethod('clearAnswerBotData');
+  }
 }

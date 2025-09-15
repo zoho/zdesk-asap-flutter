@@ -126,3 +126,7 @@ ASAP SDK Community flutter plugin
 
 # 2.3.0
 - Integrated the ASAP iOS SDK v4.3.0
+
+# 2.4.0
+- Submit Ticket Captcha mechanism support for both Android and iOS
+- Public APIs to clear GC, AnswerBot and BM Data

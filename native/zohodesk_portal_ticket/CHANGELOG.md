@@ -133,3 +133,6 @@ ASAP SDK Portal Tickets flutter plugin
 # 2.4.0
 - Submit Ticket Captcha mechanism support for both Android and iOS
 - Public APIs to clear GC, AnswerBot and BM Data
+
+# 2.4.1
+- Integrated the ASAP iOS SDK v4.4.2

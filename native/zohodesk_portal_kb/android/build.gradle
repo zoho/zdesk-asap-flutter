@@ -53,5 +53,5 @@ android {
     }
 }
 dependencies {
-    implementation "com.zoho.desk:asap-kb:4.6.1"
+    implementation "com.zoho.desk:asap-kb:4.6.3"
 }

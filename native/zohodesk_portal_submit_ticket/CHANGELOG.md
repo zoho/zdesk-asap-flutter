@@ -136,3 +136,6 @@ ASAP SDK Portal Submit Ticket flutter plugin
 
 # 2.4.1
 - Integrated the ASAP iOS SDK v4.4.2
+
+# 2.4.2
+- Integrated ASAP Android SDK v4.6.3 to ensure compliance with Android 16 KB page size requirements

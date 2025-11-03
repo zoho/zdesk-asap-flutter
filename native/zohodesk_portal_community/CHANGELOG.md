@@ -136,3 +136,7 @@ ASAP SDK Community flutter plugin
 
 # 2.4.2
 - Integrated ASAP Android SDK v4.6.3 to ensure compliance with Android 16 KB page size requirements
+
+# 2.5.0
+- Updated ASAP iOS SDK Version to 4.5.0
+- Updated ASAP Android SDK Version to 4.6.4_BETA_02

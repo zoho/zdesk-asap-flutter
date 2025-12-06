@@ -8,7 +8,13 @@ public class ZohodeskPortalCorePlugin: NSObject, FlutterPlugin {
     let channel = FlutterMethodChannel(name: "zohodesk_portal_core", binaryMessenger: registrar.messenger())
     let instance = ZohodeskPortalCorePlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
-  }
+      
+      let eventChannel = FlutterEventChannel(name: "zohodesk_portal_core_event", binaryMessenger: registrar.messenger())
+      let streamHandler = HomeProviderStreamHandler()
+      eventChannel.setStreamHandler(streamHandler)
+      
+      // Assign delegate where needed
+      ZDPortalHome.shared.actionDelegate = streamHandler
 
   }
 

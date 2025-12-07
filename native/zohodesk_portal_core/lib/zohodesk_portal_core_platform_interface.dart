@@ -1,7 +1,8 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'zohodesk_portal_core_method_channel.dart';
-import 'data/zdphomeconfiguration.dart';
+import 'common/zdphomeconfiguration.dart';
+import 'common/ZDPHomeEventListener.dart';
 
 abstract class ZohodeskPortalCorePlatform extends PlatformInterface {
   /// Constructs a ZohodeskPortalCorePlatform.
@@ -27,4 +28,6 @@ abstract class ZohodeskPortalCorePlatform extends PlatformInterface {
   Future<void> showHome();
 
   Future<void> setConfiguration(ZDPHomeConfiguration config);
+
+  void setEventListener(ZDPHomeEventListener listener);
 }

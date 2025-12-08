@@ -143,3 +143,9 @@ ASAP SDK Portal Core flutter plugin
 # 2.5.0
 - Updated ASAP iOS SDK Version to 4.5.0
 - Updated ASAP Android SDK Version to 4.6.4_BETA_02
+
+# 2.5.1
+- Updated ASAP iOS SDK Version to 4.5.3
+- Updated ASAP Android SDK Version to 4.6.4
+- Home action listener
+- Home header logo configuration

@@ -20,3 +20,4 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 -keep public class com.zoho.desk.asap.core.zohodesk_portal_core.ZohodeskPortalCorePlugin {*;}
+-keep public class com.zoho.desk.asap.core.zohodesk_portal_core.ZDPHomeConfigurationData {*;}

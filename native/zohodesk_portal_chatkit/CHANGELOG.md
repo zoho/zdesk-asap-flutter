@@ -151,4 +151,4 @@ ASAP SDK Portal Chat Kit flutter plugin
 - Home header logo configuration
 
 # 2.5.2
-- Updated ASAP iOS SDK Version to 4.5.4
+- Updated ASAP iOS SDK Version to 4.5.5

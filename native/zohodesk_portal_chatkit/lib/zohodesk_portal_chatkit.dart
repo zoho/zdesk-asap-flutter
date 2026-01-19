@@ -24,6 +24,9 @@ class ZohodeskPortalChatKit {
   ///To update Business Messaging session variable
   static Future<void> updateBMSessionVariable(List<Map<String, String>> sessionVariables) => ZohodeskPortalChatKitPlatform.instance.updateBMSessionVariable(sessionVariables);
 
+  ///To hide GC end chat popup window
+  static Future<void> hideEndChatPopupWindow(bool hide) => ZohodeskPortalChatKitPlatform.instance.hideEndChatPopupWindow(hide);
+
   ///To clear GC Data
   static Future<void> clearGCData() => ZohodeskPortalChatKitPlatform.instance.clearGCData();
 

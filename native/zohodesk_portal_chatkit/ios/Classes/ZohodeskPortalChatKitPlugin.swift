@@ -43,6 +43,10 @@ public class ZohodeskPortalChatKitPlugin: NSObject, FlutterPlugin {
           guard let arguments = call.arguments as? [[String: Any]] else { return }
           ZDPortalChatKit.updateBMSessionVariable(sessionVariables: arguments)
           
+      case .hideEndChatPopupWindow:
+          guard let flag = call.arguments as? Bool else { return }
+          ZDPortalChatKit.hideEndChatPopupWindow(disable: flag)
+          
       //To clear GC data
       case .clearGCData:
           ZDPortalChatKit.clearGCData()
@@ -64,6 +68,7 @@ public class ZohodeskPortalChatKitPlugin: NSObject, FlutterPlugin {
         case showGC, showAnswerBot, showBM
         case setGCSessionVariable, updateGCSessionVariable
         case setBMSessionVariable, updateBMSessionVariable
+        case hideEndChatPopupWindow
         case clearGCData, clearBMData, clearAnswerBotData
     }
 }

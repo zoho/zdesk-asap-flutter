@@ -42,6 +42,7 @@ class ZohodeskPortalChatKitPlugin: FlutterPlugin, MethodCallHandler, ActivityAwa
       "clearGCData" -> clearGC(call, result)
       "clearBMData" -> clearBM(call, result)
       "clearAnswerBotData" -> clearAnswerBot(call, result)
+      "hideEndChatPopupWindow" -> hideEndChatPopupWindow(call, result)
       else -> result.notImplemented()
     }
   }
@@ -88,6 +89,11 @@ class ZohodeskPortalChatKitPlugin: FlutterPlugin, MethodCallHandler, ActivityAwa
   private fun updateBMSessionVariable(@NonNull call: MethodCall, @NonNull result: Result){
     val paramsMap = call.arguments as? ArrayList<HashMap<String, Any>>
     ZohoDeskPortalChatKit.updateBMSessionVariable(activity, paramsMap)
+  }
+
+  private fun hideEndChatPopupWindow(@NonNull call: MethodCall, @NonNull result: Result){
+    val isHideEndChatPopupWindow = call.arguments as? Boolean
+    ZohoDeskPortalChatKit.hideEndChatPopupWindow(isHideEndChatPopupWindow)
   }
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {

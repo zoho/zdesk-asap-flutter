@@ -149,3 +149,8 @@ ASAP SDK Portal Tickets flutter plugin
 - Updated ASAP Android SDK Version to 4.6.4
 - Home action listener
 - Home header logo configuration
+
+# 2.5.2
+- Updated ASAP iOS SDK Version to 4.5.5
+- Updated ASAP Android SDK Version to 4.6.5
+- Provided the hideEndChatPopupWindow method in zohodesk_portal_chatkit

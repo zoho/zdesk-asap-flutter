@@ -51,6 +51,11 @@ class MethodChannelZohodeskPortalChatKit extends ZohodeskPortalChatKitPlatform {
     await methodChannel.invokeMethod('updateBMSessionVariable', sessionVariables);
   }
 
+  @override
+  Future<void> hideEndChatPopupWindow(bool hide) async {
+    await methodChannel.invokeMethod('hideEndChatPopupWindow', hide);
+  }
+
   /// ASAP ChatKit GC clear data channel method
   @override
   Future<void> clearGCData() async {

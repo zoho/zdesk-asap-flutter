@@ -53,6 +53,6 @@ android {
     }
 }
 dependencies {
-    implementation "com.zoho.desk:asap:4.6.4"
+    implementation "com.zoho.desk:asap:4.6.5"
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 }

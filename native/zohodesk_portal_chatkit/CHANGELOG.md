@@ -152,3 +152,5 @@ ASAP SDK Portal Chat Kit flutter plugin
 
 # 2.5.2
 - Updated ASAP iOS SDK Version to 4.5.5
+- Updated ASAP Android SDK Version to 4.6.5
+- Provided the hideEndChatPopupWindow method in zohodesk_portal_chatkit

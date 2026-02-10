@@ -30,4 +30,26 @@ abstract class ZohodeskPortalCommunityPlatform extends PlatformInterface {
   Future<void> showTopicWithPermaLink(String permalink);
 
   Future<void> showTopicWithId(String topicId);
+
+  Future<void> disableTopicEdit(Bool isDisable);
+
+  Future<void> disableTopicDelete(bool isDisable);
+
+  Future<void> disableReply(bool isDisable);
+
+  Future<void> disableReplyEdit(bool isDisable);
+
+  Future<void> disableReplyDelete(bool isDisable);
+
+  Future<void> disableTopicDetailSearch(bool isDisable);
+
+  Future<void> disableTextReader(bool isDisable);
+
+  Future<void> disableKeySearcher(bool isDisable);
+
+  Future<void> disableTopicShare(bool isDisable);
+
+  Future<void> disableTopicLike(bool isDisable);
+
+  Future<void> disableTopicComment(bool isDisable);
 }

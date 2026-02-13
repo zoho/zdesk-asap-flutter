@@ -31,7 +31,7 @@ abstract class ZohodeskPortalCommunityPlatform extends PlatformInterface {
 
   Future<void> showTopicWithId(String topicId);
 
-  Future<void> disableTopicEdit(Bool isDisable);
+  Future<void> disableTopicEdit(bool isDisable);
 
   Future<void> disableTopicDelete(bool isDisable);
 

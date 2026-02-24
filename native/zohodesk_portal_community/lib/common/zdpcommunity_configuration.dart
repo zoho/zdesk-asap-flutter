@@ -1,6 +1,6 @@
 import '../zohodesk_portal_community_platform_interface.dart';
 
-class CommunityConfiguration {
+class ZDPCommunityConfiguration {
 
   ///To disable or enable topic edit option in ASAP Community
   static Future<void> disableTopicEdit(bool isDisable) => ZohodeskPortalCommunityPlatform.instance.disableTopicEdit(isDisable);

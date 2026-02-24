@@ -16,7 +16,8 @@ class KBConfiguration {
   static Future<void> disableTextReader(bool isDisable) => ZohodeskPortalKbPlatform.instance.disableTextReader(isDisable);
 
   ///To allow sharing article
-  static Future<void> isShareArticleAllowed(bool isAllowed) => ZohodeskPortalKbPlatform.instance.isShareArticleAllowed(isAllowed);
+  //Will expose once native implementation is done
+  // static Future<void> isShareArticleAllowed(bool isAllowed) => ZohodeskPortalKbPlatform.instance.isShareArticleAllowed(isAllowed);
 
   ///To disable key searcher
   static Future<void> disableKeySearcher(bool isDisable) => ZohodeskPortalKbPlatform.instance.disableKeySearcher(isDisable);

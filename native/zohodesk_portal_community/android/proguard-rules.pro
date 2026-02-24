@@ -20,3 +20,4 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 -keep public class com.zoho.desk.asap.community.zohodesk_portal_community.ZohodeskPortalCommunityPlugin {*;}
+-keep public class com.zoho.desk.asap.community.zohodesk_portal_community.ZohodeskPortalCommunityPlugin$Companion {*;}

@@ -158,3 +158,8 @@ ASAP SDK Portal KB flutter plugin
 # 2.5.3
 - Updated ASAP iOS SDK Version to 4.5.6
 - Updated ASAP Android SDK Version to 4.6.6
+
+# 2.5.4
+- integrate ASAP iOS SDK 4.5.8
+- Community configuration APIs
+- KB configuration APIs

@@ -1,6 +1,7 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'zohodesk_portal_kb_method_channel.dart';
+import 'model/kb_configuration_model.dart';
 
 abstract class ZohodeskPortalKbPlatform extends PlatformInterface {
   /// Constructs a ZohodeskPortalKbPlatform.
@@ -28,4 +29,20 @@ abstract class ZohodeskPortalKbPlatform extends PlatformInterface {
   Future<void> showCategoryWithPermalink(String permalink);
 
   Future<void> showArticleWithPermalink(String permalink);
+
+  Future<void> disableArticleDetailSearch(bool isDisable);
+
+  Future<void> disableArticleLike(bool isDisable);
+
+  Future<void> disableArticleDislike(bool isDisable);
+
+  Future<void> disableTextReader(bool isDisable);
+
+  Future<void> isShareArticleAllowed(bool isAllowed);
+
+  Future<void> disableKeySearcher(bool isDisable);
+
+  Future<void> relatedArticlePreference(ZDPRelatedArticlePreference preference);
+
+  Future<void> searchPreference(ZDPSearchPreference preference);
 }

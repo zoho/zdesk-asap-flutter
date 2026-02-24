@@ -27,7 +27,8 @@ class CommunityConfiguration {
   static Future<void> disableKeySearcher(bool isDisable) => ZohodeskPortalCommunityPlatform.instance.disableKeySearcher(isDisable);
 
   ///To disable or enable topic share option in ASAP Community
-  static Future<void> disableTopicShare(bool isDisable) => ZohodeskPortalCommunityPlatform.instance.disableTopicShare(isDisable);
+  //Will expose once native implementation is done
+  // static Future<void> disableTopicShare(bool isDisable) => ZohodeskPortalCommunityPlatform.instance.disableTopicShare(isDisable);
 
   ///To disable or enable topic like option in ASAP Community
   static Future<void> disableTopicLike(bool isDisable) => ZohodeskPortalCommunityPlatform.instance.disableTopicLike(isDisable);

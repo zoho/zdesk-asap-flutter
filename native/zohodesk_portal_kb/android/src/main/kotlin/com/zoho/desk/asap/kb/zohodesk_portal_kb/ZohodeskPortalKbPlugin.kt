@@ -15,8 +15,8 @@ class ZohodeskPortalKbPlugin : ZDPBaseActivityAwarePlugin("zohodesk_portal_kb") 
     private var isArticleDetailSearchAllowed = true
     private var disableArticleLike = false
     private var disableArticleDislike = false
-    private var disableTextReader = true
-    private var disableKeySearcher = true
+    private var disableTextReader = false
+    private var disableKeySearcher = false
     private var relatedArticleScope: RelatedArticleScope? = null
   }
 

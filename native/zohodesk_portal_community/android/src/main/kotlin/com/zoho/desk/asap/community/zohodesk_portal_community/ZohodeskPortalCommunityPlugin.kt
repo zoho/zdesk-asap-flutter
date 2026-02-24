@@ -17,8 +17,8 @@ class ZohodeskPortalCommunityPlugin: ZDPBaseActivityAwarePlugin("zohodesk_portal
     private var isReplyEditAllowed = true
     private var isReplyDeleteAllowed = true
     private var isTopicDetailSearchAllowed = true
-    private var disableTextReader = true
-    private var disableKeySearcher = true
+    private var disableTextReader = false
+    private var disableKeySearcher = false
     private var disableTopicLike = false
     private var disableTopicComment = false
   }

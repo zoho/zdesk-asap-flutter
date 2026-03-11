@@ -160,3 +160,6 @@ ASAP SDK Community flutter plugin
 - integrate ASAP iOS SDK 4.5.8
 - Community configuration APIs
 - KB configuration APIs
+
+# 2.6.0
+- Integrated ASAP iOS SDK 4.6.0

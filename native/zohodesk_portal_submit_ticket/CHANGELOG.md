@@ -166,3 +166,4 @@ ASAP SDK Portal Submit Ticket flutter plugin
 
 # 2.6.0
 - Integrated ASAP iOS SDK 4.6.0
+- Added data center support for SG, INEC, and UAE.

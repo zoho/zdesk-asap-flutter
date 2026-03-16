@@ -10,6 +10,9 @@ class ZDPDataCenter {
   static final ZDPDataCenter JP = ZDPDataCenter._(5);
   static final ZDPDataCenter CA = ZDPDataCenter._(6);
   static final ZDPDataCenter SA = ZDPDataCenter._(7);
+  static final ZDPDataCenter SG = ZDPDataCenter._(8);
+  static final ZDPDataCenter INEC = ZDPDataCenter._(9);
+  static final ZDPDataCenter UAE = ZDPDataCenter._(10);
 
   final int rawValue;
 

@@ -39,6 +39,8 @@ class ZohodeskPortalChatKitPlugin: FlutterPlugin, MethodCallHandler, ActivityAwa
       "updateGCSessionVariable" -> updateGCSessionVariable(call, result)
       "setBMSessionVariable" -> setBMSessionVariable(call, result)
       "updateBMSessionVariable" -> updateBMSessionVariable(call, result)
+      "setBMConfiguration" -> setBMConfiguration(call, result)
+      "setGCConfiguration" -> setGCConfiguration(call, result)
       "clearGCData" -> clearGC(call, result)
       "clearBMData" -> clearBM(call, result)
       "clearAnswerBotData" -> clearAnswerBot(call, result)
@@ -94,6 +96,14 @@ class ZohodeskPortalChatKitPlugin: FlutterPlugin, MethodCallHandler, ActivityAwa
   private fun hideEndChatPopupWindow(@NonNull call: MethodCall, @NonNull result: Result){
     val isHideEndChatPopupWindow = call.arguments as? Boolean
     ZohoDeskPortalChatKit.hideEndChatPopupWindow(isHideEndChatPopupWindow)
+  }
+
+  private fun setBMConfiguration(@NonNull call: MethodCall, @NonNull result: Result){
+      val disableMoreOptionVisibility = call.argument<Boolean>("disableMoreOptionVisibility") ?: false
+  }
+
+  private fun setGCConfiguration(@NonNull call: MethodCall, @NonNull result: Result){
+    call.argument<Boolean>("enableLanguagePicker") ?: false
   }
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {

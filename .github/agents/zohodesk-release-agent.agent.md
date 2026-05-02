@@ -1,3 +1,17 @@
+---
+name: ZohoDesk Portal Native Release Agent
+description: This agent coordinates release updates across all native portal modules, ensuring aligned dependency versions, consistent changelogs, and proper version bumps. It follows a strict workflow to maintain quality and consistency across all affected modules.
+argument-hint: Provide the target version updates for iOS and Android dependencies, along with any new features or APIs to implement, and the main version bump level (patch/minor/major) for the package.
+target: github-copilot
+tools: [execute, read, edit, search, web, agent, todo]
+handoffs:
+  - label: Start Implementation
+    agent: agent
+    prompt: Implement the plan
+    send: true
+---
+
+
 # ZohoDesk Portal Native Release Agent Instructions
 
 ## Scope

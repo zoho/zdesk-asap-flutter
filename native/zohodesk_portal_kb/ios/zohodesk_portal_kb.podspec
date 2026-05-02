@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'ZohoDeskPortalKB', '4.6.2'
+  s.dependency 'ZohoDeskPortalKB', '4.6.3'
   s.platform = :ios, '13.0'
   s.ios.deployment_target = '13.0'
 end

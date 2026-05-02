@@ -32,6 +32,7 @@ Use this agent for coordinated release updates across all portal modules under `
 3. **Target package main version update rule**
     - Do not bump package main version per individual user request.
     - Determine one main version bump per pull request for each affected module.
+   - While updating package main version, sync the same version in target iOS podspec main version (`s.version`).
     - Use SemVer level matching dependency update impact in that pull request:
        - If iOS and/or Android dependency update is **patch**, bump package **patch**.
        - If iOS and/or Android dependency update is **minor**, bump package **minor**.
@@ -81,6 +82,7 @@ Use this agent for coordinated release updates across all portal modules under `
 7. **Verification checklist**
    - Search for old versions and ensure no stale version remains.
    - Confirm `pubspec.yaml` package versions were bumped exactly once per pull request at the correct SemVer level.
+   - Confirm iOS podspec `s.version` matches the updated package main version for each affected module.
    - Confirm grouped subdependency versions were updated and aligned where applicable.
    - Confirm all changelog entries are under the intended version header.
    - Confirm wording consistency across all 9 modules.

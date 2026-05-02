@@ -24,29 +24,30 @@ Execution requirements:
 	- major dependency update => major package bump
 	- if iOS/Android differ, use highest level (major > minor > patch)
 4. Do not bump main version per individual user request; apply it once for the pull request.
-5. While updating main target version, also update subdependency versions that belong to the same dependency group and are included in the requested update scope.
-6. Update changelog entries in all affected modules with concise, consistent wording.
-7. Implement new APIs/features only if explicitly requested.
-8. Keep release notes simple and user-facing.
-9. Create a branch for the update.
+5. While updating main target version, sync the same version in target iOS podspec main version (`s.version`).
+6. While updating main target version, also update subdependency versions that belong to the same dependency group and are included in the requested update scope.
+7. Update changelog entries in all affected modules with concise, consistent wording.
+8. Implement new APIs/features only if explicitly requested.
+9. Keep release notes simple and user-facing.
+10. Create a branch for the update.
 	- Branch name must be the main target version.
-10. Split commits in this order (when applicable):
+11. Split commits in this order (when applicable):
 	- iOS version update
 	- Android version update
 	- Flutter changes (short, clear message based on changes)
 	- Changelog update
-11. Push the branch to remote after commits (`git push` / `git push --set-upstream origin <branch>`).
-12. Ask user confirmation before creating pull request.
-13. Keep pull request title as the main version.
-14. Keep pull request description as the changelog content for that main version.
-15. Set pull request mergers as:
+12. Push the branch to remote after commits (`git push` / `git push --set-upstream origin <branch>`).
+13. Ask user confirmation before creating pull request.
+14. Keep pull request title as the main version.
+15. Keep pull request description as the changelog content for that main version.
+16. Set pull request mergers as:
 	- `vignesh-thillai-19833`
 	- `balasubramanian-k-19828`
-16. Set pull request reviewers as:
+17. Set pull request reviewers as:
 	- `prakash-vel-15296`
 	- `vinoth-nv-15074`
 	- `Copilot`
-17. Verify no stale versions remain and consistency across all 9 modules, including grouped subdependency version alignment.
+18. Verify no stale versions remain and consistency across all 9 modules, including iOS podspec main version sync and grouped subdependency version alignment.
 
 Changelog wording defaults:
 - `Integrated ASAP iOS SDK <version>` (if iOS SDK is updated)

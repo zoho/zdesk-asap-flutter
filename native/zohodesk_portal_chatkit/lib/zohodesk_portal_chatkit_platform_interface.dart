@@ -3,7 +3,7 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 import 'zohodesk_portal_chatkit_method_channel.dart';
 
 abstract class ZohodeskPortalChatKitPlatform extends PlatformInterface {
-  /// Constructs a ZohodeskPortalGcPlatform.
+  /// Constructs a ZohodeskPortalChatKitPlatform.
   ZohodeskPortalChatKitPlatform() : super(token: _token);
 
   static final Object _token = Object();
@@ -32,6 +32,12 @@ abstract class ZohodeskPortalChatKitPlatform extends PlatformInterface {
   Future<void> setBMSessionVariable(List<Map<String, String>> sessionVariables);
   Future<void> updateBMSessionVariable(List<Map<String, String>> sessionVariables);
   Future<void> hideEndChatPopupWindow(bool hide);
+  
+  /// Business Messaging configuration
+  Future<void> setBMMoreOptionVisibility(bool isVisible);
+  
+  /// Guided Conversations configuration
+  Future<void> enableGCLanguagePicker(bool isEnabled);
 
   Future<void> clearGCData();
   Future<void> clearBMData();

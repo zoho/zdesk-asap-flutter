@@ -56,6 +56,18 @@ class MethodChannelZohodeskPortalChatKit extends ZohodeskPortalChatKitPlatform {
     await methodChannel.invokeMethod('hideEndChatPopupWindow', hide);
   }
 
+  /// ASAP ChatKit BM more option visibility channel method
+  @override
+  Future<void> setBMMoreOptionVisibility(bool isVisible) async {
+    await methodChannel.invokeMethod('setBMMoreOptionVisibility', {"isVisible": isVisible});
+  }
+
+  /// ASAP ChatKit GC language picker configuration channel method
+  @override
+  Future<void> enableGCLanguagePicker(bool isEnabled) async {
+    await methodChannel.invokeMethod('enableGCLanguagePicker', {"isEnabled": isEnabled});
+  }
+
   /// ASAP ChatKit GC clear data channel method
   @override
   Future<void> clearGCData() async {

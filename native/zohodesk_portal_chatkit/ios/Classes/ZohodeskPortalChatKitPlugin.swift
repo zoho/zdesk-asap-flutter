@@ -46,6 +46,18 @@ public class ZohodeskPortalChatKitPlugin: NSObject, FlutterPlugin {
       case .hideEndChatPopupWindow:
           guard let flag = call.arguments as? Bool else { return }
           ZDPortalChatKit.hideEndChatPopupWindow(disable: flag)
+
+      //To set ChatKit configuration
+      case .setBMMoreOptionVisibility:
+          guard let arguments = call.arguments as? [String: Any] else { return }
+          let isVisible = arguments["isVisible"] as? Bool ?? true
+          ZDPortalBMConfiguration.setMoreOptionVisibility(isVisible: isVisible)
+
+      //To set Guided Conversations configuration
+      case .enableGCLanguagePicker:
+          guard let arguments = call.arguments as? [String: Any] else { return }
+          let isEnabled = arguments["isEnabled"] as? Bool ?? false
+          ZDPortalGCConfiguration.enabelLanguagePicker = isEnabled
           
       //To clear GC data
       case .clearGCData:
@@ -54,7 +66,7 @@ public class ZohodeskPortalChatKitPlugin: NSObject, FlutterPlugin {
       //To clear BM data
       case .clearBMData:
           ZDPortalChatKit.clearBMData()
-          
+
       //To clear Answer Bot data
       case .clearAnswerBotData:
           ZDPortalChatKit.clearAnswerBotData()
@@ -68,7 +80,7 @@ public class ZohodeskPortalChatKitPlugin: NSObject, FlutterPlugin {
         case showGC, showAnswerBot, showBM
         case setGCSessionVariable, updateGCSessionVariable
         case setBMSessionVariable, updateBMSessionVariable
-        case hideEndChatPopupWindow
+        case hideEndChatPopupWindow, setBMMoreOptionVisibility, enableGCLanguagePicker
         case clearGCData, clearBMData, clearAnswerBotData
     }
 }

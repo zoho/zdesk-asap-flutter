@@ -3,7 +3,8 @@ package com.zoho.desk.asap.chatkit.zohodesk_portal_chatkit
 import android.app.Activity
 import androidx.annotation.NonNull
 import com.zoho.desk.asap.chatkit.ZohoDeskPortalChatKit
-
+import com.zoho.desk.asap.chatkit.util.ZDPortalGCConfiguration
+import com.zoho.desk.asap.chatkit.util.ZDPortalBMConfiguration
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
@@ -15,6 +16,11 @@ import java.util.ArrayList
 
 /** ZohodeskPortalGcPlugin */
 class ZohodeskPortalChatKitPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
+  companion object {
+    private var isBMMoreOptionVisible = true
+    private var isGCLanguagePickerEnabled = false
+  }
+
   /// The MethodChannel that will the communication between Flutter and native Android
   ///
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
@@ -39,6 +45,8 @@ class ZohodeskPortalChatKitPlugin: FlutterPlugin, MethodCallHandler, ActivityAwa
       "updateGCSessionVariable" -> updateGCSessionVariable(call, result)
       "setBMSessionVariable" -> setBMSessionVariable(call, result)
       "updateBMSessionVariable" -> updateBMSessionVariable(call, result)
+      "setBMMoreOptionVisibility" -> setBMMoreOptionVisibility(call, result)
+      "enableGCLanguagePicker" -> enableGCLanguagePicker(call, result)
       "clearGCData" -> clearGC(call, result)
       "clearBMData" -> clearBM(call, result)
       "clearAnswerBotData" -> clearAnswerBot(call, result)
@@ -94,6 +102,30 @@ class ZohodeskPortalChatKitPlugin: FlutterPlugin, MethodCallHandler, ActivityAwa
   private fun hideEndChatPopupWindow(@NonNull call: MethodCall, @NonNull result: Result){
     val isHideEndChatPopupWindow = call.arguments as? Boolean
     ZohoDeskPortalChatKit.hideEndChatPopupWindow(isHideEndChatPopupWindow)
+  }
+
+  private fun setBMMoreOptionVisibility(@NonNull call: MethodCall, @NonNull result: Result){
+      val params = call.arguments as? HashMap<String, Any>
+      isBMMoreOptionVisible = params?.get("isVisible") as? Boolean ?: true
+      applyBMConfiguration()
+  }
+
+  private fun enableGCLanguagePicker(@NonNull call: MethodCall, @NonNull result: Result){
+    val params = call.arguments as? HashMap<String, Any>
+    isGCLanguagePickerEnabled = params?.get("isEnabled") as? Boolean ?: false
+    applyGCConfiguration()
+  }
+
+  private fun applyBMConfiguration() {
+    ZohoDeskPortalChatKit.setBMConfiguration(
+      ZDPortalBMConfiguration.Builder().disableMoreOption(!isBMMoreOptionVisible).build()
+    )
+  }
+
+  private fun applyGCConfiguration() {
+    ZohoDeskPortalChatKit.setGCConfiguration(
+      ZDPortalGCConfiguration.Builder().enableLanguagePicker(isGCLanguagePickerEnabled).build()
+    )
   }
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {

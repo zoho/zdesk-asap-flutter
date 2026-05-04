@@ -170,3 +170,9 @@ ASAP SDK Portal Tickets flutter plugin
 
 # 2.6.1
 - Integrated ASAP iOS SDK 4.6.2
+
+# 2.6.2
+- Integrated ASAP iOS SDK 4.6.3
+- Integrated ASAP Android SDK 4.6.8
+- BM configuration to configure more option visibility
+- GC configuration to configure language picker visibility

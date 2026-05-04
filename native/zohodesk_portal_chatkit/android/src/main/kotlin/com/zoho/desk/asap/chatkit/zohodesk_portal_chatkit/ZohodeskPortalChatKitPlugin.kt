@@ -99,11 +99,15 @@ class ZohodeskPortalChatKitPlugin: FlutterPlugin, MethodCallHandler, ActivityAwa
   }
 
   private fun setBMConfiguration(@NonNull call: MethodCall, @NonNull result: Result){
-      val disableMoreOptionVisibility = call.argument<Boolean>("disableMoreOptionVisibility") ?: false
+      val params = call.arguments as? HashMap<String, Any>
+      val disableMoreOptionVisibility = params?.get("disableMoreOptionVisibility") as? Boolean ?: false
+      ZohoDeskPortalChatKit.setBMConfiguration(ZDPortalBMConfiguration.Builder().disableMoreOption(disableMoreOptionVisibility).build())
   }
 
   private fun setGCConfiguration(@NonNull call: MethodCall, @NonNull result: Result){
-    call.argument<Boolean>("enableLanguagePicker") ?: false
+    val params = call.arguments as? HashMap<String, Any>
+    val isEnableLanguagePicker = params?.get("enableLanguagePicker") as? Boolean ?: false
+    ZohoDeskPortalChatKit.setGCConfiguration(ZDPortalGCConfiguration.Builder().enableLanguagePicker(isEnableLanguagePicker).build())
   }
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {

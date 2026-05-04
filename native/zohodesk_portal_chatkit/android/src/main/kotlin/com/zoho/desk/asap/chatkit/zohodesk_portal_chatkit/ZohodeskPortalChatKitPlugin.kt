@@ -3,7 +3,8 @@ package com.zoho.desk.asap.chatkit.zohodesk_portal_chatkit
 import android.app.Activity
 import androidx.annotation.NonNull
 import com.zoho.desk.asap.chatkit.ZohoDeskPortalChatKit
-
+import com.zoho.desk.asap.chatkit.util.ZDPortalGCConfiguration
+import com.zoho.desk.asap.chatkit.util.ZDPortalBMConfiguration
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding

@@ -33,40 +33,6 @@ class ZohodeskPortalChatKit {
   ///To clear BM Data
   static Future<void> clearBMData() => ZohodeskPortalChatKitPlatform.instance.clearBMData();
 
-  ///To set ChatKit configuration
-    static Future<void> setBMConfiguration(ZDPortalBMConfiguration configuration) =>
-      ZohodeskPortalChatKitPlatform.instance.setBMConfiguration(configuration.toMap());
-
-  ///To set Guided Conversations configuration
-  static Future<void> setGCConfiguration(ZDPortalGCConfiguration configuration) =>
-      ZohodeskPortalChatKitPlatform.instance.setGCConfiguration(configuration.toMap());
-
   ///To clear AnswerBot Data
   static Future<void> clearAnswerBotData() => ZohodeskPortalChatKitPlatform.instance.clearAnswerBotData();
-}
-
-///ASAP Business Messaging Configuration
-class ZDPortalBMConfiguration {
-  bool disableMoreOptionVisibility;
-
-  ZDPortalBMConfiguration({
-    this.disableMoreOptionVisibility = false,
-  });
-
-  Map<String, dynamic> toMap() => {
-    "disableMoreOptionVisibility": disableMoreOptionVisibility,
-  };
-}
-
-///ASAP Guided Conversations Configuration
-class ZDPortalGCConfiguration {
-  bool enableLanguagePicker;
-
-  ZDPortalGCConfiguration({
-    this.enableLanguagePicker = false,
-  });
-
-  Map<String, dynamic> toMap() => {
-    "enableLanguagePicker": enableLanguagePicker,
-  };
 }

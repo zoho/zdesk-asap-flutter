@@ -176,3 +176,6 @@ ASAP SDK Portal Core flutter plugin
 - Integrated ASAP Android SDK 4.6.8
 - BM configuration to configure more option visibility
 - GC configuration to configure language picker visibility
+
+# 2.6.3
+- Integrated ASAP iOS SDK 4.6.4

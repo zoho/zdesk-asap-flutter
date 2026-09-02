@@ -2,7 +2,6 @@ import Flutter
 import UIKit
 import ZohoDeskPortalTicket
 import ZohoDeskPortalAPIKit
-import zohodesk_portal_apikit
 
 public class ZohodeskPortalSubmitTicketPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
@@ -71,6 +70,15 @@ private class ZDFVisibleTicketField: Decodable {
     var departmentId: String
     var layoutId: String
     var fieldNames: [String]
+}
+
+private extension String {
+    func parser<Decoded: Decodable>() -> Decoded? {
+        guard let data = data(using: .utf8, allowLossyConversion: false) else {
+            return nil
+        }
+        return try? JSONDecoder().decode(Decoded.self, from: data)
+    }
 }
 
 private extension Array where Element == ZDCustomizedTicketField {

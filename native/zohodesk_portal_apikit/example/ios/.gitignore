@@ -59,6 +59,5 @@ GeneratedPluginRegistrant.m
 .dart_tool/
 .packages
 xcuserdata/
-Runner.xcworkspace/
 Pods/
 Podfile.lock

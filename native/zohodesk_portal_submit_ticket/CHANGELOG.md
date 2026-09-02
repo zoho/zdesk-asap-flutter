@@ -2,6 +2,8 @@
 
 ASAP SDK Portal Submit Ticket flutter plugin
 
+- Added Swift Package Manager support for iOS.
+
 # 1.0.0
 
 - Initial release of the plugin for the iOS and Android platforms.

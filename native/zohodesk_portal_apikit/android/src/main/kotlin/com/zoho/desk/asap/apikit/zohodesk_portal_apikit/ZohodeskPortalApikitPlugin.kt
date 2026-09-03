@@ -72,19 +72,19 @@ class ZohodeskPortalApikitPlugin: FlutterPlugin, MethodCallHandler {
       val paramsMap = call.arguments as? HashMap<*, *>
       val orgId = paramsMap?.get("orgID") as String
       val appId = paramsMap?.get("appID") as String
-      val dcVal = paramsMap?.get("dataCenter") as Int
-      val dc = when(dcVal) {
-        1 ->ZohoDeskPortalSDK.DataCenter.CN
-        2 -> ZohoDeskPortalSDK.DataCenter.IN
-        3 -> ZohoDeskPortalSDK.DataCenter.EU
-        4 -> ZohoDeskPortalSDK.DataCenter.AU
-        5 -> ZohoDeskPortalSDK.DataCenter.JP
-        6 -> ZohoDeskPortalSDK.DataCenter.CA
-        7 -> ZohoDeskPortalSDK.DataCenter.SA
-        8 -> ZohoDeskPortalSDK.DataCenter.SG
-        9 -> ZohoDeskPortalSDK.DataCenter.INEC
-        10 -> ZohoDeskPortalSDK.DataCenter.UAE
-        else ->   ZohoDeskPortalSDK.DataCenter.US
+      val dcVal = paramsMap?.get("dataCenter")
+      val dc = when((dcVal as? String)?.uppercase()) {
+        "CN" -> ZohoDeskPortalSDK.DataCenter.CN
+        "IN" -> ZohoDeskPortalSDK.DataCenter.IN
+        "EU" -> ZohoDeskPortalSDK.DataCenter.EU
+        "AU" -> ZohoDeskPortalSDK.DataCenter.AU
+        "JP" -> ZohoDeskPortalSDK.DataCenter.JP
+        "CA" -> ZohoDeskPortalSDK.DataCenter.CA
+        "SA" -> ZohoDeskPortalSDK.DataCenter.SA
+        "SG" -> ZohoDeskPortalSDK.DataCenter.SG
+        "INEC" -> ZohoDeskPortalSDK.DataCenter.INEC
+        "UAE" -> ZohoDeskPortalSDK.DataCenter.UAE
+        else -> ZohoDeskPortalSDK.DataCenter.US
       }
       deskPortalSDK.initDesk(orgId.toLong(), appId, dc)
 

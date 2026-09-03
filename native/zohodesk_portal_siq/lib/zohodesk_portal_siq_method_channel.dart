@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'common/ChatComponent.dart';
@@ -25,6 +24,9 @@ class MethodChannelZohodeskPortalSiq extends ZohodeskPortalSiqPlatform {
 
   @override
   Future<void> setGuestUserDetails(String? name, String? email, String? phone) async => await methodChannel.invokeMethod('setGuestUserDetails', {'name': name, 'email': email, 'phone': phone});
+
+  @override
+  Future<void> addInfo(String? key, String? value) async => await methodChannel.invokeMethod('addInfo', {'key': key, 'value': value});
 
   @override
   Future<void> setSalesIQInitCallback(SalesIQInitCallback callback) async {

@@ -12,6 +12,8 @@ class ZohodeskPortalSiq {
 
   static Future<void> setGuestUserDetails(String? name, String? email, String? phone) => ZohodeskPortalSiqPlatform.instance.setGuestUserDetails(name, email, phone);
 
+  static Future<void> addInfo(String? key, String? value) => ZohodeskPortalSiqPlatform.instance.addInfo(key, value);
+
   static Future<void> setSalesIQInitCallback(SalesIQInitCallback callback) => ZohodeskPortalSiqPlatform.instance.setSalesIQInitCallback( callback);
 
   static Future<void> setChatBrandDetails(String appKey, String accessKey) => ZohodeskPortalSiqPlatform.instance.setChatBrandDetails(appKey, accessKey);

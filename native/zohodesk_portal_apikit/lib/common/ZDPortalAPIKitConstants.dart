@@ -2,19 +2,19 @@
 /// Zoho Desk portal Data Centers
 class ZDPDataCenter {
 
-  static final ZDPDataCenter US = ZDPDataCenter._(0);
-  static final ZDPDataCenter CN = ZDPDataCenter._(1);
-  static final ZDPDataCenter IN = ZDPDataCenter._(2);
-  static final ZDPDataCenter EU = ZDPDataCenter._(3);
-  static final ZDPDataCenter AU = ZDPDataCenter._(4);
-  static final ZDPDataCenter JP = ZDPDataCenter._(5);
-  static final ZDPDataCenter CA = ZDPDataCenter._(6);
-  static final ZDPDataCenter SA = ZDPDataCenter._(7);
-  static final ZDPDataCenter SG = ZDPDataCenter._(8);
-  static final ZDPDataCenter INEC = ZDPDataCenter._(9);
-  static final ZDPDataCenter UAE = ZDPDataCenter._(10);
+  static final ZDPDataCenter US = ZDPDataCenter._("US");
+  static final ZDPDataCenter CN = ZDPDataCenter._("CN");
+  static final ZDPDataCenter IN = ZDPDataCenter._("IN");
+  static final ZDPDataCenter EU = ZDPDataCenter._("EU");
+  static final ZDPDataCenter AU = ZDPDataCenter._("AU");
+  static final ZDPDataCenter JP = ZDPDataCenter._("JP");
+  static final ZDPDataCenter CA = ZDPDataCenter._("CA");
+  static final ZDPDataCenter SA = ZDPDataCenter._("SA");
+  static final ZDPDataCenter SG = ZDPDataCenter._("SG");
+  static final ZDPDataCenter INEC = ZDPDataCenter._("INEC");
+  static final ZDPDataCenter UAE = ZDPDataCenter._("UAE");
 
-  final int rawValue;
+  final String rawValue;
 
   ZDPDataCenter._(this.rawValue);
 }

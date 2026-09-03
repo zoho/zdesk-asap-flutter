@@ -77,9 +77,24 @@ public class ZohodeskPortalApikitPlugin: NSObject, FlutterPlugin {
     private func initializeSDK(arguments: [String: Any]?) {
         guard let orgID = arguments?["orgID"] as? String,
               let appID = arguments?["appID"] as? String,
-              let dataCenterValue = arguments?["dataCenter"] as? Int,
-              let dataCenter = ZDPDataCenter(rawValue: dataCenterValue)
+              let dataCenterValue = arguments?["dataCenter"] as? String
         else { return }
+
+        let dataCenter: ZDPDataCenter
+        switch dataCenterValue.uppercased() {
+        case "CN": dataCenter = .CN
+        case "IN": dataCenter = .IN
+        case "EU": dataCenter = .EU
+        case "AU": dataCenter = .AU
+        case "JP": dataCenter = .JP
+        case "CA": dataCenter = .CA
+        case "SA": dataCenter = .SA
+        case "SG": dataCenter = .SG
+        case "INEC": dataCenter = .INEC
+        case "UAE": dataCenter = .UAE
+        default: dataCenter = .US
+        }
+
         ZohoDeskPortalKit.initialize(orgID: orgID, appID: appID, dataCenter: dataCenter)
     }
     

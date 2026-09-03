@@ -49,6 +49,7 @@ class ZohodeskPortalSiqPlugin: FlutterPlugin, MethodChannel.MethodCallHandler, A
     when(call.method) {
       "show" -> showSalesIQ(call, result)
       "setGuestUserDetails" -> setGuestUserDetails(call, result)
+      "addInfo" -> addInfo(call, result)
       "setSalesIQInitCallback" -> setSalesIQInitCallback(call, result)
       "setChatBrandDetails" -> setChatBrandDetails(call, result)
       "setChatVisibility" -> setChatVisibility(call, result)
@@ -115,6 +116,14 @@ class ZohodeskPortalSiqPlugin: FlutterPlugin, MethodChannel.MethodCallHandler, A
     userDetails.phone = phone
     userDetails.email = email
     ZohoDeskPortalSalesIQ.setGuestUserDetails(userDetails)
+  }
+
+
+  private fun addInfo(call: MethodCall, result: MethodChannel.Result) {
+    val paramsMap = call.arguments as? HashMap<String, Any>
+    val key = paramsMap?.get("key") as? String?
+    val value = paramsMap?.get("value") as? String?
+    ZohoDeskPortalSalesIQ.addInfo(key, value)
   }
 
   private fun setChatBrandDetails(call: MethodCall, result: MethodChannel.Result) {

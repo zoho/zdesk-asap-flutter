@@ -30,6 +30,10 @@ public class ZohodeskPortalSiqPlugin: NSObject, FlutterPlugin {
         case .setGuestUserDetails:
             guard let arguments = call.arguments as? [String: Any] else { return }
             setGuestUserDetails(arguments)
+
+        case .addInfo:
+            guard let arguments = call.arguments as? [String: Any] else { return }
+            addInfo(arguments)
             
         case .setChatBrandDetails:
             guard let arguments = call.arguments as? [String: Any] else { return }
@@ -92,6 +96,12 @@ public class ZohodeskPortalSiqPlugin: NSObject, FlutterPlugin {
         let phoneNumer = arguments["phone"] as? String
         
         ZDPortalSalesIQ.setGuestUser(email: emailID, displayName: displayName, phoneNumber: phoneNumer)
+    }
+
+    private func addInfo(_ arguments: [String: Any]) {
+        let key = arguments["key"] as? String
+        let value = arguments["value"] as? String
+        ZDPortalSalesIQ.addInfo(key, value: value)
     }
     
     private func setChatBrandDetails(_ arguments: [String: Any]) {
@@ -205,7 +215,7 @@ public class ZohodeskPortalSiqPlugin: NSObject, FlutterPlugin {
     
     private enum ZDPChatAPIs: String {
         case show, showOfflineMessage
-        case setSalesIQInitCallback, setGuestUserDetails, setChatBrandDetails
+        case setSalesIQInitCallback, setGuestUserDetails, addInfo, setChatBrandDetails
         case setChatVisibility, hideQueueTime, showFeedbackAfterSkip, enableDragToDismiss, setKnowledgeBaseVisibility, setLoggerEnabled, setConversationVisibility
         case setConversationTitle, setLauncherVisibility
     }

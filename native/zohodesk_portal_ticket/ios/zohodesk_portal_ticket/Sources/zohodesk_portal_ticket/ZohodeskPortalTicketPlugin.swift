@@ -37,6 +37,7 @@ public class ZohodeskPortalTicketPlugin: NSObject, FlutterPlugin {
           ZDPTicketConfiguration.configure.isTicketChannelAllowed = ticketConfigurations.isTicketChannelAllowed
           ZDPTicketConfiguration.configure.isTicketPropertiesAllowed = ticketConfigurations.isTicketPropertiesAllowed
           ZDPTicketConfiguration.configure.disableTicketDetailSearch = !ticketConfigurations.isTicketDetailSearchAllowed
+          ZDPTicketConfiguration.configure.isOverdueTagAllowed = ticketConfigurations.isOverdueTagAllowed
       }
   } 
     
@@ -57,4 +58,5 @@ private class ZDFTicketConfiguration: Decodable {
      var isTicketChannelAllowed = true
      var isTicketPropertiesAllowed = true
      var isTicketDetailSearchAllowed: Bool = true
+     var isOverdueTagAllowed: Bool = true
 }

@@ -11,4 +11,5 @@ data class ZDPTicketConfiguration (
     val isTicketPropertiesAllowed: Boolean,
     val isTicketChannelAllowed: Boolean,
     val isTicketDetailSearchAllowed: Boolean,
+    val isOverdueTagAllowed: Boolean,
 )

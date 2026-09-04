@@ -1,7 +1,6 @@
 import Flutter
 import UIKit
 import ZohoDeskPortalTicket
-import ZohoDeskPortalAPIKit
 import zohodesk_portal_apikit
 
 public class ZohodeskPortalSubmitTicketPlugin: NSObject, FlutterPlugin {

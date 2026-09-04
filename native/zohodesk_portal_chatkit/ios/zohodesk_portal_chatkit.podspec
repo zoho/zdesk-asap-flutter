@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'zohodesk_portal_chatkit'
-  s.version          = '2.6.5'
+  s.version          = '2.7.0'
   s.summary          = 'Zoho Desk Portal Chat Kit'
   
   s.description      = 'Zoho Desk Portal Chat Kit'
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'DeskMobile' => 'support@zohodesk.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
+  s.source_files = 'zohodesk_portal_chatkit/Sources/zohodesk_portal_chatkit/**/*'
   s.dependency 'Flutter'
   s.dependency 'ZohoDeskPortalChatKit', '4.6.8'
   s.platform = :ios, '13.0'

@@ -14,7 +14,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/zoho/ZohoDeskPortalCore", exact: "4.6.5"),
+        .package(url: "https://github.com/zoho/ZohoDeskPortalCore", exact: "4.6.8"),
         .package(name: "zohodesk_portal_apikit", path: "../zohodesk_portal_apikit")
     ],
     targets: [

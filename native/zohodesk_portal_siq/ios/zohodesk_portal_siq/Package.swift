@@ -14,15 +14,13 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/zoho/ZohoDeskPortalSalesIQ", exact: "4.6.5"),
-        .package(url: "https://github.com/zoho/ZohoDeskPortalConfiguration", exact: "4.6.5")
+        .package(url: "https://github.com/zoho/ZohoDeskPortalSalesIQ", exact: "4.6.8")
     ],
     targets: [
         .target(
             name: "zohodesk_portal_siq",
             dependencies: [
-                .product(name: "ZohoDeskPortalSalesIQ", package: "ZohoDeskPortalSalesIQ"),
-                .product(name: "ZohoDeskPortalConfiguration", package: "ZohoDeskPortalConfiguration")
+                .product(name: "ZohoDeskPortalSalesIQ", package: "ZohoDeskPortalSalesIQ")
             ]
         )
     ]

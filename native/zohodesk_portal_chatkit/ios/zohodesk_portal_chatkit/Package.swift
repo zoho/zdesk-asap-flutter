@@ -14,7 +14,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/zoho/ZohoDeskPortalChatKit", exact: "4.6.5")
+        .package(url: "https://github.com/zoho/ZohoDeskPortalChatKit", exact: "4.6.8")
     ],
     targets: [
         .target(

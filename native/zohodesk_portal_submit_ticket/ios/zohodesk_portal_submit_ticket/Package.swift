@@ -14,8 +14,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/zoho/ZohoDeskPortalTicket", exact: "4.6.5"),
-        .package(url: "https://github.com/zoho/ZohoDeskPortalAPIKit", exact: "4.6.5"),
+        .package(url: "https://github.com/zoho/ZohoDeskPortalTicket", exact: "4.6.8"),
         .package(name: "zohodesk_portal_apikit", path: "../zohodesk_portal_apikit")
     ],
     targets: [
@@ -23,7 +22,6 @@ let package = Package(
             name: "zohodesk_portal_submit_ticket",
             dependencies: [
                 .product(name: "ZohoDeskPortalTicket", package: "ZohoDeskPortalTicket"),
-                .product(name: "ZohoDeskPortalAPIKit", package: "ZohoDeskPortalAPIKit"),
                 .product(name: "zohodesk-portal-apikit", package: "zohodesk_portal_apikit")
             ]
         )

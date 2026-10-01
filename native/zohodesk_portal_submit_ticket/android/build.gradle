@@ -2,7 +2,7 @@ group 'com.zoho.desk.zohodesk_portal_submit_ticket'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.8.0'
+    ext.kotlin_version = '2.3.21'
     repositories {
         google()
         mavenCentral()
@@ -24,10 +24,6 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = '1.8'
     }
 
     sourceSets {
@@ -52,7 +48,14 @@ android {
         }
     }
 }
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_1_8)
+    }
+}
+
 dependencies {
-    implementation "com.zoho.desk:asap-tickets:4.6.8"
+    implementation "com.zoho.desk:asap-tickets:5.0.0_BETA_05"
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 }

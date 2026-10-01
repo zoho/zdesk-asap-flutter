@@ -2,6 +2,10 @@
 
 ASAP SDK Portal Core flutter plugin
 
+# 3.0.0
+
+- Upgraded Kotlin version to 2.3.21.
+
 # 1.0.0
 
 - Initial release of the plugin for the iOS and Android platforms.
